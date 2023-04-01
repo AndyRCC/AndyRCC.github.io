@@ -1,55 +1,83 @@
-<!DOCTYPR html>
+<!DOCTYPE html>
 <html>
-      <head>
-           <title> Welcome to Andy´s personal website </title>
-           <link rel="stylesheet" type=text/css href="/css/main.css"> 
-           <head>
-           <body>
-                  <nav> 
-                  <ul>
-                        <li><a href="/">Inicio</a></li>
-                       
-                   </ul>
-                   </nav>
-                   <div class="container">
-                   <div class="blurb">
-                        <h1> Andy Casafranca </h1>
-                        <p> mechatronic engineer under construction - UPC
-                   </div>
-                   </div>
-                   <footer>
-                   <ul>
-                        <li><a href="mailto:andycasafranca@hotmail.com">Correo electrónico</a></li>
-                         <li><a href="https://www.facebook.com/andyricardo.casafrancacarrascal">Facebook</a></li>
-                         <li><a href="https://www.instagram.com/andy_casafranca/">Instagram</a></li>
-                         <li><a href="https://mobile.twitter.com/casafranca_andy">Twitter</a></li>
-                         <li><a href="https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115/">Linkedin</a></li>
-                         <li><a href="https://www.upc.edu.pe/">University</a></li> <p>
-                         
-                         
- 
-                         
-</body>                       
-</body>      
-                 <style>
+<head>
+	<title>Welcome to Andy's personal website</title>
+	<link rel="stylesheet" type="text/css" href="/css/main.css"> 
+	<style>
+		body {
+			animation: multifondo 60s infinite;
+		}
 
+		@-webkit-keyframes multifondo {
+		    0% {background-color: #EEE;}
+		    16.6% {background-color: #FFF;}
+		    33.3% {background-color: #DDD;}
+		    50% {background-color: #EEE;}
+		    66.6% {background-color: #CCC;}
+		    83.3% {background-color: #DDD;}
+		    100% {background-color: #EEE;}
+		}
 
-body{
-animation: multifondo 43s infinite
-}
-@-webkit-keyframes multifondo {
-    85.69%   {background-color: brown;}
-    14.28%  {background-color: #dddccc;}
-    28.57%  {background-color: brown;}
-    42.85% {background-color: #abcabc;;}
-    57.13%  {background-color: purple;}  
-    71.41%  {background-color: #dddccc;} 
-    85.69%   {background-color: red;}  
-}
-</style>
-                         
-</a></li>
-                   </ul>
-                   </footer>
-                 </body>
-                 </html>
+		.nav-links li:nth-child(2) a {
+			background-image: linear-gradient(to right, #FF4E50, #F9D423, #FF4E50);
+			background-clip: text;
+			-webkit-background-clip: text;
+			color: transparent;
+		}
+
+		.nav-links li:nth-child(2) a span:nth-child(1) {
+			color: #FF4E50;
+			animation: changeColor1 3s ease-in-out infinite;
+		}
+
+		.nav-links li:nth-child(2) a span:nth-child(2) {
+			color: #F9D423;
+			animation: changeColor2 3s ease-in-out infinite;
+			animation-delay: 0.1s;
+		}
+
+		.nav-links li:nth-child(2) a span:nth-child(3) {
+			color: #FF4E50;
+			animation: changeColor3 3s ease-in-out infinite;
+			animation-delay: 0.2s;
+		}
+
+		@keyframes changeColor1 {
+			0% {color: #FF4E50;}
+			33.33% {color: #F9D423;}
+			66.66% {color: #FF4E50;}
+			100% {color: #FF4E50;}
+		}
+
+		@keyframes changeColor2 {
+			0% {color: #F9D423;}
+			33.33% {color: #FF4E50;}
+			66.66% {color: #F9D423;}
+			100% {color: #F9D423;}
+		}
+
+		@keyframes changeColor3 {
+			0% {color: #FF4E50;}
+			33.33% {color: #F9D423;}
+			66.66% {color: #FF4E50;}
+			100% {color: #FF4E50;}
+		}
+
+	</style>
+</head>
+<body>
+	<nav> 
+		<ul class="nav-links">
+			<li><a href="/">Inicio</a></li>
+			<li><a href="/chatgpt.html"><span>C</span><span>h</span><span>a</span><span>t</span>-<span>g</span><span>p</span><span>t</span></a></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<div class="blurb">
+			<h1>Andy Casafranca</h1>
+			<p>mechatronic engineer under construction - UPC</p>
+		</div>
+	</div>
+	<footer>
+		<ul>
+			<li><

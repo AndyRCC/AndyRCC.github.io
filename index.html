@@ -1,108 +1,115 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Welcome to Andy's personal website</title>
-    <link rel="stylesheet" type="text/css" href="/css/main.css"> 
-</head>
-
-<body>
-    <nav> 
-        <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/chat-gpt">Chat-gpt</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <div class="blurb">
-            <h1>Andy Casafranca</h1>
-            <p>mechatronic engineer under construction - UPC</p>
-        </div>
-    </div>
-
-    <footer>
-        <ul>
-            <li><a href="mailto:andycasafranca@hotmail.com">Correo electrónico</a></li>
-            <li><a href="https://www.facebook.com/andyricardo.casafrancacarrascal">Facebook</a></li>
-            <li><a href="https://www.instagram.com/andy_casafranca/">Instagram</a></li>
-            <li><a href="https://mobile.twitter.com/casafranca_andy">Twitter</a></li>
-            <li><a href="https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115/">LinkedIn</a></li>
-            <li><a href="https://www.upc.edu.pe/">University</a></li>
-        </ul>
-    </footer>
-
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
     <style>
-        body {
-            animation: multifondo 60s infinite;
-        }
+      body {
+        animation: multifondo 60s infinite;
+      }
 
-        @-webkit-keyframes multifondo {
-            0% {
-                background-color: #dddccc;
-            }
-            10% {
-                background-color: #aaaaaa;
-            }
-            20% {
-                background-color: #bbbbbb;
-            }
-            30% {
-                background-color: #cccccc;
-            }
-            40% {
-                background-color: #dddddd;
-            }
-            50% {
-                background-color: #eeeeee;
-            }
-            60% {
-                background-color: #ffffff;
-            }
-            70% {
-                background-color: #dddddd;
-            }
-            80% {
-                background-color: #bbbbbb;
-            }
-            90% {
-                background-color: #999999;
-            }
-            100% {
-                background-color: #777777;
-            }
+      @keyframes multifondo {
+        0% {
+          background-color: #e1e1e1;
         }
+        16.66% {
+          background-color: #f64c72;
+        }
+        33.33% {
+          background-color: #feac5e;
+        }
+        50% {
+          background-color: #c2e59c;
+        }
+        66.66% {
+          background-color: #5cdb95;
+        }
+        83.33% {
+          background-color: #54a0ff;
+        }
+        100% {
+          background-color: #636e72;
+        }
+      }
 
-        .colorful-text {
-            display: inline-block;
-        }
+      .color-change {
+        display: inline-block;
+      }
 
-        .colorful-text span {
-            animation: rainbow 5s infinite;
-        }
+      .color-change span {
+        animation: change-color 2s infinite;
+      }
 
-        @keyframes rainbow {
-            0% {
-                color: #ff0000;
-            }
-            14.28% {
-                color: #ff7f00;
-            }
-            28.57% {
-                color: #ffff00;
-            }
-            42.85% {
-                color: #00ff00;
-            }
-            57.13% {
-                color: #0000ff;
-            }
-            71.41% {
-                color: #4b0082;
-            }
-            85.69% {
-                color: #8f00ff;
-            }
+      @keyframes change-color {
+        0% {
+          color: #f64c72;
         }
+        16.66% {
+          color: #feac5e;
+        }
+        33.33% {
+          color: #c2e59c;
+        }
+        50% {
+          color: #5cdb95;
+        }
+        66.66% {
+          color: #54a0ff;
+        }
+        83.33% {
+          color: #636e72;
+        }
+        100% {
+          color: #f64c72;
+        }
+      }
+
+      nav ul li:nth-child(2) {
+        display: inline-block;
+        margin-left: 20px;
+      }
     </style>
-</body>
-</html>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/chatgpt">Chat-gpt</a></li>
+        <li>
+          <a href="mailto:andycasafranca@hotmail.com">Correo electrónico</a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/andyricardo.casafrancacarrascal"
+            >Facebook</a
+          >
+        </li>
+        <li>
+          <a href="https://www.instagram.com/andy_casafranca/">Instagram</a>
+        </li>
+        <li>
+          <a href="https://mobile.twitter.com/casafranca_andy">Twitter</a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115/"
+            >Linkedin</a
+          >
+        </li>
+        <li><a href="https://www.upc.edu.pe/">University</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="blurb">
+        <h1>Andy Casafranca</h1>
+        <p>mechatronic engineer under construction - UPC</p>
+      </div>
+    </div>
+    <div class="color-change">
+      <h1>
+        <span>C</span>
+        <span>h</span>
+        <span>a</span>
+        <span>t</span>
+        <span>-</span>
+        <span>g</span>
+        <span>p</span

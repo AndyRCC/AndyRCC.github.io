@@ -15,26 +15,8 @@
 
     <div class="container">
         <div class="blurb">
-            <h1 class="colorful-text">
-                <span style="background-image: linear-gradient(to bottom, #ff0000, #ff0000); -webkit-background-clip: text; color: transparent;">A</span>
-                <span style="background-image: linear-gradient(to bottom, #00ff00, #00ff00); -webkit-background-clip: text; color: transparent;">n</span>
-                <span style="background-image: linear-gradient(to bottom, #0000ff, #0000ff); -webkit-background-clip: text; color: transparent;">d</span>
-                <span style="background-image: linear-gradient(to bottom, #ffff00, #ffff00); -webkit-background-clip: text; color: transparent;">y</span>
-                <span style="background-image: linear-gradient(to bottom, #ff7f00, #ff7f00); -webkit-background-clip: text; color: transparent;">C</span>
-                <span style="background-image: linear-gradient(to bottom, #8f00ff, #8f00ff); -webkit-background-clip: text; color: transparent;">a</span>
-                <span style="background-image: linear-gradient(to bottom, #4b0082, #4b0082); -webkit-background-clip: text; color: transparent;">s</span>
-                <span style="background-image: linear-gradient(to bottom, #ff0000, #ff0000); -webkit-background-clip: text; color: transparent;">a</span>
-                <span style="background-image: linear-gradient(to bottom, #00ff00, #00ff00); -webkit-background-clip: text; color: transparent;">f</span>
-                <span style="background-image: linear-gradient(to bottom, #0000ff, #0000ff); -webkit-background-clip: text; color: transparent;">r</span>
-                <span style="background-image: linear-gradient(to bottom, #ffff00, #ffff00); -webkit-background-clip: text; color: transparent;">a</span>
-                <span style="background-image: linear-gradient(to bottom, #ff7f00, #ff7f00); -webkit-background-clip: text; color: transparent;">n</span>
-                <span style="background-image: linear-gradient(to bottom, #8f00ff, #8f00ff); -webkit-background-clip: text; color: transparent;">c</span>
-                <span style="background-image: linear-gradient(to bottom, #4b0082, #4b0082); -webkit-background-clip: text; color: transparent;">a</span>
-            </h1>
-            <p>mechatronic engineer under construction -
-
-
-
+            <h1 class="colorful-text"><span>A</span><span>N</span><span>D</span><span>Y</span> <span>C</span><span>A</span><span>S</span><span>A</span><span>F</span><span>R</span><span>A</span><span>N</span><span>C</span><span>A</span></h1>
+            <p>mechatronic engineer under construction - UPC</p>
         </div>
     </div>
 
@@ -94,32 +76,24 @@
             display: inline-block;
         }
 
-        .colorful-text span {
+        .colorful-text span:nth-child(1) {
             animation: rainbow 5s infinite;
         }
 
-        @keyframes rainbow {
-            0% {
-                color: #ff0000;
-            }
-            14.28% {
-                color: #ff7f00;
-            }
-            28.57% {
-                color: #ffff00;
-            }
-            42.85% {
-                color: #00ff00;
-            }
-            57.13% {
-                color: #0000ff;
-            }
-            71.41% {
-                color: #4b0082;
-            }
-            85.69% {
-                color: #8f00ff;
-            }
+        .colorful-text span:nth-child(2) {
+            animation: rainbow 5s infinite 0.5s;
+        }
+
+        .colorful-text span:nth-child(3) {
+            animation: rainbow 5s infinite 1s;
+        }
+
+        .colorful-text span:nth-child(4) {
+            animation: rainbow 5s infinite 1.5s;
+        }
+
+        .colorful-text span:nth-child(5) {
+            animation: rainbow 5s infinite 2s;
         }
     </style>
 </body>

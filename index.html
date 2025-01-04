@@ -1,12 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Welcome to Andy's personal website</title>
-    <link rel="stylesheet" type="text/css" href="/css/main.css"> 
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Andy Casafranca's personal website, showcasing his journey in mechatronics engineering.">
+    <title>Andy Casafranca | Mechatronics Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            background-size: 200% 200%;
+            animation: gradient-animation 10s ease infinite;
+            color: #fff;
+        }
 
+        @keyframes gradient-animation {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1em;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 1em;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4ca1af;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            text-align: center;
+        }
+
+        .blurb h1 {
+            font-size: 3em;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5em;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #1dd1a1, #54a0ff, #5f27cd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: text-glow 3s infinite alternate;
+        }
+
+        @keyframes text-glow {
+            from { text-shadow: 0 0 10px #fff; }
+            to { text-shadow: 0 0 20px #feca57; }
+        }
+
+        .blurb p {
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1em;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer ul li {
+            margin: 0 1em;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #54a0ff;
+        }
+
+    </style>
+</head>
 <body>
-    <nav> 
+    <nav>
         <ul>
             <li><a href="/">Inicio</a></li>
             <li><a href="https://steamcommunity.com/id/hitleg/" target="_blank">Game Zone</a></li>
@@ -15,14 +121,14 @@
 
     <div class="container">
         <div class="blurb">
-            <h1 class="colorful-text"><span>A</span><span>N</span><span>D</span><span>Y</span> <span>C</span><span>A</span><span>S</span><span>A</span><span>F</span><span>R</span><span>A</span><span>N</span><span>C</span><span>A</span></h1>
-            <p>Mechatronic Engineer Under Construction - UPC</p>
+            <h1>Andy Casafranca</h1>
+            <p>Mechatronics Engineer in Progress | UPC</p>
         </div>
     </div>
 
     <footer>
         <ul>
-            <li><a href="mailto:andycasafranca@hotmail.com">Correo electrónico</a></li>
+            <li><a href="mailto:andycasafranca@hotmail.com">Email</a></li>
             <li><a href="https://www.facebook.com/andyricardo.casafrancacarrascal" target="_blank">Facebook</a></li>
             <li><a href="https://www.instagram.com/andy_casafranca/" target="_blank">Instagram</a></li>
             <li><a href="https://mobile.twitter.com/casafranca_andy" target="_blank">Twitter</a></li>
@@ -30,125 +136,5 @@
             <li><a href="https://www.upc.edu.pe/" target="_blank">University</a></li>
         </ul>
     </footer>
-
-    <style>
-        body {
-            animation: multifondo 60s infinite;
-        }
-
-        @-webkit-keyframes multifondo {
-            0% {
-                background-color: #dddccc;
-            }
-            10% {
-                background-color: #aaaaaa;
-            }
-            20% {
-                background-color: #bbbbbb;
-            }
-            30% {
-                background-color: #cccccc;
-            }
-            40% {
-                background-color: #dddddd;
-            }
-            50% {
-                background-color: #eeeeee;
-            }
-            60% {
-                background-color: #ffffff;
-            }
-            70% {
-                background-color: #dddddd;
-            }
-            80% {
-                background-color: #bbbbbb;
-            }
-            90% {
-                background-color: #999999;
-            }
-            100% {
-                background-color: #777777;
-            }
-        }
-
-        .colorful-text {
-            display: inline-block;
-        }
-
-        .colorful-text span:nth-child(1) {
-            animation: rainbow 5s infinite;
-        }
-
-        .colorful-text span:nth-child(2) {
-            animation: rainbow 5s infinite 0.5s;
-        }
-
-        .colorful-text span:nth-child(3) {
-            animation: rainbow 5s infinite 1s;
-        }
-
-        .colorful-text span:nth-child(4) {
-            animation: rainbow 5s infinite 1.5s;
-        }
-
-        .colorful-text span:nth-child(5) {
-            animation: rainbow 5s infinite 2s;
-        }
-        
-        .colorful-text span:nth-child(6) {
-            animation: rainbow 5s infinite 2.5s;
-        }
-        
-        .colorful-text span:nth-child(7) {
-            animation: rainbow 5s infinite 3s;
-        }
-        
-        .colorful-text span:nth-child(8) {
-            animation: rainbow 5s infinite 3.5s;
-        }
-        
-        .colorful-text span:nth-child(9) {
-            animation: rainbow 5s infinite 4s;
-        }
-        
-        .colorful-text span:nth-child(10) {
-            animation: rainbow 5s infinite 4.5s;
-        }
-        
-        .colorful-text span:nth-child(11) {
-            animation: rainbow 5s infinite 5s;
-        }
-        
-        .colorful-text span:nth-child(12) {
-            animation: rainbow 5s infinite 5.5s;
-        }
-        
-        .colorful-text span:nth-child(13) {
-            animation: rainbow 5s infinite 6s;
-        }
-        
-        .colorful-text span:nth-child(14) {
-            animation: rainbow 5s infinite 6.5s;
-        }
-        
-        body {
-  background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
-  background-size: 1200% 1200%;
-  animation: rainbow 20s ease infinite;
-}
-
-@keyframes rainbow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-    </style>
 </body>
 </html>

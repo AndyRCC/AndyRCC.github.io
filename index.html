@@ -1,255 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Andy Casafranca | Mechatronics Engineer</title>
-    <meta
-      name="description"
-      content="Portfolio and personal site of Mechatronics Engineer Andy Casafranca."
-    />
-
-    <!--  ▸ Google Fonts & Icons  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-L3n8X44x5t7A1N1aPcoO7wKl1kqHlRc9Bm5cC38c7a+O5N6SQ0R9PTnE7pjfZHB5X4wfcTtu8dVdcrl+1ZP8nQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-
-    <!--  ▸ Global Styles  -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Andy Casafranca - Mechatronics Engineering Portfolio">
+    <title>Andy Casafranca | Mechatronics Engineer</title>
+    
+    <!-- Fuentes y iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-      :root {
-        /* Palette */
-        --clr-primary: #0d9488;
-        --clr-primary-dark: #0f766e;
-        --clr-bg: #0f172a;
-        --clr-bg-gradient: linear-gradient(135deg, #0f172a 0%, #164e63 50%, #020617 100%);
-        --clr-text: #f1f5f9;
-        --clr-accent: #22d3ee;
-
-        /* Typography & Layout */
-        --fs-h1: clamp(2.5rem, 6vw, 4rem);
-        --fs-h2: clamp(1.75rem, 4vw, 2.5rem);
-        --fs-body: 1rem;
-        --max-width: 1100px;
-        --header-height: 72px;
-      }
-
-      /* CSS Reset — modern-normalize minimal */
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Inter", system-ui, sans-serif;
-        font-size: var(--fs-body);
-        color: var(--clr-text);
-        background: var(--clr-bg-gradient);
-        min-height: 100vh;
-        line-height: 1.55;
-        -webkit-font-smoothing: antialiased;
-        display: flex;
-        flex-direction: column;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-        transition: color 0.25s ease;
-      }
-      a:hover,
-      a:focus-visible {
-        color: var(--clr-accent);
-      }
-
-      /* Header */
-      .header {
-        position: sticky;
-        top: 0;
-        backdrop-filter: blur(12px);
-        background: rgba(15, 23, 42, 0.6);
-        height: var(--header-height);
-        display: flex;
-        align-items: center;
-        z-index: 100;
-      }
-      .nav {
-        width: 100%;
-        max-width: var(--max-width);
-        margin-inline: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-inline: 1rem;
-      }
-      .nav__logo {
-        font-weight: 800;
-        font-size: 1.25rem;
-        letter-spacing: 0.05em;
-      }
-      .nav__list {
-        display: flex;
-        list-style: none;
-        gap: 1.5rem;
-        margin: 0;
-        padding: 0;
-      }
-
-      /* Hero */
-      .hero {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: clamp(4rem, 20vh, 9rem) 1rem;
-      }
-      .hero__inner {
-        max-width: 700px;
-      }
-      .hero__title {
-        font-size: var(--fs-h1);
-        font-weight: 800;
-        margin-bottom: 0.5rem;
-        background: linear-gradient(90deg, #06b6d4, #3b82f6, #a855f7);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .hero__subtitle {
-        font-size: var(--fs-h2);
-        font-weight: 300;
-        margin-bottom: 2rem;
-      }
-      .hero__btn {
-        display: inline-block;
-        background: var(--clr-primary);
-        padding: 0.9rem 2.3rem;
-        font-weight: 600;
-        border-radius: 6px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-      }
-      .hero__btn:hover {
-        background: var(--clr-primary-dark);
-      }
-
-      /* Footer */
-      footer {
-        margin-top: auto;
-        background: #020617;
-        padding: 2rem 1rem;
-      }
-      .footer__content {
-        max-width: var(--max-width);
-        margin-inline: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.2rem;
-      }
-      .socials {
-        display: flex;
-        gap: 1rem;
-        font-size: 1.5rem;
-      }
-      .socials a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 2.6rem;
-        height: 2.6rem;
-      }
-      .small {
-        font-size: 0.875rem;
-        color: #94a3b8;
-      }
-
-      /* Accessibility */
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          animation: none !important;
-          transition: none !important;
+        :root {
+            --primary: #00f7ff;
+            --secondary: #4CA1AF;
+            --background: #0a192f;
+            --light: #ccd6f6;
+            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
         }
-      }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navegación */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo a {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding: 15rem 5% 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: var(--light);
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--background);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 247, 255, 0.2);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 247, 255, 0.1);
+        }
+
+        /* Social Links */
+        .social-links {
+            position: fixed;
+            left: 40px;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .social-links {
+                position: static;
+                flex-direction: row;
+                justify-content: center;
+                margin-top: 3rem;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <!-- ████ Header ████-->
-    <header class="header">
-      <nav class="nav" aria-label="Primary">
-        <a class="nav__logo" href="/">Andy Casafranca</a>
-        <ul class="nav__list">
-          <li><a href="/">Home</a></li>
-          <li><a href="https://steamcommunity.com/id/hitheads/" target="_blank">Gaming</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+</head>
+<body>
+    <nav class="nav-container">
+        <nav>
+            <div class="logo">
+                <a href="/">AC</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </nav>
 
-    <!-- ████ Main Content ████-->
-    <main id="content">
-      <section class="hero" aria-label="Introduction">
-        <div class="hero__inner">
-          <h1 class="hero__title">Mechatronics Engineer</h1>
-          <p class="hero__subtitle">
-            Building intelligent systems that bridge the physical and digital worlds.
-          </p>
-          <a class="hero__btn" href="mailto:u201917931@upc.edu.pe">Get in touch</a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Innovating Through Mechatronics</h1>
+            <h2>Andy Casafranca</h2>
+            <p>Mechatronics Engineering Student at UPC | Passionate about Robotics and Advanced Manufacturing</p>
+            
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="#" class="btn btn-outline">View CV</a>
+            </div>
         </div>
-      </section>
-    </main>
+    </section>
 
-    <!-- ████ Footer ████-->
-    <footer id="contact">
-      <div class="footer__content">
-        <div class="socials">
-          <a href="mailto:u201917931@upc.edu.pe" title="Email"
-            ><i class="fa-solid fa-envelope"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115/"
-            target="_blank"
-            title="LinkedIn"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a
-            href="https://mobile.twitter.com/casafranca_andy"
-            target="_blank"
-            title="X"
-            ><i class="fa-brands fa-x-twitter"></i
-          ></a>
-          <a
-            href="https://www.instagram.com/andy_casafranca/"
-            target="_blank"
-            title="Instagram"
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
-          <a
-            href="https://www.youtube.com/@Andy_Casafranca"
-            target="_blank"
-            title="YouTube"
-            ><i class="fa-brands fa-youtube"></i
-          ></a>
-        </div>
-        <p class="small">
-          © <span id="year"></span> Andy Casafranca — All rights reserved.
-        </p>
-      </div>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/yourusername" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.youtube.com/@Andy_Casafranca" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="mailto:u201917931@upc.edu.pe">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Andy Casafranca. All rights reserved.</p>
     </footer>
-
-    <!-- ▸ Small helper for dynamic year -->
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+</body>
 </html>
-

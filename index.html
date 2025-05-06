@@ -1,256 +1,1050 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Andy Casafranca - Mechatronics Engineering Portfolio">
-    <title>Andy Casafranca | Mechatronics Engineer</title>
-    
-    <!-- Fuentes y iconos -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary: #00f7ff;
-            --secondary: #4CA1AF;
-            --background: #0a192f;
-            --light: #ccd6f6;
-            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<meta name="author" content="W3Layouts.com">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+	<!-- google-fonts -->
+	<link href="//fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<!-- //google-fonts -->
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--background);
-            color: var(--light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+	<link href="css/style-liberty.css" rel="stylesheet">
+	<title>UI Portfolio  WordPress Theme  Just another W3Layouts free WordPress Demo Sites site</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="UI Portfolio - WordPress Theme � Feed" href="https://wp.w3layouts.com/ui-portfolio/feed/">
+<link rel="alternate" type="application/rss+xml" title="UI Portfolio - WordPress Theme � Comments Feed" href="https://wp.w3layouts.com/ui-portfolio/comments/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/wp.w3layouts.com\/ui-portfolio\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.6"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!s("\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="css/style.min.css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="css/classic-themes.min.css" media="all">
+<style id="global-styles-inline-css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('index.html#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('index.html#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('index.html#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('index.html#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('index.html#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('index.html#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('index.html#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('index.html#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="w3layouts-style-css" href="css/style.css" media="all">
+<link rel="stylesheet" id="fm-frontend-css" href="css/foodmenu.min.css" media="all">
+<link rel="stylesheet" id="recent-posts-widget-with-thumbnails-public-style-css" href="css/public.css" media="all">
+<link rel="https://api.w.org/" href="https://wp.w3layouts.com/ui-portfolio/wp-json/"><link rel="alternate" type="application/json" href="https://wp.w3layouts.com/ui-portfolio/wp-json/wp/v2/pages/7"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://wp.w3layouts.com/ui-portfolio/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://wp.w3layouts.com/ui-portfolio/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.2.6">
+<link rel="canonical" href="https://wp.w3layouts.com/ui-portfolio/">
+<link rel="shortlink" href="https://wp.w3layouts.com/ui-portfolio/">
+<link rel="alternate" type="application/json+oembed" href="https://wp.w3layouts.com/ui-portfolio/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwp.w3layouts.com%2Fui-portfolio%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://wp.w3layouts.com/ui-portfolio/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwp.w3layouts.com%2Fui-portfolio%2F&format=xml">
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style></head>
 
-        /* Navegación */
-        .nav-container {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(10, 25, 47, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 5%;
-        }
+<body id="top-gap-fixed-header" class="home page-template page-template-page-templates page-template-template-homepage page-template-page-templatestemplate-homepage-php page page-id-7">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0.49803921568627"></feFuncR><feFuncG type="table" tableValues="0 0.49803921568627"></feFuncG><feFuncB type="table" tableValues="0 0.49803921568627"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1"></feFuncR><feFuncG type="table" tableValues="0 1"></feFuncG><feFuncB type="table" tableValues="0 1"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765"></feFuncR><feFuncG type="table" tableValues="0 1"></feFuncG><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1"></feFuncR><feFuncG type="table" tableValues="0 0.27843137254902"></feFuncG><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0"></feFuncR><feFuncG type="table" tableValues="0 0.64705882352941"></feFuncG><feFuncB type="table" tableValues="0 1"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.78039215686275 1"></feFuncR><feFuncG type="table" tableValues="0 0.94901960784314"></feFuncG><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745"></feFuncR><feFuncG type="table" tableValues="0 1"></feFuncG><feFuncB type="table" tableValues="0.44705882352941 0.4"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.098039215686275 1"></feFuncR><feFuncG type="table" tableValues="0 0.66274509803922"></feFuncG><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg>	
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+	<!--header-->
+	<header id="site-header" class="main-header fixed-top">
+		<div class="container w3HeaderLogoEd">
+			<nav class="navbar navbar-expand-lg stroke">
 
-        .logo a {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
+								
+								<h1><a class="navbar-brand" href="https://wp.w3layouts.com/ui-portfolio/">
+						<i class="fab fa-asymmetrik"></i> UI Portfolio					</a></h1>
+				
+				<button class="navbar-toggler collapsed bg-gradient" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+						<span class="navbar-toggler-icon fa icon-close fa-times"></span>
+				</button>
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+					<ul id="menu-main-menu" class="navbar-nav ms-lg-auto align-items-center "><li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item nav-item nav-item-21"><a href="https://wp.w3layouts.com/ui-portfolio/" class="nav-link active">Home</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-22"><a href="https://wp.w3layouts.com/ui-portfolio/about-page/" class="nav-link ">About</a></li>
+<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-23"><a href="https://wp.w3layouts.com/ui-portfolio/services-page/" class="nav-link ">Services</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-24"><a href="https://wp.w3layouts.com/ui-portfolio/pages/" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+<ul class="dropdown-menu  depth_0">
+	<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-25"><a href="https://wp.w3layouts.com/ui-portfolio/blog-page/" class="dropdown-item ">Blog Page</a></li>
+	<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-26"><a href="https://wp.w3layouts.com/ui-portfolio/elements-page/" class="dropdown-item ">Elements page</a></li>
+	<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-27"><a href="https://wp.w3layouts.com/ui-portfolio/404-page/" class="dropdown-item ">404 page</a></li>
+	<li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-32"><a href="https://wp.w3layouts.com/ui-portfolio/landing-page/" class="dropdown-item ">Landing page</a></li>
+</ul>
+</li>
+<li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-28"><a href="https://wp.w3layouts.com/ui-portfolio/contact-page/" class="nav-link ">Contact</a></li>
+</ul>
+					<!--/right-btn-->
+															<div class="header-btn mx-lg-2 HeaderButton">
+							<a class="btn btn-style btn-primary mr-lg-5" href="#url"> Hire Me</a>
+					</div>
+										<!--/right-btn-->
+					
+															<!--/search-right-->
+					<ul class="cd-header-buttons px-lg-2 HeaderSearch">
+							<li>
+								<a class="cd-search-trigger" href="#cd-search">
+										<span></span>
+								</a>
+							</li>
+					</ul>
+					<div id="cd-search" class="cd-search">
+							<form action="https://wp.w3layouts.com/ui-portfolio/" method="GET">
+									<input name="s" type="search" placeholder="Click enter after typing...">
+							</form>
+					</div>
+					<!--//search-right-->
+					
+				</div>
 
-        .nav-links a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding: 0.5rem 0;
-        }
+				<!-- toggle switch for light and dark theme -->
+												<div class="cont-ser-position DarkandLight">
+						<nav class="navigation">
+								<div class="theme-switch-wrapper">
+										<label class="theme-switch" for="checkbox">
+												<input type="checkbox" id="checkbox">
+												<div class="mode-container">
+														<i class="gg-sun"></i>
+														<i class="gg-moon"></i>
+												</div>
+										</label>
+								</div>
+						</nav>
+				</div>
+								<!-- //toggle switch for light and dark theme -->
+			</nav>
+		</div>
+	</header>
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: var(--transition);
-        }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+<!-- HomePage Hero Header -->
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            padding: 15rem 5% 5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-        }
+<!-- <section>
+</section> -->
 
-        .hero-content {
-            flex: 1;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            color: var(--light);
-            margin-bottom: 2rem;
-            opacity: 0.8;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: var(--background);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 247, 255, 0.2);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: rgba(0, 247, 255, 0.1);
-        }
-
-        /* Social Links */
-        .social-links {
-            position: fixed;
-            left: 40px;
-            bottom: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
-            color: var(--light);
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            padding: 2rem 5%;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .social-links {
-                position: static;
-                flex-direction: row;
-                justify-content: center;
-                margin-top: 3rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav-container">
-        <nav>
-            <div class="logo">
-                <a href="/">AC</a>
+<section id="home" class="w3l-banner pt-5">
+  <style>
+    .w3l-banner {
+      background-image: url(images/banner1.jpg);
+    }
+  </style>
+    <div class="container pt-lg-5 pt-md-4">
+        <div class="row pt-lg-5 pt-4">
+            <div class="col-lg-7 banner-info-grid pt-lg-0 pt-5 HomePageHeroHeader">
+                <h1 class="mb-3">Hi, I'm John Watson</h1>
+                <h3 class="mb-4"> <span class="typed-text"></span><span class="cursor">�</span> </h3>
+                <p>I love Graphic design and Photography and have been working on my portfolio since 2016. I Can give your business a new Creative start right away!</p>
+                
+                <a class="btn btn-primary btn-style mt-5 me-2" href="#url"> Hire Me </a>
+                <a class="btn btn-style transparent-btn mt-5" href="#url"> My Portfolio </a>
+                
             </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Innovating Through Mechatronics</h1>
-            <h2>Andy Casafranca</h2>
-            <p>Mechatronics Engineering Student at UPC | Passionate about Robotics and Advanced Manufacturing</p>
-            
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                <a href="#" class="btn btn-outline">View CV</a>
+            <div class="col-lg-5 text-lg-end my-image mt-lg-0 mt-4">
+                <img src="images/banner.png" class="img-fluid">
             </div>
         </div>
+    </div>
+</section>
+
+<section>
+  </section>
+
+<!-- //HomePage Hero Header -->
+
+
+<!-- HomePage About section -->
+
+<section>
     </section>
 
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115/" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/AndyRCC" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.youtube.com/@Andy_Casafranca" target="_blank">
-            <i class="fab fa-youtube"></i>
-        </a>
-        <a href="mailto:u201917931@upc.edu.pe">
-            <i class="fas fa-envelope"></i>
-        </a>
+<section class="w3l-about py-5" id="about">
+    <div class="container py-md-5 py-2 HomePageAbout">
+        <div class="row w3l-row">
+            <div class="col-lg-5 my-image pe-lg-5 mb-lg-0 mb-md-5 mb-4">
+                <img src="images/about.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-lg-7 w3l-about-info px-lg-4 align-center">
+                <h6 class="w3l-title-small mb-1">My Biography</h6>
+                <h3 class="w3l-title-main mb-2">A Lead UI Designer & Web Developer based in UK</h3>
+                <p class="my-4 pe-lg-5">I love Graphic design and Photography and have been working on my portfolio since 2016. I Can give your business a new Creative start right away! Contact me and we will discuss your projects!</p>
+
+                <div class="my-info mt-4">
+
+                    <div class="single-info"><span>Name:</span>
+                        <p>John Watson</p>
+                    </div>
+
+                    <div class="single-info"><span>From:</span>
+                        <p>London, UK</p>
+                    </div>
+
+                    <div class="single-info"><span>Email:</span>
+                        <p><a href="/cdn-cgi/l/email-protection#4c29342d213c20290c212d2520622f2321"><span class="__cf_email__" data-cfemail="7f1a071e120f131a3f121e1613511c1012">[email�protected]</span></a></p>
+                    </div>
+
+                    <div class="single-info"><span>Phone:</span>
+                        <p><a href="tel:+21 234 567 8901">+21 234 567 8901</a></p>
+                    </div>
+                    
+                </div>
+
+								                <ul class="follow-social mt-lg-5 mt-4">
+                    <li>
+                        <h5 class="me-md-3">Follow me on </h5>
+                    </li>
+
+                                                            <li><a href="https://www.behance.net/">
+                        <span class="fab fa-behance"></span></a>
+                    </li>
+                    
+                                                            <li><a href="https://in.linkedin.com/company/w3layouts">
+                        <span class="fab fa-linkedin-in"></span></a>
+                    </li>
+                    
+                                                            <li><a href="https://facebook.com/w3layouts">
+                            <span class="fab fa-facebook-f"></span></a>
+                    </li>
+                    
+                                                            <li><a href="https://twitter.com/W3layouts">
+                        <span class="fab fa-twitter"></span></a>
+                    </li>
+                    
+                </ul>
+                
+                <div class="w3l-btn">
+                    <a href="#url" class="btn btn-style btn-primary mt-lg-5 mt-4 me-md-2">Hire me</a>
+                    <a href="#url" class="btn btn-style btn-secondary mt-lg-5 mt-4">Download CV</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    </section>
+
+<!-- HomePage About section -->
+
+
+<!-- HomePage Services -->
+
+<section>
+    </section>
+
+<section class="about-section py-5">
+    <div class="container py-lg-5 py-md-4 py-2 HomePageServices">
+
+        <div class="title-heading-w3 mx-auto text-center mb-sm-5 mb-4">
+            <h3 class="w3l-title-main">What I do for you</h3>
+        </div>
+
+        <div class="row justify-content-center">
+
+                           
+            <div class="col-lg-4 col-md-6">
+                <div class="about-single">
+                    <div class="about-icon mb-4">
+                        <i class="fas fa-chalkboard"></i>
+                    </div>
+                    <div class="about-content">
+                        <h5 class="mb-3"><a href="#url">Web Development</a></h5>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p>
+                    </div>
+                </div>
+            </div>
+            
+                               
+            <div class="col-lg-4 col-md-6 mt-md-0 mt-3">
+                <div class="about-single">
+                    <div class="about-icon mb-4">
+                        <i class="fab fa-app-store"></i>
+                    </div>
+                    <div class="about-content">
+                        <h5 class="mb-3"><a href="#url"> App development</a></h5>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p>
+                    </div>
+                </div>
+            </div>
+            
+                          
+            <div class="col-lg-4 col-md-6 mt-lg-0 mt-3">
+                <div class="about-single">
+                    <div class="about-icon mb-4">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <div class="about-content">
+                        <h5 class="mb-3"><a href="#url"> Photography</a></h5>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- <div class="w3l-btn text-center">
+            <a href="services.html" class="btn btn-border mt-lg-5 mt-4 me-2">
+                More services <span class="fas fa-long-arrow-alt-right"></span></a>
+        </div> -->
+
+    </div>
+</section>
+
+<section>
+    </section>
+
+<!-- //HomePage Services -->
+
+
+<!-- HomePage Skills section -->
+
+<section>
+    </section>
+
+<section class="w3l-skills py-5" id="skills">
+    <div class="container py-lg-5 py-md-4 py-3 HomePageSkills">
+        <div class="row">
+
+            <div class="col-lg-6 pe-lg-5">
+                <img src="images/about1.jpg" alt="" class="img-fluid">
+            </div>
+
+            <div class="col-lg-6 mt-lg-0 mt-5 w3l-content-6 px-lg-4 align-self-center">
+                <h6 class="w3l-title-small mb-2">My skills</h6>
+                <h3 class="w3l-title-main">My Featured skills</h3>
+                <p class="mt-4">I Specialize in Branding and Strategy, and am passionate about creating Awesome Portfolio work. And I always ready to impress the audience with my Creativity. </p>
+                
+                                                
+                <div class="progress-info mt-5">
+                    <h6 class="progress-tittle">UI/UX Design</h6>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                
+                                                  
+                <div class="progress-info">
+                    <h6 class="progress-tittle">Ideas & Technology                    </h6>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                
+                                                
+                <div class="progress-info">
+                    <h6 class="progress-tittle">Branding Design</h6>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                
+                                   
+                <div class="progress-info mb-0">
+                    <h6 class="progress-tittle">Responsive Web Design</h6>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    </section>
+
+<!-- HomePage Skills section -->
+
+
+<!-- HomePage Features with Photo section -->
+
+<section>
+    </section>
+
+<section class="w3l-whychooseus pt-5" id="about1">
+    <div class="container pt-lg-0 pt-md-4 pt-2 HomePageFeaturesWithPhoto">
+        <div class="row align-items-center">
+            <div class="col-lg-7 pe-lg-5 align-items-center">
+
+                <div class="row two-grids">
+
+                                             
+                    <div class="col-sm-6 grids_info d-flex">
+                        <i class="fab fa-wordpress-simple"></i>
+                        <div class="detail ms-3">
+                            <h4 class="w3l-subtitle">Web Development</h4>
+                            <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.                            </p>
+                        </div>
+                    </div>
+                    
+                                                 
+                    <div class="col-sm-6 grids_info d-flex mt-sm-0 mt-4">
+                        <i class="fab fa-css3-alt"></i>
+                        <div class="detail ms-3">
+                            <h4 class="w3l-subtitle">Design Trends</h4>
+                            <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.                            </p>
+                        </div>
+                    </div>
+                    
+                                           
+                    <div class="col-sm-6 grids_info d-flex mt-md-5 mt-4">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="detail ms-3">
+                            <h4 class="w3l-subtitle">Research & Analysis</h4>
+                            <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.                            </p>
+                        </div>
+                    </div>
+                    
+                                          
+                    <div class="col-sm-6 grids_info d-flex mt-md-5 mt-4">
+                        <i class="fas fa-headset"></i>
+                        <div class="detail ms-3">
+                            <h4 class="w3l-subtitle">Customer support</h4>
+                            <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.                            </p>
+                        </div>
+                    </div>
+                    
+                                          
+                    <div class="col-sm-6 grids_info d-flex mt-md-5 mt-4">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div class="detail ms-3">
+                            <h4 class="w3l-subtitle">Responsive design</h4>
+                            <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.                            </p>
+                        </div>
+                    </div>
+                    
+                                          
+                    <div class="col-sm-6 grids_info d-flex mt-md-5 mt-4">
+                        <i class="fas fa-layer-group"></i>
+                        <div class="detail ms-3">
+                            <h4 class="w3l-subtitle">PSD Design</h4>
+                            <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="col-lg-5 ps-lg-5 my-image mt-lg-0 mt-4">
+                <img src="images/banner.png" alt="" class="img-fluid">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    </section>
+
+<!-- HomePage Features with Photo section -->
+
+
+<!-- HomePage Stats section -->
+
+<section>
+    </section>
+
+<section class="w3l-stats-section py-5" id="stats">
+    <div class="container py-lg-5 py-md-4 py-2 HomePageStats">
+        <div class="w3l-stats-inner-inf py-lg-4">
+            <div class="row stats-con text-center justify-content-center">
+
+                                           
+                <div class="col-lg-3 col-6 stats_info counter_grid">
+                    <p class="counter"> 1500 </p>
+                    <h3>Finished Projects</h3>
+                </div>
+                
+                                                <div class="col-lg-3 col-6 stats_info counter_grid">
+                    <p class="counter"> 2500 </p>
+                    <h3>Working Hours</h3>
+                </div>
+                
+                                                <div class="col-lg-3 col-6 stats_info counter_grid mt-lg-0 mt-sm-5 mt-5">
+                    <p class="counter"> 1280 </p>
+                    <h3>Online Support</h3>
+                </div>
+                
+                                                <div class="col-lg-3 col-6 stats_info counter_grid mt-lg-0 mt-sm-5 mt-5">
+                    <p class="counter"> 3020 </p>
+                    <h3>Happy Customers</h3>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    </section>
+
+<!-- /HomePage Stats section -->
+
+
+<!-- HomePage Gallery -->
+
+<section>
+  </section>
+
+<section class="w3-gallery py-5" id="portfolio">
+    <div class="container py-lg-5 py-md-4 py-2 HomePageGallery">
+
+        <div class="title-heading-w3 mx-auto text-center mb-sm-5 mb-4">
+            <h3 class="w3l-title-main mb-2">My Success Work</h3>
+        </div>
+
+        <div class="row portfolio-area clearfix p-0 m-0">
+            
+            <div class="col-lg-4 col-md-6 portfolio-item2 content" data-id="id-1" data-type="cat-item-1">
+                <span class="image-block">
+                    <a class="image-zoom" href="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/blog1.jpg" data-gal="prettyPhoto[gallery]">
+                        <div class="content-overlay"></div>
+                        <img src="images/blog1.jpg" class="img-fluid w3layouts agileits" alt="portfolio-img">
+                        <div class="content-details fadeIn-bottom">
+                            <h3 class="content-title">Architecture</h3>
+                            <p class="content-text">This is a short description</p>
+                        </div>
+                    </a>
+                </span>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item2 content mt-md-0 mt-4" data-id="id-2" data-type="cat-item-2">
+                <span class="image-block">
+                    <a class="image-zoom" href="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/blog2.jpg" data-gal="prettyPhoto[gallery]">
+                        <div class="content-overlay"></div>
+                        <img src="images/blog2.jpg" class="img-fluid w3layouts agileits" alt="portfolio-img">
+                        <div class="content-details fadeIn-bottom">
+                            <h3 class="content-title">Corporate</h3>
+                            <p class="content-text">This is a short description</p>
+                        </div>
+                    </a>
+                </span>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item2 content mt-lg-0 mt-4" data-id="id-3" data-type="cat-item-3">
+                <span class="image-block">
+                    <a class="image-zoom" href="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/blog3.jpg" data-gal="prettyPhoto[gallery]">
+                        <div class="content-overlay"></div>
+                        <img src="images/blog3.jpg" class="img-fluid w3layouts agileits" alt="portfolio-img">
+                        <div class="content-details fadeIn-bottom">
+                            <h3 class="content-title">Ecommerce</h3>
+                            <p class="content-text">This is a short description</p>
+                        </div>
+                    </a>
+                </span>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item2 content mt-4" data-id="id-4" data-type="cat-item-4">
+                <span class="image-block">
+                    <a class="image-zoom" href="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/blog4.jpg" data-gal="prettyPhoto[gallery]">
+                        <div class="content-overlay"></div>
+                        <img src="images/blog4.jpg" class="img-fluid w3layouts agileits" alt="portfolio-img">
+                        <div class="content-details fadeIn-bottom">
+                            <h3 class="content-title">Mobile UI</h3>
+                            <p class="content-text">This is a short description</p>
+                        </div>
+                    </a>
+                </span>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item2 content mt-4" data-id="id-5" data-type="cat-item-5">
+                <span class="image-block">
+                    <a class="image-zoom" href="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/blog5.jpg" data-gal="prettyPhoto[gallery]">
+                        <div class="content-overlay"></div>
+                        <img src="images/blog5.jpg" class="img-fluid w3layouts agileits" alt="portfolio-img">
+                        <div class="content-details fadeIn-bottom">
+                            <h3 class="content-title">Fashion</h3>
+                            <p class="content-text">This is a short description</p>
+                        </div>
+                    </a>
+                </span>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item2 content mt-4" data-id="id-7" data-type="cat-item-6">
+                <span class="image-block">
+                    <a class="image-zoom" href="https://wp.w3layouts.com/ui-portfolio/wp-content/themes/ui-portfolio/assets/images/blog6.jpg" data-gal="prettyPhoto[gallery]">
+                        <div class="content-overlay"></div>
+                        <img src="images/blog6.jpg" class="img-fluid w3layouts agileits" alt="portfolio-img">
+                        <div class="content-details fadeIn-bottom">
+                            <h3 class="content-title">Real Estate </h3>
+                            <p class="content-text">This is a short description</p>
+                        </div>
+                    </a>
+                </span>
+            </div>
+
+        </div>
+        <!--end portfolio-area -->
+    </div>
+    <!-- //gallery container -->
+</section>
+
+<section>
+  </section>
+
+<!-- //HomePage Gallery -->
+
+
+<!-- HomePage Client logos -->
+
+<section>
+  </section>
+
+<section class="w3l-brands py-md-5 py-4">
+    <div class="container py-lg-2 HomePageClientLogos">
+        <div class="align-items-center">
+            <div id="owl-demo" class="owl-carousel owl-theme">
+
+                <div class="item">
+                    <img src="images/logo1.png" class="img-fluid" alt="Brand">
+                </div>
+
+                <div class="item">
+                    <img src="images/logo2.png" class="img-fluid" alt="Brand">
+                </div>
+
+                <div class="item">
+                    <img src="images/logo3.png" class="img-fluid" alt="Brand">
+                </div>
+
+                <div class="item">
+                    <img src="images/logo4.png" class="img-fluid" alt="Brand">
+                </div>
+
+                <div class="item">
+                    <img src="images/logo5.png" class="img-fluid" alt="Brand">
+                </div>
+
+                <div class="item">
+                    <img src="images/logo1.png" class="img-fluid" alt="Brand">
+                </div>
+
+                <div class="item">
+                    <img src="images/logo2.png" class="img-fluid" alt="Brand">
+                </div>
+
+                <div class="item">
+                    <img src="images/logo3.png" class="img-fluid" alt="Brand">
+                </div>
+
+                <div class="item">
+                    <img src="images/logo4.png" class="img-fluid" alt="Brand">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+  </section>
+
+<!-- //HomePage Client logos -->
+
+<!-- /typig-text-->
+<script data-cfasync="false" src="js/email-decode.min.js"></script><script>
+    const typedTextSpan = document.querySelector(".typed-text");
+    const cursorSpan = document.querySelector(".cursor");
+
+    const textArray = ["Web Designer", "Web Developer", "Photographer ", "Freelancer"
+    ];
+    const typingDelay = 200;
+    const erasingDelay = 10;
+    const newTextDelay = 100; // Delay between current and next text
+    let textArrayIndex = 0;
+    let charIndex = 0;
+
+    function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+            if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+            typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, typingDelay);
+        } else {
+            cursorSpan.classList.remove("typing");
+            setTimeout(erase, newTextDelay);
+        }
+    }
+
+    function erase() {
+        if (charIndex > 0) {
+            // add class 'typing' if there's none
+            if (!cursorSpan.classList.contains("typing")) {
+                cursorSpan.classList.add("typing");
+            }
+            typedTextSpan.textContent = textArray[textArrayIndex].substring(0, 0);
+            charIndex--;
+            setTimeout(erase, erasingDelay);
+        } else {
+            cursorSpan.classList.remove("typing");
+            textArrayIndex++;
+            if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+            setTimeout(type, typingDelay);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
+        if (textArray.length) setTimeout(type, newTextDelay + 250);
+    });
+</script>
+<!-- //typig-text-->
+
+
+
+
+
+<!-- footer -->
+
+<footer class="footer text-center">
+
+    <div class="footer py-5">
+        <div class="container py-md-4 UiportfolioFooter">
+
+                                    <div clss="footer-logo">
+                <a class="logo" href="https://wp.w3layouts.com/ui-portfolio/">
+                    <i class="fab fa-asymmetrik"></i> UI Portfolio                </a>
+            </div>
+            
+                                    <div class="footer-contact-info mt-4">
+
+                <ul>
+
+                                                            <li>
+                        <a href="tel:+12 345 678 900" class="contact-text-sub">
+                            <span class="fas fa-phone me-2"></span>+12 345 678 900                        </a>
+                    </li>
+                    
+                                                            <li>
+                        <a href="/cdn-cgi/l/email-protection#e980878f86a98c91888499858cc78a8684" class="contact-text-sub">
+                            <span class="fas fa-envelope me-2"></span><span class="__cf_email__" data-cfemail="523b3c343d12372a333f223e377c313d3f">[email�protected]</span> 
+                        </a>
+                    </li>
+                    
+                                                            <li>
+                        <p class="contact-text-sub"> 
+                            <span class="fas fa-map-marker me-2"></span>208 Avenue street, UK - 62617.                        </p>
+                    </li>
+                    
+                </ul>
+
+            </div>
+                        
+        </div>
     </div>
 
-    <footer>
-        <p>&copy; 2023 Andy Casafranca. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+    <div class="container py-4">
+        <div class="row footer-grids">
+
+            <!-- copyright -->
+                                    
+                <div class="col-lg-6 copyright text-lg-start text-center align-center">
+                    <p class="CopyRights">� 2025                        UI Portfolio.                        All Rights Reserved |
+                                                                        WordPress Theme by                        <a href="https://w3layouts.com/">
+                            W3Layouts.                        </a>
+                                            </p>
+                </div>
+                        <!-- //copyright -->
+
+
+                                    <div class="col-lg-6 text-lg-end text-center mt-lg-0 mt-4 FooterSocial">
+                <div class="social">
+                    <ul>
+
+                                                                        
+                            <li><a href="https://www.facebook.com/w3layouts/"><span class="fab me-2 fa-facebook-f"></span></a></li>
+                        
+                                                                        
+                            <li><a href="https://twitter.com/W3layouts"><span class="fab me-2 fa-twitter"></span></a></li>
+                         
+
+                                                                        
+                            <li><a href="https://myaccount.google.com/intro/profile"><span class="fab me-2 fa-google-plus"></span></a></li>
+                        
+                                                                        
+                            <li><a href="https://in.pinterest.com/w3layouts/_created/"><span class="fab me-2 fa-pinterest"></span></a></li>
+                        
+                                                                        
+                            <li><a href="https://vk.com/w3layouts"><span class="fab me-2 fa-vk"></span></a></li>
+                          
+
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</footer>
+<!-- //footer -->
+
+
+
+
+<!-- Js scripts -->
+<!-- move top -->
+<button onclick="topFunction()" id="movetop" title="Go to top">
+    <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+</button>
+<script data-cfasync="false" src="js/email-decode.min.js"></script><script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("movetop").style.display = "block";
+        } else {
+            document.getElementById("movetop").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<!-- //move top -->
+
+<!-- common jquery plugin -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- //common jquery plugin -->
+
+<!-- theme switch js (light and dark)-->
+<script src="js/theme-change.js"></script>
+<!-- //theme switch js (light and dark)-->
+
+<!--search-bar-->
+<script src="js/search.js"></script>
+<!--//search-bar-->
+
+<!-- video popup -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.popup-with-zoom-anim').magnificPopup({
+      type: 'inline',
+
+      fixedContentPos: false,
+      fixedBgPos: true,
+
+      overflowY: 'auto',
+
+      closeBtnInside: true,
+      preloader: false,
+
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-zoom-in'
+    });
+
+    $('.popup-with-move-anim').magnificPopup({
+      type: 'inline',
+
+      fixedContentPos: false,
+      fixedBgPos: true,
+
+      overflowY: 'auto',
+
+      closeBtnInside: true,
+      preloader: false,
+
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-slide-bottom'
+    });
+  });
+</script>
+<!-- //video popup -->
+
+<!--/owlcarousel-->
+<script src="js/owl.carousel.js"></script>
+
+<!-- script for tesimonials carousel slider -->
+<script>
+    $(document).ready(function () {
+      $("#owl-demo1").owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: false,
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: false
+          },
+          768: {
+            items: 2,
+            nav: false
+          },
+          1024: {
+            items: 3,
+            nav: false
+          }
+        }
+      })
+    })
+  </script>
+  <!-- //script for tesimonials carousel slider -->
+  <!-- //brands-->
+<script>
+    $(document).ready(function() {
+        $("#owl-demo").owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            nav: false,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 2,
+                    nav: false
+                },
+                568: {
+                    items: 3,
+                    nav: false
+                },
+                768: {
+                    items: 4,
+                    nav: false
+                }
+            }
+        })
+    })
+
+</script>
+<!-- //brands-->
+
+<!--/stats-number-counter-->
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.countup.js"></script>
+<script>
+    $('.counter').countUp();
+
+</script>
+<!--//stats-number-counter-->
+
+<!-- /typig-text-->
+<script>
+    const typedTextSpan = document.querySelector(".typed-text");
+    const cursorSpan = document.querySelector(".cursor");
+
+    const textArray = ["Web Designer", "Web Developer", "Photographer", "Freelancer"];
+    const typingDelay = 200;
+    const erasingDelay = 10;
+    const newTextDelay = 100; // Delay between current and next text
+    let textArrayIndex = 0;
+    let charIndex = 0;
+
+    function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+            if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+            typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, typingDelay);
+        } else {
+            cursorSpan.classList.remove("typing");
+            setTimeout(erase, newTextDelay);
+        }
+    }
+
+    function erase() {
+        if (charIndex > 0) {
+            // add class 'typing' if there's none
+            if (!cursorSpan.classList.contains("typing")) {
+                cursorSpan.classList.add("typing");
+            }
+            typedTextSpan.textContent = textArray[textArrayIndex].substring(0, 0);
+            charIndex--;
+            setTimeout(erase, erasingDelay);
+        } else {
+            cursorSpan.classList.remove("typing");
+            textArrayIndex++;
+            if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+            setTimeout(type, typingDelay);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
+        if (textArray.length) setTimeout(type, newTextDelay + 250);
+    });
+</script>
+<!-- //typig-text-->
+
+
+<!-- jQuery-Photo-filter-lightbox-portfolio-plugin -->
+<script src="js/jquery-1.7.2.js"></script>
+<script src="js/jquery.quicksand.js"></script>
+<script src="js/script.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<!-- //jQuery-Photo-filter-lightbox-portfolio-plugin -->
+
+<!-- MENU-JS -->
+<script>
+    $(window).on("scroll", function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+            $("#site-header").addClass("nav-fixed");
+        } else {
+            $("#site-header").removeClass("nav-fixed");
+        }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+        $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+        if ($(window).width() > 991) {
+            $("header").removeClass("active");
+        }
+        $(window).on("resize", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+        });
+    });
+</script>
+<!-- //MENU-JS -->
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+    $(function () {
+        $('.navbar-toggler').click(function () {
+            $('body').toggleClass('noscroll');
+        })
+    });
+</script>
+<!-- //disable body scroll which navbar is in active -->
+
+<!--bootstrap-->
+<script src="js/bootstrap.min.js"></script>
+<!-- //bootstrap-->
+<!-- //Js scripts -->
+
+
+<script src="js/navigation.js" id="w3layouts-navigation-js"></script>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93b5a0b3d9dffc28',t:'MTc0NjUwNDYyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+
+
+
+</body></html><!-- Cache served by breeze CACHE - Last modified: Tue, 06 May 2025 03:54:25 GMT -->

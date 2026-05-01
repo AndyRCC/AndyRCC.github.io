@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+  .swatch { aspect-ratio: 1; border-radius: 10px; display: flex; flex-direction: column; justify-content: flex-end; padding: 8px; box-sizing: border-box; font-size: 10px; }
+  .swatch .name { font-weight: 700; }
+  .swatch .hex { font-family: var(--font-mono); opacity: .8; }
+</style></head>
+<body><div class="card-frame">
+  <div class="grid">
+    <div class="swatch" style="background:#ffffff;border:1px solid #e6e8eb;color:#404040"><div class="name">bg</div><div class="hex">#ffffff</div></div>
+    <div class="swatch" style="background:#f8f9fa;color:#404040"><div class="name">bg-grey</div><div class="hex">#f8f9fa</div></div>
+    <div class="swatch" style="background:#f1f3f5;color:#404040"><div class="name">bg-light</div><div class="hex">#f1f3f5</div></div>
+    <div class="swatch" style="background:#e6e8eb;color:#404040"><div class="name">border</div><div class="hex">#e6e8eb</div></div>
+    <div class="swatch" style="background:#6c757d;color:white"><div class="name">soft</div><div class="hex">#6c757d</div></div>
+    <div class="swatch" style="background:#404040;color:white"><div class="name">font</div><div class="hex">#404040</div></div>
+    <div class="swatch" style="background:#0c1116;color:white"><div class="name">heading</div><div class="hex">#0c1116</div></div>
+  </div>
+</div></body></html>

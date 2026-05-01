@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andy Casafranca · Personal Site UI Kit</title>
+  <link rel="icon" href="../../assets/mclaren.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="components.jsx"></script>
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "intensity": "shocking",
+      "tilt": true,
+      "marquee": true,
+      "parallax": true,
+      "halo": true,
+      "primaryColor": "#0aa697",
+      "papayaColor": "#ff8000"
+    }/*EDITMODE-END*/;
+
+    function App() {
+      const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+      const [section, setSection] = useState('home');
+      const [theme, setTheme] = useState('light');
+
+      useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+      }, [theme]);
+
+      useEffect(() => {
+        document.documentElement.style.setProperty('--primary-color', t.primaryColor);
+        document.documentElement.style.setProperty('--accent-papaya', t.papayaColor);
+      }, [t.primaryColor, t.papayaColor]);
+
+      // Apply intensity preset
+      const isFoundation = t.intensity === 'foundation';
+      const isShocking = t.intensity === 'shocking';
+      const showTilt = !isFoundation && t.tilt;
+      const showMarquee = !isFoundation && t.marquee;
+      const showHalo = isShocking && t.halo;
+      const showParallax = !isFoundation && t.parallax;
+
+      return (
+        <>
+          {showHalo && <CursorHalo enabled={true} />}
+          <Header section={section} setSection={setSection} theme={theme} setTheme={setTheme} />
+          <Hero tilt={showTilt} parallax={showParallax} />
+          {showMarquee && <MarqueeRibbon enabled={true} />}
+          <About />
+          <Services />
+          {isShocking && <ThreeDFlourish />}
+          <Portfolio />
+          <Contact />
+          <Footer />
+
+          <TweaksPanel title="Tweaks">
+            <TweakSection title="Intensity">
+              <TweakRadio
+                label="Mode"
+                value={t.intensity}
+                onChange={(v) => setTweak('intensity', v)}
+                options={[
+                  { value: 'foundation', label: 'Foundation' },
+                  { value: 'modern', label: 'Modern' },
+                  { value: 'shocking', label: 'Shocking' },
+                ]}
+              />
+              <div style={{ fontSize: 11, color: '#888', lineHeight: 1.4, marginTop: 4 }}>
+                Foundation = the original brand. Modern adds tilt + marquee + parallax. Shocking adds 3D flourish + cursor halo.
+              </div>
+            </TweakSection>
+
+            <TweakSection title="Effects">
+              <TweakToggle label="3D Tilt Portrait" value={t.tilt} onChange={(v) => setTweak('tilt', v)} />
+              <TweakToggle label="Papaya Marquee" value={t.marquee} onChange={(v) => setTweak('marquee', v)} />
+              <TweakToggle label="Parallax Hero BG" value={t.parallax} onChange={(v) => setTweak('parallax', v)} />
+              <TweakToggle label="Cursor Halo (shocking only)" value={t.halo} onChange={(v) => setTweak('halo', v)} />
+            </TweakSection>
+
+            <TweakSection title="Brand Colors">
+              <TweakColor label="Primary" value={t.primaryColor} onChange={(v) => setTweak('primaryColor', v)} />
+              <TweakColor label="Papaya Accent" value={t.papayaColor} onChange={(v) => setTweak('papayaColor', v)} />
+            </TweakSection>
+          </TweaksPanel>
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

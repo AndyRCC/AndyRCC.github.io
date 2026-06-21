@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" role="img" aria-label="Water pipe with a clandestine tap and the pressure echo that the AI detects">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0d141b"/><stop offset="1" stop-color="#080d12"/>
+    </linearGradient>
+    <linearGradient id="pipe" x1="0" y1="340" x2="0" y2="392" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#16c4b1"/><stop offset="0.5" stop-color="#0aa697"/><stop offset="1" stop-color="#05352f"/>
+    </linearGradient>
+    <linearGradient id="tap" x1="490" y1="190" x2="490" y2="345" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffb060"/><stop offset="1" stop-color="#ff8000"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="40" y1="0" x2="760" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19d3bd"/><stop offset="0.6" stop-color="#ffb060"/><stop offset="0.72" stop-color="#ff8000"/><stop offset="1" stop-color="#19d3bd"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-60%" width="140%" height="260%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="hot" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#ff8000" stop-opacity="0.55"/><stop offset="1" stop-color="#ff8000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background + grid -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <g stroke="#ffffff" stroke-opacity="0.035" stroke-width="1">
+    <path d="M0 50H800M0 100H800M0 150H800M0 200H800M0 250H800M0 300H800M0 450H800"/>
+    <path d="M50 0V500M100 0V500M150 0V500M200 0V500M250 0V500M300 0V500M350 0V500M400 0V500M450 0V500M500 0V500M550 0V500M600 0V500M650 0V500M700 0V500M750 0V500"/>
+  </g>
+
+  <!-- echo halo at the tap -->
+  <circle cx="520" cy="200" r="150" fill="url(#hot)"/>
+  <g stroke="#ff8000" fill="none" stroke-linecap="round">
+    <path d="M455 250a92 92 0 0 1 130 0" stroke-opacity="0.5" stroke-width="2.5"/>
+    <path d="M425 270a135 135 0 0 1 190 0" stroke-opacity="0.28" stroke-width="2.5"/>
+    <path d="M395 290a178 178 0 0 1 250 0" stroke-opacity="0.14" stroke-width="2.5"/>
+  </g>
+
+  <!-- pressure / echo waveform (the signal the ML reads) -->
+  <polyline filter="url(#glow)" stroke="url(#wave)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="
+    40,170 92,160 140,178 192,164 244,173 300,167 360,173 420,168 470,171 495,172
+    510,118 520,58 533,214 546,104 560,188 586,148 612,184 642,156 676,177 710,163 744,172 760,170"/>
+  <circle cx="520" cy="58" r="6" fill="#ffd9b0"/>
+  <circle cx="520" cy="58" r="11" fill="none" stroke="#ff8000" stroke-width="2" stroke-opacity="0.7"/>
+
+  <!-- main pipe -->
+  <rect x="16" y="338" width="768" height="44" rx="22" fill="url(#pipe)"/>
+  <rect x="16" y="345" width="768" height="6" rx="3" fill="#bdfff5" fill-opacity="0.45"/>
+  <!-- flow chevrons -->
+  <g stroke="#eafffb" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M150 351l9 9-9 9"/><path d="M250 351l9 9-9 9"/><path d="M650 351l9 9-9 9"/><path d="M720 351l9 9-9 9"/>
+  </g>
+  <!-- pipe flanges -->
+  <rect x="12" y="332" width="12" height="56" rx="4" fill="#0a6a60"/>
+  <rect x="776" y="332" width="12" height="56" rx="4" fill="#0a6a60"/>
+
+  <!-- clandestine tap (illegal T-junction) -->
+  <rect x="505" y="232" width="30" height="120" rx="10" fill="url(#tap)"/>
+  <rect x="486" y="210" width="68" height="34" rx="9" fill="#ff8000"/>
+  <rect x="486" y="210" width="68" height="12" rx="6" fill="#ffce9e" fill-opacity="0.6"/>
+  <circle cx="520" cy="227" r="6" fill="#1a1205"/>
+  <!-- leak droplet -->
+  <path d="M560 392c0 9-7 16-16 16s-16-7-16-16c0-10 16-26 16-26s16 16 16 26z" fill="#19d3bd"/>
+  <circle cx="544" cy="392" r="5" fill="#bdfff5" fill-opacity="0.7"/>
+
+  <!-- caption chips -->
+  <g font-family="DM Sans, system-ui, sans-serif" font-weight="700">
+    <text x="40" y="448" fill="#ff8000" font-size="15" letter-spacing="2">CLANDESTINE TAP</text>
+    <text x="40" y="476" fill="#19d3bd" font-size="13" letter-spacing="1.5" font-weight="500">pressure echo → ML verdict</text>
+  </g>
+</svg>

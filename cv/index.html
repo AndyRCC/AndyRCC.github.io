@@ -4,34 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Andy Casafranca — Curriculum Vitae</title>
-<meta name="description" content="Andy Casafranca — Mechatronics Engineer · Embedded Systems & AI. Interactive CV, viewable in English or Spanish.">
+<meta name="description" content="Andy Casafranca — Mechatronics Engineer · Embedded Systems & AI. CV, viewable in English or Spanish.">
 <link rel="icon" href="../assets/mclaren.png">
 <meta name="theme-color" content="#05080b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Dosis:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Dosis:wght@700;800&display=swap">
 <style>
   :root{
-    --bg:#0e1419; --side:#0a1014; --surface:#141b21; --surface-2:#1a222a; --page:#05080b;
+    --bg:#0e1419; --side:#0a1014; --page:#05080b;
     --border:#232a31; --border-2:#2e3741;
     --heading:#f5f7f8; --text:#c4cad0; --soft:#8c949c;
     --teal:#19d3bd; --teal-deep:#0aa697; --papaya:#ff8000; --papaya-soft:#ffa040;
-    --font:'DM Sans',system-ui,sans-serif; --display:'Dosis','DM Sans',sans-serif; --mono:'JetBrains Mono',monospace;
+    --font:'DM Sans',system-ui,sans-serif; --display:'Dosis','DM Sans',sans-serif;
+    --side-w:252px;
   }
-  *{box-sizing:border-box;margin:0;padding:0;}
+  *{ box-sizing:border-box; margin:0; padding:0; }
   html{ -webkit-text-size-adjust:100%; }
-  body{ font-family:var(--font); background:var(--page); -webkit-font-smoothing:antialiased; color:var(--text); }
+  body{ font-family:var(--font); background:var(--page); color:var(--text); -webkit-font-smoothing:antialiased; }
+  a{ color:inherit; text-decoration:none; }
 
   /* ---------- Toolbar (screen only) ---------- */
   .toolbar{
     position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:14px;
-    padding:12px 18px; background:rgba(8,12,16,.82); backdrop-filter:saturate(160%) blur(12px);
-    border-bottom:1px solid var(--border);
+    padding:12px 18px; background:rgba(8,12,16,.84); backdrop-filter:saturate(160%) blur(12px);
+    -webkit-backdrop-filter:saturate(160%) blur(12px); border-bottom:1px solid var(--border);
   }
-  .tb-left{ display:inline-flex; align-items:center; gap:10px; font-family:var(--display); font-weight:800; color:var(--heading); font-size:16px; }
+  .tb-left{ display:inline-flex; align-items:center; gap:12px; font-family:var(--display); font-weight:800; color:var(--heading); font-size:16px; }
   .tb-left img{ width:24px; }
-  .tb-back{ color:var(--soft); font-weight:600; font-size:13px; text-decoration:none; }
+  .tb-back{ font-family:var(--font); color:var(--soft); font-weight:600; font-size:13px; }
   .tb-back:hover{ color:var(--papaya); }
   .tb-right{ display:flex; align-items:center; gap:10px; }
   .lang-switch{ display:inline-flex; border:1px solid var(--border-2); border-radius:999px; overflow:hidden; }
@@ -42,139 +43,121 @@
   .lang-switch button.active{ background:var(--teal-deep); color:#fff; }
   .dl-btn{
     display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:14px; min-height:40px;
-    padding:9px 18px; border-radius:999px; background:var(--papaya); color:#1a1205; text-decoration:none;
-    border:0; cursor:pointer; transition:transform .15s, background .2s;
+    padding:9px 18px; border-radius:999px; background:var(--papaya); color:#1a1205;
+    transition:transform .15s, background .2s;
   }
   .dl-btn:hover{ background:var(--papaya-soft); transform:translateY(-1px); }
 
-  .stage{ padding:26px 16px 48px; display:flex; justify-content:center; }
+  .stage{ padding:28px 16px 56px; display:flex; justify-content:center; }
 
   /* ---------- The sheet ---------- */
   .sheet{
-    width:794px; background:var(--bg); color:var(--text); display:grid; grid-template-columns:276px 1fr;
-    position:relative; overflow:hidden; border-radius:8px; box-shadow:0 30px 80px rgba(0,0,0,.55);
+    width:794px; background:var(--bg); display:grid; grid-template-columns:var(--side-w) 1fr;
+    border-radius:8px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.55);
   }
-  .sheet::before{ content:""; position:absolute; right:-80px; top:-80px; width:320px; height:320px;
-    background:radial-gradient(circle,rgba(255,128,0,.13),transparent 65%); pointer-events:none; }
 
-  .side{ background:var(--side); border-right:1px solid var(--border); padding:34px 26px 40px; }
-  .avatar-wrap{ position:relative; width:150px; height:150px; margin:0 auto 10px; }
-  .avatar{ width:150px; height:150px; border-radius:50%; overflow:hidden;
-    background:radial-gradient(120% 120% at 50% 0%, #1d3a40, #0a1418); border:2px solid var(--teal-deep); box-shadow:0 0 0 6px rgba(10,166,151,.12); }
-  .avatar img{ width:100%; height:100%; object-fit:cover; object-position:center top; }
-  .seal{ position:absolute; right:2px; bottom:2px; width:42px; height:42px; border-radius:50%;
-    background:var(--bg); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; }
-  .seal img{ width:24px; }
+  /* Sidebar */
+  .side{ background:var(--side); border-right:1px solid var(--border); padding:40px 20px 40px; }
+  .avatar{ width:112px; height:112px; border-radius:50%; overflow:hidden; margin:0 auto 6px;
+    border:2px solid var(--teal-deep); box-shadow:0 0 0 5px rgba(10,166,151,.10); }
+  .avatar img{ width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
 
-  .side-eyebrow{ display:flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:2px;
-    text-transform:uppercase; color:var(--papaya); margin:26px 0 12px; }
-  .side-eyebrow::before{ content:""; width:18px; height:2px; background:var(--papaya); border-radius:2px; }
+  .side-title{ font-size:10.5px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase; color:var(--papaya); margin:30px 0 12px; }
+  .side-title:first-of-type{ margin-top:34px; }
 
-  .contact{ list-style:none; display:flex; flex-direction:column; gap:11px; }
-  .contact li{ display:flex; gap:11px; align-items:flex-start; font-size:12.5px; line-height:1.4; }
-  .contact i{ color:var(--teal); width:15px; text-align:center; margin-top:2px; flex:0 0 15px; }
-  .contact b{ color:var(--heading); font-weight:500; }
+  .contact{ list-style:none; display:flex; flex-direction:column; gap:9px; }
+  .contact li{ display:flex; gap:10px; align-items:flex-start; font-size:11.5px; line-height:1.45; color:var(--text); }
+  .ic{ width:13px; height:13px; fill:currentColor; flex:0 0 13px; }
+  .contact .ic{ color:var(--teal); margin-top:2px; }
+  .dl-btn .ic{ width:14px; height:14px; }
+  .contact a{ word-break:break-word; }
+  .contact a:hover{ color:var(--heading); }
 
-  .skill-group{ margin-bottom:14px; }
-  .skill-group h4{ font-size:12px; font-weight:700; color:var(--heading); margin-bottom:8px; }
-  .pills{ display:flex; flex-wrap:wrap; gap:6px; }
-  .pill{ font-size:10.5px; font-weight:600; padding:4px 9px; border-radius:999px;
-    background:rgba(10,166,151,.10); border:1px solid rgba(10,166,151,.26); color:var(--teal); font-family:var(--mono); }
-  .pill.dark{ background:var(--surface); border-color:var(--border-2); color:var(--text); }
+  .skill{ margin-bottom:11px; }
+  .skill h4{ font-size:11.5px; font-weight:700; color:var(--heading); margin-bottom:2px; }
+  .skill p{ font-size:12px; line-height:1.55; color:var(--text); }
 
-  .lang{ margin-bottom:13px; }
-  .lang-row{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; }
-  .lang-row b{ color:var(--heading); font-size:13px; font-weight:700; }
-  .lang-row span{ color:var(--soft); font-size:10.5px; letter-spacing:.5px; text-transform:uppercase; }
-  .bar{ height:5px; border-radius:5px; background:rgba(255,255,255,.08); overflow:hidden; }
-  .bar i{ display:block; height:100%; background:linear-gradient(90deg,var(--papaya),var(--teal-deep)); border-radius:5px; }
+  .lang{ display:flex; justify-content:space-between; align-items:baseline; gap:8px; font-size:12px; padding:4px 0; }
+  .lang b{ color:var(--heading); font-weight:600; }
+  .lang span{ color:var(--soft); }
 
-  .interests{ display:flex; flex-wrap:wrap; gap:7px; }
-  .chip-i{ display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:500; color:var(--text);
-    padding:6px 11px; border-radius:999px; background:var(--surface); border:1px solid var(--border); }
-  .chip-i i{ color:var(--papaya); font-size:11px; }
+  .interests{ font-size:12px; line-height:1.6; color:var(--text); }
 
-  .main{ padding:34px 36px 40px; position:relative; z-index:1; }
-  .topline{ font-family:var(--mono); font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--soft); margin-bottom:10px; }
-  .topline b{ color:var(--papaya); }
-  h1{ font-family:var(--display); font-weight:800; font-size:46px; line-height:1; color:#fff; letter-spacing:-.5px; }
+  /* Main column */
+  .main{ padding:40px 40px 36px; }
+  h1{ font-family:var(--display); font-weight:800; font-size:40px; line-height:1; color:#fff; letter-spacing:-.4px; }
   h1 .dot{ color:var(--papaya); }
-  .role{ font-size:15px; font-weight:500; color:var(--teal); margin-top:8px; }
+  .role{ font-size:14px; font-weight:500; color:var(--teal); margin-top:9px; }
 
-  .echo{ margin:18px 0 4px; line-height:0; }
-  .echo svg{ width:100%; height:20px; display:block; }
-
-  .sec{ margin-top:22px; }
-  .sec-head{ display:flex; align-items:center; gap:10px; margin-bottom:13px; }
-  .sec-num{ font-family:var(--mono); font-size:12px; font-weight:600; color:var(--papaya); }
-  .sec-title{ font-size:14px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--heading); }
-  .sec-rule{ flex:1; height:1px; background:linear-gradient(90deg,var(--border-2),transparent); }
+  .sec{ margin-top:30px; }
+  .sec-head{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+  .sec-title{ font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--heading); }
+  .sec-rule{ flex:1; height:1px; background:var(--border-2); }
 
   .profile{ font-size:13px; line-height:1.7; }
-  .profile b{ color:var(--heading); font-weight:700; }
+  .profile b{ color:var(--heading); font-weight:600; }
 
-  .item{ display:grid; grid-template-columns:118px 1fr; gap:16px; padding:13px 0; border-bottom:1px solid var(--border); }
-  .item:last-child{ border-bottom:0; }
-  .meta{ font-size:11px; color:var(--soft); line-height:1.6; }
-  .meta .when{ color:var(--heading); font-weight:700; font-size:12px; display:block; margin-bottom:3px; }
-  .badge{ display:inline-block; margin-top:7px; font-family:var(--mono); font-size:9.5px; font-weight:600; letter-spacing:1px; text-transform:uppercase;
-    color:var(--papaya); border:1px solid rgba(255,128,0,.4); border-radius:4px; padding:2px 6px; }
-  .item h3{ font-size:14.5px; color:var(--heading); font-weight:700; line-height:1.2; }
-  .org{ font-size:12px; color:var(--teal); font-weight:600; margin:2px 0 7px; }
-  .bullets{ list-style:none; display:flex; flex-direction:column; gap:5px; }
-  .bullets li{ position:relative; padding-left:15px; font-size:12px; line-height:1.55; }
-  .bullets li::before{ content:""; position:absolute; left:0; top:7px; width:6px; height:2px; background:var(--papaya); border-radius:2px; }
-  .bullets b{ color:var(--heading); font-weight:700; }
-  .tagline{ display:flex; flex-wrap:wrap; gap:5px; margin-top:8px; }
-  .tag{ font-family:var(--mono); font-size:9.5px; color:var(--soft); border:1px solid var(--border); border-radius:4px; padding:2px 7px; }
+  .item{ display:grid; grid-template-columns:112px 1fr; gap:18px; padding:13px 0; border-bottom:1px solid var(--border); }
+  .item:first-child{ padding-top:2px; }
+  .item:last-child{ border-bottom:0; padding-bottom:2px; }
+  .when{ display:block; font-size:12px; font-weight:600; color:var(--heading); line-height:1.4; }
+  .where{ display:block; font-size:11px; color:var(--soft); line-height:1.5; margin-top:2px; }
+  .item h3{ font-size:14px; font-weight:700; color:var(--heading); line-height:1.25; }
+  .item h3 a{ border-bottom:1px solid var(--border-2); transition:color .2s, border-color .2s; }
+  .item h3 a:hover{ color:var(--papaya); border-color:var(--papaya); }
+  .flag{ font-size:11px; font-weight:600; color:var(--papaya); white-space:nowrap; }
+  .org{ font-size:12px; color:var(--teal); font-weight:500; margin:2px 0 6px; }
+  .bullets{ list-style:none; display:flex; flex-direction:column; gap:4px; }
+  .bullets li{ position:relative; padding-left:13px; font-size:12.25px; line-height:1.55; }
+  .bullets li::before{ content:""; position:absolute; left:0; top:8px; width:4px; height:4px; border-radius:50%; background:var(--papaya); opacity:.9; }
+  .bullets b{ color:var(--heading); font-weight:600; }
 
-  .proj-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-  .proj{ display:block; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 15px; color:inherit; text-decoration:none; transition:border-color .2s, transform .2s; }
-  .proj[href]:hover{ border-color:rgba(255,128,0,.5); transform:translateY(-2px); }
-  .proj-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:3px; }
-  .proj h4{ font-size:13.5px; color:var(--heading); font-weight:700; line-height:1.2; }
-  .proj .flag{ font-family:var(--mono); font-size:8.5px; font-weight:600; letter-spacing:.8px; text-transform:uppercase; color:var(--papaya); white-space:nowrap; }
-  .proj .pkick{ font-family:var(--mono); font-size:10px; color:var(--teal); margin-bottom:7px; }
-  .proj p{ font-size:11.5px; line-height:1.55; color:var(--soft); margin-bottom:9px; }
-  .proj .ptags{ font-family:var(--mono); font-size:9.5px; color:var(--teal); }
-
-  .foot{ margin-top:24px; padding-top:14px; border-top:1px dashed var(--border-2); display:flex; justify-content:space-between; gap:10px;
-    font-family:var(--mono); font-size:10px; letter-spacing:1px; color:var(--soft); }
-  .foot b{ color:var(--text); }
+  .foot{ margin-top:32px; padding-top:12px; border-top:1px solid var(--border); display:flex; justify-content:space-between; gap:10px;
+    font-size:10.5px; letter-spacing:.3px; color:var(--soft); }
 
   /* ---------- Responsive (screen) ---------- */
-  @media (max-width:833px){
+  @media screen and (max-width:833px){
     .toolbar{ flex-wrap:wrap; gap:10px; padding:10px 14px; }
-    .tb-left span.tb-title{ display:none; }
+    .tb-left .tb-title{ display:none; }
     .stage{ padding:16px 10px 40px; }
     .sheet{ width:100%; max-width:560px; grid-template-columns:1fr; border-radius:10px; }
-    .side{ border-right:0; border-bottom:1px solid var(--border); padding:28px 22px 26px; }
-    .main{ padding:28px 22px 32px; }
-    h1{ font-size:38px; }
-    .item{ grid-template-columns:1fr; gap:6px; }
-    .meta{ display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center; }
-    .meta .when{ margin-bottom:0; }
-    .badge{ margin-top:0; }
-    .proj-grid{ grid-template-columns:1fr; }
+    .side{ border-right:0; border-bottom:1px solid var(--border); padding:30px 22px 28px; }
+    .main{ padding:30px 22px 30px; }
+    h1{ font-size:34px; }
+    .item{ grid-template-columns:1fr; gap:4px; }
+    .meta{ display:flex; flex-wrap:wrap; gap:0 10px; align-items:baseline; }
+    .where{ margin-top:0; }
   }
-  @media (max-width:420px){
+  @media screen and (max-width:420px){
     .dl-btn span{ display:none; }
     .dl-btn{ padding:9px 13px; }
-    h1{ font-size:32px; }
+    h1{ font-size:30px; }
   }
 
   /* ---------- Print / PDF ---------- */
-  @page{ size:210mm 980mm; margin:0; }
+  /* Fallback page box (overridden by setPageSize() with the exact sheet height on desktop). */
+  @page{ size:210mm 500mm; margin:0; }
   @media print{
     body{ background:var(--bg); }
     .toolbar{ display:none !important; }
     .stage{ padding:0; }
-    .sheet{ width:794px; grid-template-columns:276px 1fr; border-radius:0; box-shadow:none; }
+    .sheet{ width:794px; grid-template-columns:var(--side-w) 1fr; border-radius:0; box-shadow:none; }
   }
   *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 </style>
 </head>
 <body>
+
+<!-- Icon sprite: Font Awesome Free 6.5.0 glyphs (CC BY 4.0) inlined so the CV needs no icon font -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-pin" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 232V334.1l31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31V232c0-13.3 10.7-24 24-24s24 10.7 24 24z"/></symbol>
+</svg>
 
 <div class="toolbar">
   <div class="tb-left">
@@ -187,7 +170,7 @@
       <button type="button" data-lang="es" id="btnEs">ES</button>
     </div>
     <a class="dl-btn" id="downloadBtn" href="cv-en.pdf" download>
-      <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i><span id="dlText">Download</span>
+      <svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span id="dlText">Download</span>
     </a>
   </div>
 </div>
@@ -195,61 +178,53 @@
 <div class="stage">
   <div class="sheet">
     <aside class="side">
-      <div class="avatar-wrap">
-        <div class="avatar"><img src="../assets/banner.png" alt="Andy Casafranca"></div>
-        <div class="seal"><img src="../assets/mclaren.png" alt=""></div>
-      </div>
-      <div class="side-eyebrow" id="t_contact">Contact</div>
+      <div class="avatar"><img src="../assets/banner.png" alt="Andy Casafranca"></div>
+
+      <div class="side-title" id="t_contact">Contact</div>
       <ul class="contact">
-        <li><i class="fa-solid fa-location-dot"></i><span>Lima, Perú · <b>UTC−5 (PET)</b></span></li>
-        <li><i class="fa-solid fa-envelope"></i><span>u201917931@upc.edu.pe</span></li>
-        <li><i class="fa-solid fa-globe"></i><span>andyrcc.github.io</span></li>
-        <li><i class="fa-brands fa-linkedin-in"></i><span>linkedin.com/in/andy-ricardo-<br>casafranca-carrascal</span></li>
-        <li><i class="fa-brands fa-github"></i><span>github.com/AndyRCC</span></li>
-        <li><i class="fa-brands fa-youtube"></i><span>youtube.com/@Andy_Casafranca</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span>Lima, Perú</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:andycasafranca5100@gmail.com">andycasafranca5100@gmail.com</a></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg><a href="https://andyrcc.github.io" target="_blank" rel="noopener">andyrcc.github.io</a></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-linkedin"/></svg><a href="https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115" target="_blank" rel="noopener">linkedin.com/in/andy-ricardo-casafranca-carrascal</a></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg><a href="https://github.com/AndyRCC" target="_blank" rel="noopener">github.com/AndyRCC</a></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg><a href="https://www.youtube.com/@Andy_Casafranca" target="_blank" rel="noopener">youtube.com/@Andy_Casafranca</a></li>
       </ul>
-      <div class="side-eyebrow" id="t_skills">Technical Skills</div>
+
+      <div class="side-title" id="t_skills">Skills</div>
       <div id="skillsMount"></div>
-      <div class="side-eyebrow" id="t_langs">Languages</div>
+
+      <div class="side-title" id="t_langs">Languages</div>
       <div id="langsMount"></div>
-      <div class="side-eyebrow" id="t_interests">Interests</div>
-      <div class="interests" id="interestsMount"></div>
+
+      <div class="side-title" id="t_interests">Interests</div>
+      <p class="interests" id="interestsMount"></p>
     </aside>
 
     <main class="main">
-      <div class="topline" id="topline">Curriculum Vitae · <b>2026</b></div>
       <h1>Andy Casafranca<span class="dot">.</span></h1>
       <div class="role" id="role"></div>
-      <div class="echo" aria-hidden="true">
-        <svg viewBox="0 0 700 20" preserveAspectRatio="none" fill="none">
-          <defs><linearGradient id="g" x1="0" y1="0" x2="700" y2="0" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#ff8000"/><stop offset="0.5" stop-color="#0aa697"/><stop offset="1" stop-color="#ff8000"/>
-          </linearGradient></defs>
-          <path d="M0 14 Q 35 2 70 14 T 140 14 T 210 14 T 280 14 T 350 14 T 420 14 T 490 14 T 560 14 T 630 14 T 700 14" stroke="url(#g)" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </div>
 
       <section class="sec">
-        <div class="sec-head"><span class="sec-num">01</span><span class="sec-title" id="t_profile">Profile</span><span class="sec-rule"></span></div>
+        <div class="sec-head"><span class="sec-title" id="t_profile">Profile</span><span class="sec-rule"></span></div>
         <p class="profile" id="profile"></p>
       </section>
 
       <section class="sec">
-        <div class="sec-head"><span class="sec-num">02</span><span class="sec-title" id="t_experience">Experience</span><span class="sec-rule"></span></div>
+        <div class="sec-head"><span class="sec-title" id="t_experience">Experience</span><span class="sec-rule"></span></div>
         <div id="expMount"></div>
       </section>
 
       <section class="sec">
-        <div class="sec-head"><span class="sec-num">03</span><span class="sec-title" id="t_projects">Selected Projects</span><span class="sec-rule"></span></div>
-        <div class="proj-grid" id="projMount"></div>
+        <div class="sec-head"><span class="sec-title" id="t_projects">Selected Projects</span><span class="sec-rule"></span></div>
+        <div id="projMount"></div>
       </section>
 
       <section class="sec">
-        <div class="sec-head"><span class="sec-num">04</span><span class="sec-title" id="t_education">Education</span><span class="sec-rule"></span></div>
+        <div class="sec-head"><span class="sec-title" id="t_education">Education</span><span class="sec-rule"></span></div>
         <div id="eduMount"></div>
       </section>
 
-      <div class="foot"><span><b>Andy Casafranca</b> · <span id="f_cv">Curriculum Vitae</span></span><span id="f_upd">Last updated · June 2026</span></div>
+      <div class="foot"><span id="f_cv">Andy Casafranca · Curriculum Vitae</span><span id="f_upd">Last updated · October 2026</span></div>
     </main>
   </div>
 </div>
@@ -260,140 +235,123 @@
 
   var DATA = {
     en: {
-      ui:{ download:"Download", back:"← Back to site", contact:"Contact", skills:"Technical Skills",
-           langs:"Languages", interests:"Interests", profile:"Profile", experience:"Experience",
-           projects:"Selected Projects", education:"Education", topline:'Curriculum Vitae · <b>2026</b>',
-           cv:"Curriculum Vitae", updated:"Last updated · June 2026",
+      ui:{ download:"Download", back:"← Back to site", contact:"Contact", skills:"Skills", langs:"Languages",
+           interests:"Interests", profile:"Profile", experience:"Experience", projects:"Selected Projects",
+           education:"Education", cv:"Andy Casafranca · Curriculum Vitae", updated:"Last updated · October 2026",
            role:"Mechatronics Engineer · Embedded Systems & AI" },
-      profile:"Mechatronics Engineering student with hands-on experience designing <b>embedded systems</b>, tuning <b>AI models</b>, and delivering end-to-end IoT solutions. Combines a strong electronics and firmware foundation with software-engineering practice and bilingual, client-facing skills. Driven by precision, reliability, and shipping working hardware.",
-      skillGroups:[
-        { h:"Languages", soft:false, items:["Python","C","C++","C#","JavaScript","ASM","MATLAB"] },
-        { h:"Embedded · Hardware", soft:true, items:["STM32","ESP32","Arduino","RTOS","PWM","I²C","UART","PCB design","QMK"] },
-        { h:"AI · Signals", soft:false, items:["PyTorch","TensorFlow","OpenCV","DSP","FFT","EEG/EMG","PID"] },
-        { h:"Tools · CAD", soft:true, items:["SolidWorks","Fusion 360","KiCad","Git","Linux","Docker"] },
-        { h:"Security", soft:true, items:["Burp Suite","Nmap","Wireshark","Metasploit"] },
-        { h:"Frontend", soft:true, items:["React","WebSockets","HTML/CSS","Figma"] }
+      profile:"Mechatronics Engineering student (UPC, Lima) who designs <b>embedded systems</b>, trains <b>AI models</b> and ships end-to-end IoT products. Strong electronics and firmware foundation, solid software practice, and bilingual experience supporting U.S. clients.",
+      skills:[
+        { h:"Embedded", items:["STM32","ESP32","Arduino","RTOS","I²C / UART / PWM"] },
+        { h:"Software", items:["Python","C / C++","C#","JavaScript / React","MATLAB"] },
+        { h:"AI & Signals", items:["PyTorch","TensorFlow","OpenCV","DSP","EEG / EMG","PID control"] },
+        { h:"Security", items:["Burp Suite","Nmap","Wireshark","Metasploit"] },
+        { h:"Tools & CAD", items:["KiCad","SolidWorks","Fusion 360","Git","Linux","Docker"] }
       ],
-      languages:[ {name:"Spanish", level:"Native", pct:100}, {name:"English", level:"Professional · C1", pct:82} ],
-      interests:[ {i:"fa-flag-checkered",t:"Formula 1"},{i:"fa-road",t:"Road trips"},{i:"fa-water",t:"Ocean"},{i:"fa-gamepad",t:"Gaming"},{i:"fa-camera",t:"Photography"} ],
+      languages:[ {name:"Spanish", level:"Native"}, {name:"English", level:"Professional · C1"} ],
+      interests:["Formula 1","Road trips","The ocean","Gaming","Photography"],
       experience:[
-        { when:"Feb 2025 — Jun 2025", where:"Lima, Perú", badge:"Remote",
+        { when:"Feb — Jun 2025", where:"Remote",
           title:"Bilingual Customer Support Agent", org:"Major U.S. last-mile delivery platform",
-          bullets:[ "Supported delivery drivers for a leading U.S. last-mile delivery platform, resolving order, routing, and payment issues in real time over chat and phone.",
-            "Handled a high volume of bilingual (English/Spanish) interactions while consistently meeting strict response-time and quality targets.",
-            "De-escalated time-sensitive incidents and coordinated fast resolutions to keep deliveries on track." ],
-          tags:["EN / ES","Real-time support","Logistics","CRM tooling"] },
-        { when:"2023 — 2024", where:"Lima, Perú", badge:"Research",
+          bullets:[ "Resolved order, routing and payment issues for delivery drivers in real time over chat and phone, in English and Spanish.",
+                    "Met strict response-time and quality targets at high volume and de-escalated time-sensitive incidents." ] },
+        { when:"2023 — 2024", where:"Lima, Perú",
           title:"Undergraduate Research Assistant", org:"Universidad Peruana de Ciencias Aplicadas (UPC)",
-          bullets:[ "Designed a <b>custom analog front-end</b> for an EEG/EMG acquisition headset and developed the STM32-based firmware for real-time signal capture.",
-            "Built a Python signal-processing pipeline (NumPy, SciPy) achieving <b>87% classification accuracy</b> on motor-imagery tasks across 8 channels." ],
-          tags:["STM32","Python","SciPy","MATLAB","Analog design"] },
-        { when:"Feb 2023 — Aug 2023", where:"Lima, Perú", badge:"On-site",
+          bullets:[ "Designed a <b>custom analog front-end</b> and STM32 firmware for an 8-channel EEG/EMG acquisition headset.",
+                    "Built a Python (NumPy, SciPy) signal pipeline reaching <b>87% accuracy</b> on motor-imagery classification." ] },
+        { when:"Feb — Aug 2023", where:"Lima, Perú · On-site",
           title:"Bilingual Customer Support Agent", org:"Major U.S. health-insurance network",
-          bullets:[ "Assisted U.S. healthcare providers with claims, eligibility, and benefits inquiries on behalf of a major U.S. health-insurance network, under strict regulatory protocols.",
-            "Delivered accurate bilingual (English/Spanish) support in a regulated, high-volume on-site call-center environment." ],
-          tags:["EN / ES","Healthcare","Regulated environment","Claims & eligibility"] },
-        { when:"2022 — 2023", where:"Remote", badge:"Freelance",
+          bullets:[ "Handled claims, eligibility and benefits inquiries from U.S. healthcare providers under strict regulatory protocols.",
+                    "Delivered accurate bilingual support in a high-volume, regulated call-center environment." ] },
+        { when:"2022 — 2023", where:"Remote · Freelance",
           title:"Embedded Systems & Automation Engineer", org:"Independent projects",
-          bullets:[ "Delivered three turnkey IoT projects end-to-end — hardware, firmware, and dashboards — including a smart-greenhouse mesh and a water-quality monitor.",
-            "Authored ESP32 mesh-networking firmware in C/C++ with OTA updates and integrated React dashboards over WebSocket.",
-            "Performed a responsible-disclosure security assessment of a consumer IoT camera, resulting in a <b>CVE writeup</b> with proof-of-concept exploit." ],
-          tags:["ESP32","C++","MQTT","React","Burp Suite"] }
+          bullets:[ "Delivered three turnkey IoT projects (hardware, firmware and dashboards), including a smart-greenhouse mesh and a water-quality monitor.",
+                    "Wrote ESP32 mesh firmware in C/C++ with OTA updates, paired with React dashboards over WebSocket.",
+                    "Ran a responsible-disclosure security assessment of a consumer IoT camera, resulting in a <b>CVE write-up</b> with a proof-of-concept exploit." ] }
       ],
       projects:[
-        { title:"Hackatón MINSA 2017", flag:"1st place", kicker:"Ministry of Health · Team Vincere",
-          desc:"Part of the 10-student team “Vincere” that won first place at Peru's national MINSA health hackathon, building a video-game-based app for preliminary depression screening.",
-          tags:"Healthtech · Mental health · Game-based screening", url:"https://facultad-ciencias-ingenieria.pucp.edu.pe/2017/10/20/estudiantes-de-ingenieria-biomedica-obtienen-primer-puesto-en-hackaton-minsa-2017-2/" },
-        { title:"HydraDetect-AI", flag:"In progress", kicker:"Clandestine water-tap detection",
-          desc:"Detects clandestine water connections in city pipes using a controlled water hammer and machine learning — 89% field accuracy on an offline Arduino edge device.",
-          tags:"Arduino · Python · Machine Learning · Edge AI", url:"https://andyrcc.github.io/HydraDetect-AI/" }
+        { when:"In progress", title:"HydraDetect-AI", org:"Clandestine water-tap detection",
+          url:"https://andyrcc.github.io/HydraDetect-AI/",
+          bullets:[ "Detects illegal water connections in city pipes using a controlled water hammer and machine learning: <b>89% field accuracy</b> on an offline Arduino edge device." ] },
+        { when:"2017", title:"Hackatón MINSA", flag:"1st place", org:"Ministry of Health · Team Vincere",
+          url:"https://facultad-ciencias-ingenieria.pucp.edu.pe/2017/10/20/estudiantes-de-ingenieria-biomedica-obtienen-primer-puesto-en-hackaton-minsa-2017-2/",
+          bullets:[ "Co-built a game-based app for preliminary depression screening with the 10-student team that won Peru's national health hackathon." ] }
       ],
       education:[
-        { when:"2019 — Present", where:"Expected 2026", badge:"Bachelor",
+        { when:"2019 — 2026", where:"Expected graduation 2026",
           title:"B.Sc. in Mechatronics Engineering", org:"Universidad Peruana de Ciencias Aplicadas (UPC) · Lima, Perú",
-          bullets:[ "Focus areas: <b>control systems, embedded firmware, biomedical instrumentation, and applied AI</b>.",
-            "Selected coursework: Digital Signal Processing · Control Systems · Microprocessors · Robotics · Machine Learning · Bioengineering." ] },
-        { when:"2024", where:"Online", badge:"Cert.",
-          title:"Practical Ethical Hacking & Network Security", org:"Self-directed · TCM Security · TryHackMe",
-          bullets:[ "Hands-on penetration-testing labs covering OWASP Top-10 and active-directory exploitation paths." ] }
+          bullets:[ "Focus: control systems, embedded firmware, biomedical instrumentation and applied AI." ] },
+        { when:"2024", where:"Online",
+          title:"Practical Ethical Hacking & Network Security", org:"TCM Security · TryHackMe",
+          bullets:[ "Hands-on penetration-testing labs covering the OWASP Top 10 and Active Directory exploitation paths." ] }
       ]
     },
     es: {
-      ui:{ download:"Descargar", back:"← Volver al sitio", contact:"Contacto", skills:"Habilidades Técnicas",
-           langs:"Idiomas", interests:"Intereses", profile:"Perfil", experience:"Experiencia",
-           projects:"Proyectos Destacados", education:"Educación", topline:'Currículum Vitae · <b>2026</b>',
-           cv:"Currículum Vitae", updated:"Última actualización · Junio 2026",
+      ui:{ download:"Descargar", back:"← Volver al sitio", contact:"Contacto", skills:"Habilidades", langs:"Idiomas",
+           interests:"Intereses", profile:"Perfil", experience:"Experiencia", projects:"Proyectos Destacados",
+           education:"Educación", cv:"Andy Casafranca · Currículum Vitae", updated:"Última actualización · Octubre 2026",
            role:"Ingeniero Mecatrónico · Sistemas Embebidos e IA" },
-      profile:"Estudiante de Ingeniería Mecatrónica con experiencia práctica diseñando <b>sistemas embebidos</b>, ajustando <b>modelos de IA</b> y entregando soluciones IoT de extremo a extremo. Combina una base sólida en electrónica y firmware con práctica en ingeniería de software y habilidades bilingües de cara al cliente. Movido por la precisión, la confiabilidad y por entregar hardware que funciona.",
-      skillGroups:[
-        { h:"Lenguajes", soft:false, items:["Python","C","C++","C#","JavaScript","ASM","MATLAB"] },
-        { h:"Embebidos · Hardware", soft:true, items:["STM32","ESP32","Arduino","RTOS","PWM","I²C","UART","Diseño PCB","QMK"] },
-        { h:"IA · Señales", soft:false, items:["PyTorch","TensorFlow","OpenCV","DSP","FFT","EEG/EMG","PID"] },
-        { h:"Herramientas · CAD", soft:true, items:["SolidWorks","Fusion 360","KiCad","Git","Linux","Docker"] },
-        { h:"Seguridad", soft:true, items:["Burp Suite","Nmap","Wireshark","Metasploit"] },
-        { h:"Frontend", soft:true, items:["React","WebSockets","HTML/CSS","Figma"] }
+      profile:"Estudiante de Ingeniería Mecatrónica (UPC, Lima) que diseña <b>sistemas embebidos</b>, entrena <b>modelos de IA</b> y entrega productos IoT de extremo a extremo. Base sólida en electrónica y firmware, buena práctica en software y experiencia bilingüe atendiendo clientes de EE. UU.",
+      skills:[
+        { h:"Embebidos", items:["STM32","ESP32","Arduino","RTOS","I²C / UART / PWM"] },
+        { h:"Software", items:["Python","C / C++","C#","JavaScript / React","MATLAB"] },
+        { h:"IA y Señales", items:["PyTorch","TensorFlow","OpenCV","DSP","EEG / EMG","Control PID"] },
+        { h:"Seguridad", items:["Burp Suite","Nmap","Wireshark","Metasploit"] },
+        { h:"Herramientas y CAD", items:["KiCad","SolidWorks","Fusion 360","Git","Linux","Docker"] }
       ],
-      languages:[ {name:"Español", level:"Nativo", pct:100}, {name:"Inglés", level:"Profesional · C1", pct:82} ],
-      interests:[ {i:"fa-flag-checkered",t:"Fórmula 1"},{i:"fa-road",t:"Viajes"},{i:"fa-water",t:"El mar"},{i:"fa-gamepad",t:"Videojuegos"},{i:"fa-camera",t:"Fotografía"} ],
+      languages:[ {name:"Español", level:"Nativo"}, {name:"Inglés", level:"Profesional · C1"} ],
+      interests:["Fórmula 1","Viajes","El mar","Videojuegos","Fotografía"],
       experience:[
-        { when:"Feb 2025 — Jun 2025", where:"Lima, Perú", badge:"Remoto",
+        { when:"Feb — Jun 2025", where:"Remoto",
           title:"Agente de Soporte al Cliente Bilingüe", org:"Importante plataforma de delivery de última milla (EE. UU.)",
-          bullets:[ "Brindé soporte a repartidores de una importante plataforma de delivery de última milla en EE. UU., resolviendo problemas de pedidos, rutas y pagos en tiempo real por chat y teléfono.",
-            "Atendí un alto volumen de interacciones bilingües (inglés/español) cumpliendo de forma constante estrictas metas de tiempo de respuesta y calidad.",
-            "Desescalé incidentes urgentes y coordiné soluciones rápidas para mantener las entregas en curso." ],
-          tags:["EN / ES","Soporte en tiempo real","Logística","Herramientas CRM"] },
-        { when:"2023 — 2024", where:"Lima, Perú", badge:"Investigación",
+          bullets:[ "Resolví problemas de pedidos, rutas y pagos de repartidores en tiempo real por chat y teléfono, en inglés y español.",
+                    "Cumplí metas estrictas de tiempo de respuesta y calidad con alto volumen, y desescalé incidentes urgentes." ] },
+        { when:"2023 — 2024", where:"Lima, Perú",
           title:"Asistente de Investigación de Pregrado", org:"Universidad Peruana de Ciencias Aplicadas (UPC)",
-          bullets:[ "Diseñé un <b>front-end analógico a medida</b> para un casco de adquisición EEG/EMG y desarrollé el firmware basado en STM32 para la captura de señales en tiempo real.",
-            "Construí una tubería de procesamiento de señales en Python (NumPy, SciPy) que alcanzó <b>87% de precisión</b> en tareas de imaginería motora en 8 canales." ],
-          tags:["STM32","Python","SciPy","MATLAB","Diseño analógico"] },
-        { when:"Feb 2023 — Ago 2023", where:"Lima, Perú", badge:"Presencial",
+          bullets:[ "Diseñé un <b>front-end analógico a medida</b> y el firmware STM32 de un casco de adquisición EEG/EMG de 8 canales.",
+                    "Construí un pipeline de señales en Python (NumPy, SciPy) que alcanzó <b>87% de precisión</b> en clasificación de imaginería motora." ] },
+        { when:"Feb — Ago 2023", where:"Lima, Perú · Presencial",
           title:"Agente de Soporte al Cliente Bilingüe", org:"Importante red de seguros de salud (EE. UU.)",
-          bullets:[ "Asistí a proveedores de salud de EE. UU. con consultas de reclamos, elegibilidad y beneficios en representación de una importante red de seguros de salud, bajo estrictos protocolos regulatorios.",
-            "Brindé soporte bilingüe (inglés/español) preciso en un entorno de call center presencial, regulado y de alto volumen." ],
-          tags:["EN / ES","Salud","Entorno regulado","Reclamos y elegibilidad"] },
-        { when:"2022 — 2023", where:"Remoto", badge:"Freelance",
+          bullets:[ "Atendí consultas de reclamos, elegibilidad y beneficios de proveedores de salud de EE. UU. bajo estrictos protocolos regulatorios.",
+                    "Brindé soporte bilingüe preciso en un call center regulado y de alto volumen." ] },
+        { when:"2022 — 2023", where:"Remoto · Freelance",
           title:"Ingeniero de Sistemas Embebidos y Automatización", org:"Proyectos independientes",
-          bullets:[ "Entregué tres proyectos IoT llave en mano de extremo a extremo — hardware, firmware y dashboards — incluyendo una malla de invernadero inteligente y un monitor de calidad de agua.",
-            "Desarrollé firmware de red mesh ESP32 en C/C++ con actualizaciones OTA e integré dashboards en React sobre WebSocket.",
-            "Realicé una evaluación de seguridad con divulgación responsable de una cámara IoT de consumo, resultando en un <b>reporte CVE</b> con exploit de prueba de concepto." ],
-          tags:["ESP32","C++","MQTT","React","Burp Suite"] }
+          bullets:[ "Entregué tres proyectos IoT llave en mano (hardware, firmware y dashboards), incluyendo una malla de invernadero inteligente y un monitor de calidad de agua.",
+                    "Desarrollé firmware de red mesh ESP32 en C/C++ con actualizaciones OTA, junto con dashboards en React sobre WebSocket.",
+                    "Realicé una evaluación de seguridad con divulgación responsable de una cámara IoT de consumo, que derivó en un <b>reporte CVE</b> con exploit de prueba de concepto." ] }
       ],
       projects:[
-        { title:"Hackatón MINSA 2017", flag:"1er puesto", kicker:"Ministerio de Salud · Equipo Vincere",
-          desc:"Parte del equipo de 10 estudiantes “Vincere” que obtuvo el primer puesto en la hackatón nacional de salud del MINSA, desarrollando una app tipo videojuego para el tamizaje preliminar de depresión.",
-          tags:"Healthtech · Salud mental · Tamizaje lúdico", url:"https://facultad-ciencias-ingenieria.pucp.edu.pe/2017/10/20/estudiantes-de-ingenieria-biomedica-obtienen-primer-puesto-en-hackaton-minsa-2017-2/" },
-        { title:"HydraDetect-AI", flag:"En curso", kicker:"Detección de tomas clandestinas de agua",
-          desc:"Detecta conexiones clandestinas de agua en tuberías mediante un golpe de ariete controlado y machine learning — 89% de precisión en campo, en un dispositivo Arduino edge sin conexión.",
-          tags:"Arduino · Python · Machine Learning · Edge AI", url:"https://andyrcc.github.io/HydraDetect-AI/" }
+        { when:"En curso", title:"HydraDetect-AI", org:"Detección de tomas clandestinas de agua",
+          url:"https://andyrcc.github.io/HydraDetect-AI/",
+          bullets:[ "Detecta conexiones clandestinas de agua en tuberías mediante un golpe de ariete controlado y machine learning: <b>89% de precisión en campo</b> en un dispositivo Arduino edge sin conexión." ] },
+        { when:"2017", title:"Hackatón MINSA", flag:"1er puesto", org:"Ministerio de Salud · Equipo Vincere",
+          url:"https://facultad-ciencias-ingenieria.pucp.edu.pe/2017/10/20/estudiantes-de-ingenieria-biomedica-obtienen-primer-puesto-en-hackaton-minsa-2017-2/",
+          bullets:[ "Desarrollé, con el equipo de 10 estudiantes que ganó la hackatón nacional de salud, una app tipo videojuego para el tamizaje preliminar de depresión." ] }
       ],
       education:[
-        { when:"2019 — Actualidad", where:"Egreso previsto 2026", badge:"Bachillerato",
+        { when:"2019 — 2026", where:"Egreso previsto 2026",
           title:"Bachiller en Ingeniería Mecatrónica", org:"Universidad Peruana de Ciencias Aplicadas (UPC) · Lima, Perú",
-          bullets:[ "Áreas de enfoque: <b>sistemas de control, firmware embebido, instrumentación biomédica e IA aplicada</b>.",
-            "Cursos seleccionados: Procesamiento Digital de Señales · Sistemas de Control · Microprocesadores · Robótica · Machine Learning · Bioingeniería." ] },
-        { when:"2024", where:"En línea", badge:"Cert.",
-          title:"Hacking Ético y Seguridad de Redes (Práctico)", org:"Autodidacta · TCM Security · TryHackMe",
-          bullets:[ "Laboratorios prácticos de pruebas de penetración cubriendo OWASP Top-10 y rutas de explotación de Active Directory." ] }
+          bullets:[ "Enfoque: sistemas de control, firmware embebido, instrumentación biomédica e IA aplicada." ] },
+        { when:"2024", where:"En línea",
+          title:"Hacking Ético y Seguridad de Redes (Práctico)", org:"TCM Security · TryHackMe",
+          bullets:[ "Laboratorios prácticos de pentesting sobre el OWASP Top 10 y rutas de explotación de Active Directory." ] }
       ]
     }
   };
 
-  function esc(s){ return s; }
   function itemHTML(it){
-    var bullets = it.bullets.map(function(b){ return '<li>'+b+'</li>'; }).join('');
-    var tags = (it.tags||[]).map(function(t){ return '<span class="tag">'+t+'</span>'; }).join('');
+    var bullets = (it.bullets||[]).map(function(b){ return '<li>'+b+'</li>'; }).join('');
+    var title = it.url ? '<a href="'+it.url+'" target="_blank" rel="noopener">'+it.title+'</a>' : it.title;
+    var flag = it.flag ? ' <span class="flag">· '+it.flag+'</span>' : '';
+    var where = it.where ? '<span class="where">'+it.where+'</span>' : '';
     return '<div class="item">'+
-      '<div class="meta"><span class="when">'+it.when+'</span>'+it.where+'<span class="badge">'+it.badge+'</span></div>'+
-      '<div><h3>'+it.title+'</h3><div class="org">'+it.org+'</div>'+
-      '<ul class="bullets">'+bullets+'</ul>'+
-      (tags?'<div class="tagline">'+tags+'</div>':'')+'</div></div>';
+      '<div class="meta"><span class="when">'+it.when+'</span>'+where+'</div>'+
+      '<div><h3>'+title+flag+'</h3><div class="org">'+it.org+'</div>'+
+      '<ul class="bullets">'+bullets+'</ul></div></div>';
   }
 
   function render(lang){
     var d = DATA[lang], u = d.ui;
     document.documentElement.lang = lang;
-    // titles
     document.getElementById('t_contact').textContent = u.contact;
     document.getElementById('t_skills').textContent = u.skills;
     document.getElementById('t_langs').textContent = u.langs;
@@ -402,7 +360,6 @@
     document.getElementById('t_experience').textContent = u.experience;
     document.getElementById('t_projects').textContent = u.projects;
     document.getElementById('t_education').textContent = u.education;
-    document.getElementById('topline').innerHTML = u.topline;
     document.getElementById('role').textContent = u.role;
     document.getElementById('profile').innerHTML = d.profile;
     document.getElementById('f_cv').textContent = u.cv;
@@ -410,35 +367,17 @@
     document.getElementById('dlText').textContent = u.download;
     document.getElementById('backLink').textContent = u.back;
 
-    // skills
-    document.getElementById('skillsMount').innerHTML = d.skillGroups.map(function(g){
-      var pills = g.items.map(function(it){ return '<span class="pill'+(g.soft?' dark':'')+'">'+it+'</span>'; }).join('');
-      return '<div class="skill-group"><h4>'+g.h+'</h4><div class="pills">'+pills+'</div></div>';
+    document.getElementById('skillsMount').innerHTML = d.skills.map(function(g){
+      return '<div class="skill"><h4>'+g.h+'</h4><p>'+g.items.join(' · ')+'</p></div>';
     }).join('');
-    // languages
     document.getElementById('langsMount').innerHTML = d.languages.map(function(l){
-      return '<div class="lang"><div class="lang-row"><b>'+l.name+'</b><span>'+l.level+'</span></div>'+
-             '<div class="bar"><i style="width:'+l.pct+'%"></i></div></div>';
+      return '<div class="lang"><b>'+l.name+'</b><span>'+l.level+'</span></div>';
     }).join('');
-    // interests
-    document.getElementById('interestsMount').innerHTML = d.interests.map(function(x){
-      return '<span class="chip-i"><i class="fa-solid '+x.i+'"></i>'+x.t+'</span>';
-    }).join('');
-    // experience / education
+    document.getElementById('interestsMount').textContent = d.interests.join(' · ');
     document.getElementById('expMount').innerHTML = d.experience.map(itemHTML).join('');
+    document.getElementById('projMount').innerHTML = d.projects.map(itemHTML).join('');
     document.getElementById('eduMount').innerHTML = d.education.map(itemHTML).join('');
-    // projects
-    document.getElementById('projMount').innerHTML = d.projects.map(function(p){
-      var flag = p.flag ? '<span class="flag">'+p.flag+'</span>' : '';
-      var open = p.url ? ' href="'+p.url+'" target="_blank" rel="noopener"' : '';
-      return '<a class="proj"'+open+'>'+
-        '<div class="proj-top"><h4>'+p.title+'</h4>'+flag+'</div>'+
-        '<div class="pkick">'+p.kicker+'</div>'+
-        '<p>'+p.desc+'</p>'+
-        '<div class="ptags">'+p.tags+'</div></a>';
-    }).join('');
 
-    // toolbar state
     document.getElementById('btnEn').classList.toggle('active', lang==='en');
     document.getElementById('btnEs').classList.toggle('active', lang==='es');
     var dl = document.getElementById('downloadBtn');
@@ -448,19 +387,18 @@
     setPageSize();
   }
 
-  // Auto-size the printed/exported page to the rendered sheet (so each language
-  // produces a tight single-page PDF). Only meaningful at desktop width / print.
+  // Size the printed page to the rendered sheet so each language prints as one tight page.
   function setPageSize(){
     var sheet = document.querySelector('.sheet');
     if (!sheet || window.innerWidth < 834) return;
-    if (new URLSearchParams(location.search).get('fixed')) return; /* PDF build trims instead */
-    var mm = Math.ceil(sheet.offsetHeight / 96 * 25.4) + 12;
+    if (new URLSearchParams(location.search).get('fixed')) return;
+    var mm = Math.ceil(sheet.offsetHeight / 96 * 25.4) + 4;
     var st = document.getElementById('pagestyle');
     if (!st){ st = document.createElement('style'); st.id = 'pagestyle'; document.head.appendChild(st); }
     st.textContent = '@page{size:210mm ' + mm + 'mm;margin:0;}';
   }
 
-  // initial language: ?lang= > saved > browser > en
+  // Initial language: ?lang= > saved > browser > en
   var params = new URLSearchParams(location.search);
   var initial = params.get('lang');
   if (initial !== 'en' && initial !== 'es') {

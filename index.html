@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Andy Casafranca · Mechatronics Engineer</title>
-<meta name="description" content="Andy Casafranca — mechatronics engineer from Perú, working as an Instrumentation Engineer on water-flow measurement. Embedded systems, IoT and edge-AI projects like HydraDetect-AI.">
+<meta name="description" content="Andy Casafranca — Mechatronics Engineering student from Perú, working as an Instrumentation Engineer on water-flow measurement. Embedded systems, IoT and edge-AI projects like HydraDetect-AI.">
 <meta name="author" content="Andy Casafranca">
 <meta name="theme-color" content="#0e1419">
 <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
@@ -48,7 +48,6 @@
   "image": "https://andyrcc.github.io/assets/banner.png",
   "jobTitle": "Instrumentation Engineer",
   "worksFor": { "@type": "Organization", "name": "LabProjects" },
-  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad Peruana de Ciencias Aplicadas (UPC)" },
   "sameAs": [
     "https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115",
     "https://github.com/AndyRCC",
@@ -557,7 +556,7 @@ img { max-width: 100%; display: block; }
       <p class="hero-typed" id="heroTyped">
         <span class="typed-live"><span class="static">Just as comfortable&nbsp;</span><span id="typed">debugging a circuit board.</span><span class="cursor" aria-hidden="true"></span></span>
       </p>
-      <p class="hero-sub">Instrumentation Engineer at LabProjects, validating water-flow measurement across Ica's wells and reservoirs. Happiest where mechanics, electronics, and intelligent systems collide.</p>
+      <p class="hero-sub">Mechatronics Engineering student, currently an Instrumentation Engineer at LabProjects validating water-flow measurement across EMAPICA's wells and reservoirs in Ica.</p>
       <div class="hero-cta">
         <a class="btn btn--papaya" href="cv/"><svg class="ic ic-file-lines" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><use href="#i-file-lines"/></svg> View CV</a>
         <a class="btn btn--ghost" href="#contact">Get in touch</a>
@@ -652,7 +651,7 @@ img { max-width: 100%; display: block; }
       <h2 class="section-title">my projects <span aria-hidden="true">ツ</span></h2>
       <p class="section-lead">Things I've built end-to-end — from edge-AI field hardware to a national hackathon win. Open a card for the project or the full story.</p>
     </div>
-    <div class="projects-grid reveal" id="projectsGrid"><!-- rendered by JS --><noscript><a class="project-next" href="https://andyrcc.github.io/HydraDetect-AI/"><span>HydraDetect-AI</span><small>see the project</small></a></noscript></div>
+    <div class="projects-grid reveal" id="projectsGrid"><!-- rendered by JS --><noscript><a class="project-next" href="https://andyrcc.github.io/HydraDetect-AI/"><span>HydraDetect-AI</span><small>see the project</small></a><a class="project-next" href="https://facultad-ciencias-ingenieria.pucp.edu.pe/2017/10/20/estudiantes-de-ingenieria-biomedica-obtienen-primer-puesto-en-hackaton-minsa-2017-2/"><span>Hackatón MINSA 2017</span><small>read the story</small></a></noscript></div>
   </div>
 </section>
 
@@ -661,7 +660,7 @@ img { max-width: 100%; display: block; }
   <div class="wrap reveal">
     <span class="eyebrow" style="justify-content:center;">get in touch</span>
     <h2 class="section-title">Let's build something.</h2>
-    <p class="section-lead">Open to engineering roles, collaborations, and good conversations — about instrumentation, embedded systems, Formula 1, or anything that moves fast.</p>
+    <p class="section-lead">Open to collaborations and good conversations — about instrumentation, embedded systems, Formula 1, or anything that moves fast.</p>
     <div class="social-row">
       <a class="social-btn email" href="mailto:andycasafranca5100@gmail.com"><svg class="ic ic-envelope" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><use href="#i-envelope"/></svg> Email me</a>
       <a class="social-btn" href="cv/"><svg class="ic ic-file-lines" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><use href="#i-file-lines"/></svg> CV</a>
@@ -716,6 +715,10 @@ img { max-width: 100%; display: block; }
     else if (refocus) menuBtn.focus();
   }
   function closeMenu() { setMenu(false); }
+  var navEl = navLinks.closest('nav');
+  navEl.addEventListener('focusout', function (e) {
+    if (navLinks.classList.contains('open') && e.relatedTarget && !navEl.contains(e.relatedTarget)) setMenu(false);
+  });
   menuBtn.addEventListener('click', function () { setMenu(!navLinks.classList.contains('open')); });
   navLinks.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
   document.addEventListener('keydown', function (e) {
@@ -791,7 +794,7 @@ img { max-width: 100%; display: block; }
   } else {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
     reveals.forEach(function (r) { io.observe(r); });
   }
 
@@ -801,17 +804,18 @@ img { max-width: 100%; display: block; }
   var linkFor = {};
   document.querySelectorAll('.nav-links a[href^="#"]').forEach(function (a) { linkFor[a.getAttribute('href').slice(1)] = a; });
   function setActive(id) { Object.keys(linkFor).forEach(function (k) { linkFor[k].classList.toggle('active', k === id); }); }
+  function atBottom() { return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4; }
   if ('IntersectionObserver' in window) {
     var navIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) setActive(e.target.id);
+        if (e.isIntersecting) setActive(atBottom() ? 'contact' : e.target.id);
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach(function (s) { if (s) navIO.observe(s); });
   }
   /* The short contact section may never reach the middle band, so light it at the bottom of the page */
   window.addEventListener('scroll', function () {
-    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) setActive('contact');
+    if (atBottom()) setActive('contact');
   }, { passive: true });
 
   /* ---- Hero typed effect ---- */

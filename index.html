@@ -4,32 +4,58 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Andy Casafranca · Mechatronics Engineer</title>
-<meta name="description" content="Andy Casafranca — Mechatronics Engineering student from Lima, Perú. Embedded systems, ethical hacking, bioinstrumentation, and AI projects like HydraDetect-AI.">
+<meta name="description" content="Andy Casafranca — mechatronics engineer from Perú, working as an Instrumentation Engineer on water-flow measurement. Embedded systems, IoT and edge-AI projects like HydraDetect-AI.">
 <meta name="author" content="Andy Casafranca">
 <meta name="theme-color" content="#0e1419">
-<link rel="icon" href="assets/mclaren.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="canonical" href="https://andyrcc.github.io/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Andy Casafranca · Mechatronics Engineer">
-<meta property="og:description" content="Engineer who also has a soul — embedded systems, ethical hacking, AI. Lima, Perú.">
-<meta property="og:image" content="assets/banner.png">
+<meta property="og:description" content="Engineer who also has a soul — instrumentation, embedded systems, edge AI and ethical hacking. Perú.">
+<meta property="og:image" content="https://andyrcc.github.io/assets/banner.png">
+<meta property="og:image:alt" content="Portrait of Andy Casafranca">
+<meta property="og:site_name" content="Andy Casafranca">
 <meta property="og:url" content="https://andyrcc.github.io/">
+<meta name="twitter:card" content="summary">
 
-<!-- Fonts + icons -->
+<!-- Fonts (icons are an inline SVG sprite at the top of <body>) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Dosis:wght@300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Dosis:wght@600;800&display=swap">
 
-<!-- Apply saved theme before paint to avoid flash; default = dark -->
+<!-- Mark JS as available and apply the saved theme before paint (avoids a flash); default = dark -->
 <script>
   (function () {
+    document.documentElement.classList.add('js');
     try {
       var t = localStorage.getItem('theme');
       if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      if (t === 'light') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
     } catch (e) {}
   })();
+</script>
+
+<!-- Structured data for search engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Andy Casafranca",
+  "url": "https://andyrcc.github.io/",
+  "image": "https://andyrcc.github.io/assets/banner.png",
+  "jobTitle": "Instrumentation Engineer",
+  "worksFor": { "@type": "Organization", "name": "LabProjects" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad Peruana de Ciencias Aplicadas (UPC)" },
+  "sameAs": [
+    "https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115",
+    "https://github.com/AndyRCC",
+    "https://www.youtube.com/@Andy_Casafranca",
+    "https://www.instagram.com/andy_rcc"
+  ]
+}
 </script>
 
 <style>
@@ -39,11 +65,13 @@
    Dark is the default theme; light is an override.
    ============================================================ */
 :root {
+  color-scheme: dark;
   /* Brand */
   --primary:        #0aa697;
   --primary-hover:  #025b4d;
   --primary-bright: #19d3bd;   /* teal that passes AA on dark surfaces */
   --papaya:         #ff8000;   /* McLaren signature accent */
+  --papaya-ink:     #ff8000;   /* papaya used as TEXT; darkened in light theme for contrast */
   --papaya-soft:    #ffa040;
   --yellow:         #ffc107;
   --red:            #dc3545;
@@ -80,7 +108,9 @@
 }
 
 [data-theme="light"] {
-  --primary-bright: #07897c;
+  color-scheme: light;
+  --primary-bright: #067a6e;   /* 5.2:1 on white */
+  --papaya-ink:     #b35900;   /* 4.8:1 on white */
   --bg:        #ffffff;
   --bg-2:      #f8f9fa;
   --bg-3:      #eef1f4;
@@ -88,7 +118,7 @@
   --surface-2: #f8f9fa;
   --heading:   #0c1116;
   --text:      #404040;
-  --text-soft: #6c757d;
+  --text-soft: #5f676f;
   --border:    #e6e8eb;
   --border-strong: #d4d9de;
   --shadow-sm: 0 4px 14px rgba(15,22,30,.06);
@@ -117,7 +147,14 @@ p { margin: 0 0 1rem; }
 a { color: var(--primary-bright); text-decoration: none; transition: color .2s ease; }
 img { max-width: 100%; display: block; }
 
-:focus-visible { outline: 3px solid var(--papaya); outline-offset: 3px; border-radius: var(--r-sm); }
+:focus-visible { outline: 3px solid var(--papaya-ink); outline-offset: 3px; border-radius: var(--r-sm); }
+
+/* Inline SVG icons (sprite at the top of <body>); sized like an icon font */
+.ic { display: inline-block; height: 1em; width: auto; fill: currentColor; vertical-align: -.125em; flex: none; overflow: visible; }
+
+.sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip-link { position: absolute; left: 12px; top: -64px; z-index: 200; padding: 10px 16px; border-radius: var(--r-full); background: var(--papaya); color: #1a1205; font-weight: 700; transition: top .2s ease; }
+.skip-link:focus { top: 12px; }
 
 /* ---------- Layout helpers ---------- */
 .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
@@ -127,7 +164,7 @@ img { max-width: 100%; display: block; }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--font-sans); font-size: 13px; font-weight: 700;
-  letter-spacing: 2.5px; text-transform: uppercase; color: var(--papaya);
+  letter-spacing: 2.5px; text-transform: uppercase; color: var(--papaya-ink);
   margin-bottom: 14px;
 }
 .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--papaya); border-radius: 2px; }
@@ -175,6 +212,7 @@ img { max-width: 100%; display: block; }
 .brand { display: inline-flex; align-items: center; gap: 11px; font-family: var(--font-display); font-weight: 800; font-size: 20px; color: var(--heading); letter-spacing: .3px; }
 .brand img { width: 30px; height: auto; filter: drop-shadow(0 2px 6px rgba(255,128,0,.4)); }
 .brand b { color: var(--heading); font-weight: 800; }
+.brand span { white-space: nowrap; }
 
 .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; margin: 0; padding: 0; }
 .nav-links a { color: var(--text); font-weight: 500; font-size: 15px; position: relative; padding: 6px 0; }
@@ -192,9 +230,12 @@ img { max-width: 100%; display: block; }
   transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
 }
 .theme-toggle:hover, .menu-btn:hover { color: var(--papaya); border-color: var(--papaya); transform: translateY(-1px); }
-.theme-toggle .fa-sun { display: none; }
-[data-theme="light"] .theme-toggle .fa-sun { display: inline; }
-[data-theme="light"] .theme-toggle .fa-moon { display: none; }
+.theme-toggle .ic-sun { display: none; }
+[data-theme="light"] .theme-toggle .ic-sun { display: inline-block; }
+[data-theme="light"] .theme-toggle .ic-moon { display: none; }
+.menu-btn .ic-xmark { display: none; }
+.menu-btn[aria-expanded="true"] .ic-bars { display: none; }
+.menu-btn[aria-expanded="true"] .ic-xmark { display: inline-block; }
 .menu-btn { display: none; }
 
 /* ============================================================
@@ -203,7 +244,9 @@ img { max-width: 100%; display: block; }
 .hero {
   position: relative; min-height: 100vh; min-height: 100svh;
   display: flex; align-items: center;
-  padding-top: var(--nav-h); padding-bottom: 40px;
+  padding-top: var(--nav-h); padding-bottom: 72px;
+  /* The hero is always dark: pin the dark tokens here so light theme cannot leak in */
+  --heading: #f5f7f8; --primary-bright: #19d3bd; --border-strong: #2e3741; --papaya-ink: #ff8000; --text-soft: #8c949c;
   background:
     linear-gradient(var(--hero-overlay-a), var(--hero-overlay-b)),
     url('assets/banner-bg.jpg') center/cover no-repeat fixed;
@@ -231,7 +274,10 @@ img { max-width: 100%; display: block; }
 .hero h1 { color: #fff; font-size: clamp(2.5rem, 1.3rem + 4.6vw, 4.6rem); line-height: 1.04; margin: 0 0 18px; }
 .hero h1 .accent { color: var(--papaya); }
 
-.hero-typed { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.15rem, .9rem + 1.2vw, 1.7rem); color: #dfe5e9; min-height: 1.6em; margin-bottom: 18px; }
+.hero-typed { display: grid; font-family: var(--font-display); font-weight: 600; font-size: clamp(1.15rem, .9rem + 1.2vw, 1.7rem); color: #dfe5e9; margin-bottom: 18px; }
+/* Every phrase is laid out invisibly in the same grid cell, so the line height never jumps while typing */
+.typed-live, .typed-ghost { grid-area: 1 / 1; }
+.typed-ghost { visibility: hidden; }
 .hero-typed .static { color: var(--primary-bright); }
 .cursor { display: inline-block; width: 3px; height: 1.05em; background: var(--papaya); margin-left: 3px; transform: translateY(3px); animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
@@ -246,17 +292,17 @@ img { max-width: 100%; display: block; }
   background: radial-gradient(60% 60% at 50% 40%, rgba(10,166,151,.35), transparent 70%);
   filter: blur(8px); z-index: 0;
 }
-.hero-portrait img { position: relative; z-index: 1; width: min(340px, 70vw); filter: drop-shadow(0 30px 50px rgba(0,0,0,.55)); }
+.hero-portrait img { position: relative; z-index: 1; width: min(340px, 70vw); height: auto; filter: drop-shadow(0 30px 50px rgba(0,0,0,.55)); }
 .hero-ring { position: absolute; z-index: 0; inset: 0; margin: auto; width: 108%; aspect-ratio: 1; border: 1.5px dashed rgba(255,128,0,.35); border-radius: 50%; animation: spin 26s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* echo wave divider */
-.echo { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; line-height: 0; }
+.echo { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; line-height: 0; pointer-events: none; }
 .echo svg { width: 100%; height: 54px; display: block; }
 .echo path { stroke: url(#echoGrad); }
 
 .scroll-hint { position: absolute; left: 50%; bottom: 86px; transform: translateX(-50%); z-index: 3; color: #8c98a2; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.scroll-hint i { animation: bob 1.8s ease-in-out infinite; }
+.scroll-hint .ic { animation: bob 1.8s ease-in-out infinite; }
 @keyframes bob { 50% { transform: translateY(6px); } }
 
 /* ============================================================
@@ -277,12 +323,14 @@ img { max-width: 100%; display: block; }
   padding: 8px 15px; border-radius: var(--r-full);
   background: var(--surface-2); border: 1px solid var(--border);
 }
-.tag i { color: var(--primary-bright); margin-right: 7px; }
+.tag .ic { color: var(--primary-bright); margin-right: 7px; }
 
 /* ============================================================
    SKILLS
    ============================================================ */
-.cards-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; margin-top: 46px; }
+.cards-3 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 46px; }
+@media (min-width: 1100px) { .cards-3 { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px)  { .cards-3 { grid-template-columns: 1fr; } }
 .skill-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
   padding: 30px 26px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
@@ -319,9 +367,9 @@ img { max-width: 100%; display: block; }
   display: inline-flex; align-items: center; gap: 7px; backdrop-filter: blur(6px);
   opacity: 0; transform: translateY(-6px); transition: opacity .25s ease, transform .25s ease;
 }
-.project-card:hover .open-pill { opacity: 1; transform: translateY(0); }
+.project-card:hover .open-pill, .project-card:focus-visible .open-pill { opacity: 1; transform: translateY(0); }
 .project-body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
-.project-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--papaya); margin-bottom: 9px; }
+.project-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--papaya-ink); margin-bottom: 9px; }
 .project-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
 .project-card p { color: var(--text-soft); font-size: .97rem; line-height: 1.65; margin-bottom: 18px; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
@@ -334,10 +382,10 @@ img { max-width: 100%; display: block; }
   color: var(--text-soft); background: transparent; min-height: 220px;
   transition: border-color .25s ease, color .25s ease, transform .25s ease;
 }
-.project-next:hover { border-color: var(--papaya); color: var(--papaya); transform: translateY(-4px); }
+.project-next:hover { border-color: var(--papaya); color: var(--papaya-ink); transform: translateY(-4px); }
 .project-next .plus { width: 54px; height: 54px; border-radius: 50%; border: 1.5px dashed currentColor; display: flex; align-items: center; justify-content: center; font-size: 22px; }
 .project-next span { font-weight: 600; font-size: .95rem; }
-.project-next small { font-size: .8rem; opacity: .8; }
+.project-next small { font-size: .8rem; }
 
 /* ============================================================
    CONTACT
@@ -351,11 +399,11 @@ img { max-width: 100%; display: block; }
   background: var(--surface); border: 1px solid var(--border); color: var(--heading);
   transition: transform .18s ease, border-color .2s ease, color .2s ease, box-shadow .25s ease;
 }
-.social-btn i { font-size: 18px; color: var(--text-soft); transition: color .2s ease; }
+.social-btn .ic { font-size: 18px; color: var(--text-soft); transition: color .2s ease; }
 .social-btn:hover { transform: translateY(-3px); border-color: var(--papaya); box-shadow: var(--shadow-sm); }
-.social-btn:hover i { color: var(--papaya); }
-.social-btn.email { background: var(--primary); color: #fff; border-color: transparent; }
-.social-btn.email i { color: #fff; }
+.social-btn:hover .ic { color: var(--papaya); }
+.social-btn.email { background: #067a6e; color: #fff; border-color: transparent; } /* 5.2:1 with white text */
+.social-btn.email .ic { color: #fff; }
 .social-btn.email:hover { background: var(--primary-hover); border-color: transparent; }
 
 /* ============================================================
@@ -366,13 +414,15 @@ img { max-width: 100%; display: block; }
 .footer-inner p { margin: 0; color: var(--text-soft); font-size: .92rem; }
 .footer-inner .brand { font-size: 18px; }
 .to-top { color: var(--text-soft); font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
-.to-top:hover { color: var(--papaya); }
+.to-top:hover { color: var(--papaya-ink); }
 
 /* ============================================================
    Scroll-reveal
    ============================================================ */
-.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.in { opacity: 1; transform: none; }
+/* Hidden only when JS is running, so the page never renders blank without it */
+.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+.js .reveal.in { opacity: 1; transform: none; }
+@media print { .js .reveal { opacity: 1 !important; transform: none !important; } }
 
 /* ============================================================
    RESPONSIVE
@@ -392,14 +442,16 @@ img { max-width: 100%; display: block; }
 @media (max-width: 760px) {
   .nav-links {
     position: fixed; inset: var(--nav-h) 0 auto 0;
-    flex-direction: column; align-items: flex-start; gap: 4px;
+    flex-direction: column; align-items: stretch; gap: 0;
     background: var(--bg); border-bottom: 1px solid var(--border);
     padding: 14px 24px 22px; box-shadow: var(--shadow-md);
-    transform: translateY(-130%); transition: transform .32s cubic-bezier(.4,0,.2,1);
+    /* fully off-screen and out of the tab order while closed */
+    transform: translateY(calc(-100% - var(--nav-h))); visibility: hidden;
+    transition: transform .32s cubic-bezier(.4,0,.2,1), visibility 0s linear .32s;
     max-height: calc(100dvh - var(--nav-h)); overflow-y: auto;
   }
-  .nav-links.open { transform: translateY(0); }
-  .nav-links a { width: 100%; padding: 13px 4px; font-size: 17px; border-bottom: 1px solid var(--border); }
+  .nav-links.open { transform: translateY(0); visibility: visible; transition: transform .32s cubic-bezier(.4,0,.2,1); }
+  .nav-links a { display: block; width: 100%; padding: 13px 4px; font-size: 17px; border-bottom: 1px solid var(--border); }
   .nav-links a::after { display: none; }
   .menu-btn { display: inline-flex; }
 }
@@ -412,6 +464,14 @@ img { max-width: 100%; display: block; }
   .projects-grid { grid-template-columns: 1fr; }
   .social-btn { width: 100%; justify-content: center; }
   .footer-inner { flex-direction: column; text-align: center; }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 1.6px; gap: 8px; }
+  .about-photo .badge { right: 12px; }
+}
+
+@media (max-width: 340px) {
+  .brand { font-size: 18px; gap: 8px; }
+  .brand img { width: 26px; }
+  .nav-actions { gap: 8px; }
 }
 
 /* ============================================================
@@ -419,15 +479,44 @@ img { max-width: 100%; display: block; }
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 1; transform: none; }
   .hero { background-attachment: scroll; }
   .cursor { animation: none; }
 }
-@media (max-width: 980px) { .hero { background-attachment: scroll; } }
+@media (max-width: 980px), (hover: none), (pointer: coarse) { .hero { background-attachment: scroll; } }
 </style>
 </head>
 
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- Icon sprite: Font Awesome Free 6.5.0 glyphs (CC BY 4.0), inlined so the page needs no icon font -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow-up" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></symbol>
+  <symbol id="i-arrow-up-right-from-square" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></symbol>
+  <symbol id="i-bars" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></symbol>
+  <symbol id="i-envelope" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></symbol>
+  <symbol id="i-file-lines" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM112 256H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></symbol>
+  <symbol id="i-flag-checkered" viewBox="0 0 448 512"><path d="M32 0C49.7 0 64 14.3 64 32V48l69-17.2c38.1-9.5 78.3-5.1 113.5 12.5c46.3 23.2 100.8 23.2 147.1 0l9.6-4.8C423.8 28.1 448 43.1 448 66.1V345.8c0 13.3-8.3 25.3-20.8 30l-34.7 13c-46.2 17.3-97.6 14.6-141.7-7.4c-37.9-19-81.3-23.7-122.5-13.4L64 384v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V400 334 64 32C0 14.3 14.3 0 32 0zM64 187.1l64-13.9v65.5L64 252.6V318l48.8-12.2c5.1-1.3 10.1-2.4 15.2-3.3V238.7l38.9-8.4c8.3-1.8 16.7-2.5 25.1-2.1l0-64c13.6 .4 27.2 2.6 40.4 6.4l23.6 6.9v66.7l-41.7-12.3c-7.3-2.1-14.8-3.4-22.3-3.8v71.4c21.8 1.9 43.3 6.7 64 14.4V244.2l22.7 6.7c13.5 4 27.3 6.4 41.3 7.4V194c-7.8-.8-15.6-2.3-23.2-4.5l-40.8-12v-62c-13-3.8-25.8-8.8-38.2-15c-8.2-4.1-16.9-7-25.8-8.8v72.4c-13-.4-26 .8-38.7 3.6L128 173.2V98L64 114v73.1zM320 335.7c16.8 1.5 33.9-.7 50-6.8l14-5.2V251.9l-7.9 1.8c-18.4 4.3-37.3 5.7-56.1 4.5v77.4zm64-149.4V115.4c-20.9 6.1-42.4 9.1-64 9.1V194c13.9 1.4 28 .5 41.7-2.6l22.3-5.2z"/></symbol>
+  <symbol id="i-gamepad" viewBox="0 0 640 512"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></symbol>
+  <symbol id="i-gauge-high" viewBox="0 0 512 512"><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM288 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM256 416c35.3 0 64-28.7 64-64c0-17.4-6.9-33.1-18.1-44.6L366 161.7c5.3-12.1-.2-26.3-12.3-31.6s-26.3 .2-31.6 12.3L257.9 288c-.6 0-1.3 0-1.9 0c-35.3 0-64 28.7-64 64s28.7 64 64 64zM176 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM96 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm352-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></symbol>
+  <symbol id="i-linkedin-in" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></symbol>
+  <symbol id="i-location-dot" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></symbol>
+  <symbol id="i-microchip" viewBox="0 0 512 512"><path d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64c-35.3 0-64 28.7-64 64H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64c0 35.3 28.7 64 64 64v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448c35.3 0 64-28.7 64-64h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V280h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V176h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448c0-35.3-28.7-64-64-64V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H280V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H176V24zM160 128H352c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32zm192 32H160V352H352V160z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></symbol>
+  <symbol id="i-road" viewBox="0 0 576 512"><path d="M256 32H181.2c-27.1 0-51.3 17.1-60.3 42.6L3.1 407.2C1.1 413 0 419.2 0 425.4C0 455.5 24.5 480 54.6 480H256V416c0-17.7 14.3-32 32-32s32 14.3 32 32v64H521.4c30.2 0 54.6-24.5 54.6-54.6c0-6.2-1.1-12.4-3.1-18.2L455.1 74.6C446 49.1 421.9 32 394.8 32H320V96c0 17.7-14.3 32-32 32s-32-14.3-32-32V32zm64 192v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V224c0-17.7 14.3-32 32-32s32 14.3 32 32z"/></symbol>
+  <symbol id="i-robot" viewBox="0 0 640 512"><path d="M320 0c17.7 0 32 14.3 32 32V96H472c39.8 0 72 32.2 72 72V440c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72H288V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H208zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H304zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H400zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224H64V416H48c-26.5 0-48-21.5-48-48V272c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H576V224h16z"/></symbol>
+  <symbol id="i-steam" viewBox="0 0 496 512"><path d="M496 256c0 137-111.2 248-248.4 248-113.8 0-209.6-76.3-239-180.4l95.2 39.3c6.4 32.1 34.9 56.4 68.9 56.4 39.2 0 71.9-32.4 70.2-73.5l84.5-60.2c52.1 1.3 95.8-40.9 95.8-93.5 0-51.6-42-93.5-93.7-93.5s-93.7 42-93.7 93.5v1.2L176.6 279c-15.5-.9-30.7 3.4-43.5 12.1L0 236.1C10.2 108.4 117.1 8 247.6 8 384.8 8 496 119 496 256zM155.7 384.3l-30.5-12.6a52.79 52.79 0 0 0 27.2 25.8c26.9 11.2 57.8-1.6 69-28.4 5.4-13 5.5-27.3.1-40.3-5.4-13-15.5-23.2-28.5-28.6-12.9-5.4-26.7-5.2-38.9-.6l31.5 13c19.8 8.2 29.2 30.9 20.9 50.7-8.3 19.9-31 29.2-50.8 21zm173.8-129.9c-34.4 0-62.4-28-62.4-62.3s28-62.3 62.4-62.3 62.4 28 62.4 62.3-27.9 62.3-62.4 62.3zm.1-15.6c25.9 0 46.9-21 46.9-46.8 0-25.9-21-46.8-46.9-46.8s-46.9 21-46.9 46.8c.1 25.8 21.1 46.8 46.9 46.8z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></symbol>
+  <symbol id="i-user-secret" viewBox="0 0 448 512"><path d="M224 16c-6.7 0-10.8-2.8-15.5-6.1C201.9 5.4 194 0 176 0c-30.5 0-52 43.7-66 89.4C62.7 98.1 32 112.2 32 128c0 14.3 25 27.1 64.6 35.9c-.4 4-.6 8-.6 12.1c0 17 3.3 33.2 9.3 48H45.4C38 224 32 230 32 237.4c0 1.7 .3 3.4 1 5l38.8 96.9C28.2 371.8 0 423.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7c0-58.5-28.2-110.4-71.7-143L415 242.4c.6-1.6 1-3.3 1-5c0-7.4-6-13.4-13.4-13.4H342.7c6-14.8 9.3-31 9.3-48c0-4.1-.2-8.1-.6-12.1C391 155.1 416 142.3 416 128c0-15.8-30.7-29.9-78-38.6C324 43.7 302.5 0 272 0c-18 0-25.9 5.4-32.5 9.9c-4.8 3.3-8.8 6.1-15.5 6.1zm56 208H267.6c-16.5 0-31.1-10.6-36.3-26.2c-2.3-7-12.2-7-14.5 0c-5.2 15.6-19.9 26.2-36.3 26.2H168c-22.1 0-40-17.9-40-40V169.6c28.2 4.1 61 6.4 96 6.4s67.8-2.3 96-6.4V184c0 22.1-17.9 40-40 40zm-88 96l16 32L176 480 128 288l64 32zm128-32L272 480 240 352l16-32 64-32z"/></symbol>
+  <symbol id="i-water" viewBox="0 0 576 512"><path d="M269.5 69.9c11.1-7.9 25.9-7.9 37 0C329 85.4 356.5 96 384 96c26.9 0 55.4-10.8 77.4-26.1l0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 149.7 417 160 384 160c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4C42.8 92.6 61 83.5 75.3 71.6c11.1-9.5 27.3-10.1 39.2-1.7l0 0C136.7 85.2 165.1 96 192 96c27.5 0 55-10.6 77.5-26.1zm37 288C329 373.4 356.5 384 384 384c26.9 0 55.4-10.8 77.4-26.1l0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 437.7 417 448 384 448c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.4 27.3-10.1 39.2-1.7l0 0C136.7 373.2 165.1 384 192 384c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0zm0-144C329 229.4 356.5 240 384 240c26.9 0 55.4-10.8 77.4-26.1l0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 293.7 417 304 384 304c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.5 27.3-10.1 39.2-1.7l0 0C136.7 229.2 165.1 240 192 240c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0z"/></symbol>
+  <symbol id="i-wave-square" viewBox="0 0 640 512"><path d="M128 64c0-17.7 14.3-32 32-32H320c17.7 0 32 14.3 32 32V416h96V256c0-17.7 14.3-32 32-32H608c17.7 0 32 14.3 32 32s-14.3 32-32 32H512V448c0 17.7-14.3 32-32 32H320c-17.7 0-32-14.3-32-32V96H192V256c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h96V64z"/></symbol>
+  <symbol id="i-xmark" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></symbol>
+</svg>
 
 <!-- ========================= HEADER ========================= -->
 <header class="site-header" id="header">
@@ -442,44 +531,47 @@ img { max-width: 100%; display: block; }
       <li><a href="#skills">skills</a></li>
       <li><a href="#projects">projects</a></li>
       <li><a href="#contact">contact</a></li>
+      <li><a href="cv/">cv</a></li>
     </ul>
 
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light / dark theme">
-        <i class="fa-solid fa-moon" aria-hidden="true"></i>
-        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Light theme" aria-pressed="false">
+        <svg class="ic ic-moon" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>
+        <svg class="ic ic-sun" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>
       </button>
       <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <svg class="ic ic-bars" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><use href="#i-bars"/></svg>
+        <svg class="ic ic-xmark" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><use href="#i-xmark"/></svg>
       </button>
     </div>
   </nav>
 </header>
 
+<main id="main">
 <!-- ========================= HERO ========================= -->
 <section class="hero" id="home">
   <div class="hero-grid">
     <div class="hero-copy">
       <span class="hero-eyebrow"><span class="dot"></span>Mechatronics Engineer — Lima, Perú</span>
       <h1>Hi, I'm Andy <span class="accent">Casafranca</span>.</h1>
-      <p class="hero-typed" aria-live="polite">
-        <span class="static">Just as comfortable&nbsp;</span><span id="typed"></span><span class="cursor" aria-hidden="true"></span>
+      <p class="hero-typed" id="heroTyped">
+        <span class="typed-live"><span class="static">Just as comfortable&nbsp;</span><span id="typed">debugging a circuit board.</span><span class="cursor" aria-hidden="true"></span></span>
       </p>
-      <p class="hero-sub">A Mechatronics Engineering student thriving at the chaotic intersection of mechanics, electronics, and intelligent systems.</p>
+      <p class="hero-sub">Instrumentation Engineer at LabProjects, validating water-flow measurement across Ica's wells and reservoirs. Happiest where mechanics, electronics, and intelligent systems collide.</p>
       <div class="hero-cta">
-        <a class="btn btn--papaya" href="cv/"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> View CV</a>
+        <a class="btn btn--papaya" href="cv/"><svg class="ic ic-file-lines" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><use href="#i-file-lines"/></svg> View CV</a>
         <a class="btn btn--ghost" href="#contact">Get in touch</a>
       </div>
     </div>
 
     <div class="hero-portrait">
       <span class="hero-ring" aria-hidden="true"></span>
-      <img src="assets/banner.png" alt="Andy Casafranca" width="340" loading="eager">
+      <img src="assets/banner.png" alt="Andy Casafranca" width="380" height="508" fetchpriority="high">
     </div>
   </div>
 
   <a class="scroll-hint" href="#about" aria-label="Scroll to about">
-    <span>scroll</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+    <span>scroll</span><svg class="ic ic-chevron-down" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg>
   </a>
 
   <div class="echo" aria-hidden="true">
@@ -499,20 +591,21 @@ img { max-width: 100%; display: block; }
 <section class="section" id="about">
   <div class="wrap about-grid">
     <div class="about-photo reveal">
-      <img src="assets/about.jpg" alt="Andy standing in the dunes outside Lima, Perú">
-      <span class="badge"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Lima, Perú</span>
+      <img src="assets/about.jpg" alt="Andy standing in the dunes outside Lima, Perú" loading="lazy" decoding="async">
+      <span class="badge"><svg class="ic ic-location-dot" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><use href="#i-location-dot"/></svg> Lima, Perú</span>
     </div>
     <div class="about-body reveal">
       <span class="eyebrow">about</span>
       <h2 class="section-title">Engineer who also has a soul.</h2>
       <p>I'm just as comfortable <span class="text-teal">debugging a circuit board</span> as I am <span class="text-teal">polishing a user interface</span>. My work lives where mechanics, electronics, and intelligent systems collide — and where careful engineering meets a bit of curiosity.</p>
+      <p>Right now I'm an <span class="text-teal">Instrumentation Engineer at LabProjects</span> in Ica, validating flow measurement across EMAPICA's wells and reservoirs: I benchmark installed meters against clamp-on ultrasonic flowmeters and tune their correction factors. Before that came EEG/EMG research at UPC, freelance embedded and IoT builds, and bilingual support for U.S. companies.</p>
       <p>I'm passionate about creating, exploring, and moving — whether it's through engineering challenges, road trips, fast cars, or quiet moments by the ocean.</p>
       <div class="tag-row">
-        <span class="tag"><i class="fa-solid fa-flag-checkered"></i>Formula 1</span>
-        <span class="tag"><i class="fa-solid fa-gauge-high"></i>Fast cars</span>
-        <span class="tag"><i class="fa-solid fa-gamepad"></i>Gaming</span>
-        <span class="tag"><i class="fa-solid fa-road"></i>Road trips</span>
-        <span class="tag"><i class="fa-solid fa-water"></i>The ocean</span>
+        <span class="tag"><svg class="ic ic-flag-checkered" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><use href="#i-flag-checkered"/></svg>Formula 1</span>
+        <span class="tag"><svg class="ic ic-gauge-high" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><use href="#i-gauge-high"/></svg>Fast cars</span>
+        <span class="tag"><svg class="ic ic-gamepad" viewBox="0 0 640 512" aria-hidden="true" focusable="false"><use href="#i-gamepad"/></svg>Gaming</span>
+        <span class="tag"><svg class="ic ic-road" viewBox="0 0 576 512" aria-hidden="true" focusable="false"><use href="#i-road"/></svg>Road trips</span>
+        <span class="tag"><svg class="ic ic-water" viewBox="0 0 576 512" aria-hidden="true" focusable="false"><use href="#i-water"/></svg>The ocean</span>
       </div>
     </div>
   </div>
@@ -524,26 +617,26 @@ img { max-width: 100%; display: block; }
     <div class="reveal">
       <span class="eyebrow">some things i do</span>
       <h2 class="section-title">My featured skills</h2>
-      <p class="section-lead">Three places where I like to get my hands dirty — from breaking systems on purpose to teaching microcontrollers new tricks.</p>
+      <p class="section-lead">Four places where I like to get my hands dirty — from breaking systems on purpose to teaching microcontrollers new tricks.</p>
     </div>
-    <div class="cards-3">
-      <article class="skill-card reveal">
-        <div class="skill-icon"><i class="fa-solid fa-user-secret" aria-hidden="true"></i></div>
+    <div class="cards-3 reveal">
+      <article class="skill-card">
+        <div class="skill-icon"><svg class="ic ic-user-secret" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><use href="#i-user-secret"/></svg></div>
         <h3>Ethical Hacking &amp; Pentesting</h3>
         <p>Breaking things on purpose to make them safer — from web apps to embedded targets, finding the weak link before someone else does.</p>
       </article>
-      <article class="skill-card reveal">
-        <div class="skill-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
+      <article class="skill-card">
+        <div class="skill-icon"><svg class="ic ic-microchip" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><use href="#i-microchip"/></svg></div>
         <h3>Embedded Systems &amp; Automation</h3>
         <p>Microcontrollers, sensor integration, and control algorithms that bridge clean code and the messy physical world.</p>
       </article>
-      <article class="skill-card reveal">
-        <div class="skill-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
-        <h3>Bioengineering &amp; Instrumentation</h3>
-        <p>Biomedical instrumentation and signal processing — where electronics, data, and living systems meet.</p>
+      <article class="skill-card">
+        <div class="skill-icon"><svg class="ic ic-wave-square" viewBox="0 0 640 512" aria-hidden="true" focusable="false"><use href="#i-wave-square"/></svg></div>
+        <h3>Instrumentation &amp; Measurement</h3>
+        <p>From EEG/EMG front-ends to field flow metering — benchmarking installed meters against clamp-on ultrasonic flowmeters and turning noisy signals into numbers you can trust.</p>
       </article>
-      <article class="skill-card reveal">
-        <div class="skill-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+      <article class="skill-card">
+        <div class="skill-icon"><svg class="ic ic-robot" viewBox="0 0 640 512" aria-hidden="true" focusable="false"><use href="#i-robot"/></svg></div>
         <h3>Machine Learning &amp; AI</h3>
         <p>Training and deploying ML models — from feature engineering on raw sensor data to offline edge inference, like the ensemble behind HydraDetect-AI.</p>
       </article>
@@ -557,9 +650,9 @@ img { max-width: 100%; display: block; }
     <div class="reveal">
       <span class="eyebrow">portfolio</span>
       <h2 class="section-title">my projects <span aria-hidden="true">ツ</span></h2>
-      <p class="section-lead">Things I've built end-to-end. Click any card to open the live project — more are on the way.</p>
+      <p class="section-lead">Things I've built end-to-end — from edge-AI field hardware to a national hackathon win. Open a card for the project or the full story.</p>
     </div>
-    <div class="projects-grid" id="projectsGrid"><!-- rendered by JS --></div>
+    <div class="projects-grid reveal" id="projectsGrid"><!-- rendered by JS --><noscript><a class="project-next" href="https://andyrcc.github.io/HydraDetect-AI/"><span>HydraDetect-AI</span><small>see the project</small></a></noscript></div>
   </div>
 </section>
 
@@ -568,24 +661,26 @@ img { max-width: 100%; display: block; }
   <div class="wrap reveal">
     <span class="eyebrow" style="justify-content:center;">get in touch</span>
     <h2 class="section-title">Let's build something.</h2>
-    <p class="section-lead">Open to collaborations, internships, and good conversations — about engineering, Formula 1, or anything that moves fast.</p>
+    <p class="section-lead">Open to engineering roles, collaborations, and good conversations — about instrumentation, embedded systems, Formula 1, or anything that moves fast.</p>
     <div class="social-row">
-      <a class="social-btn email" href="mailto:andycasafranca5100@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email me</a>
-      <a class="social-btn" href="https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a>
-      <a class="social-btn" href="https://github.com/AndyRCC" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-      <a class="social-btn" href="https://www.instagram.com/andy_rcc" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
-      <a class="social-btn" href="https://www.youtube.com/@Andy_Casafranca" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</a>
-      <a class="social-btn" href="https://steamcommunity.com/id/hitheads" target="_blank" rel="noopener"><i class="fa-brands fa-steam" aria-hidden="true"></i> Steam</a>
+      <a class="social-btn email" href="mailto:andycasafranca5100@gmail.com"><svg class="ic ic-envelope" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><use href="#i-envelope"/></svg> Email me</a>
+      <a class="social-btn" href="cv/"><svg class="ic ic-file-lines" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><use href="#i-file-lines"/></svg> CV</a>
+      <a class="social-btn" href="https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115" target="_blank" rel="noopener"><svg class="ic ic-linkedin-in" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><use href="#i-linkedin-in"/></svg> LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="social-btn" href="https://github.com/AndyRCC" target="_blank" rel="noopener"><svg class="ic ic-github" viewBox="0 0 496 512" aria-hidden="true" focusable="false"><use href="#i-github"/></svg> GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="social-btn" href="https://www.instagram.com/andy_rcc" target="_blank" rel="noopener"><svg class="ic ic-instagram" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><use href="#i-instagram"/></svg> Instagram<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="social-btn" href="https://www.youtube.com/@Andy_Casafranca" target="_blank" rel="noopener"><svg class="ic ic-youtube" viewBox="0 0 576 512" aria-hidden="true" focusable="false"><use href="#i-youtube"/></svg> YouTube<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="social-btn" href="https://steamcommunity.com/id/hitheads" target="_blank" rel="noopener"><svg class="ic ic-steam" viewBox="0 0 496 512" aria-hidden="true" focusable="false"><use href="#i-steam"/></svg> Steam<span class="sr-only"> (opens in a new tab)</span></a>
     </div>
   </div>
 </section>
+</main>
 
 <!-- ========================= FOOTER ========================= -->
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <a class="brand" href="#home"><img src="assets/mclaren.png" alt="" aria-hidden="true"><span>Andy <b>Casafranca</b></span></a>
-    <p>© <span id="year"></span> Andy Casafranca — built with caffeine &amp; papaya in Lima, Perú.</p>
-    <a class="to-top" href="#home"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Back to top</a>
+    <p>© <span id="year">2026</span> Andy Casafranca — built with caffeine &amp; papaya in Lima, Perú.</p>
+    <a class="to-top" href="#home"><svg class="ic ic-arrow-up" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><use href="#i-arrow-up"/></svg> Back to top</a>
   </div>
 </footer>
 
@@ -598,10 +693,13 @@ img { max-width: 100%; display: block; }
 
   /* ---- Theme toggle ---- */
   var toggle = document.getElementById('themeToggle');
+  function syncToggle(theme) { toggle.setAttribute('aria-pressed', String(theme === 'light')); }
+  syncToggle(root.getAttribute('data-theme'));
   toggle.addEventListener('click', function () {
     var current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
     var next = current === 'light' ? 'dark' : 'light';
     root.setAttribute('data-theme', next);
+    syncToggle(next);
     try { localStorage.setItem('theme', next); } catch (e) {}
     document.querySelector('meta[name="theme-color"]').setAttribute('content', next === 'light' ? '#ffffff' : '#0e1419');
   });
@@ -609,17 +707,23 @@ img { max-width: 100%; display: block; }
   /* ---- Mobile menu ---- */
   var menuBtn = document.getElementById('menuBtn');
   var navLinks = document.getElementById('navLinks');
-  function closeMenu() {
-    navLinks.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    menuBtn.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-  }
-  menuBtn.addEventListener('click', function () {
-    var open = navLinks.classList.toggle('open');
+  /* The bars/xmark icons swap via CSS on aria-expanded */
+  function setMenu(open, refocus) {
+    navLinks.classList.toggle('open', open);
     menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.innerHTML = open ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-  });
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (open) navLinks.querySelector('a').focus();
+    else if (refocus) menuBtn.focus();
+  }
+  function closeMenu() { setMenu(false); }
+  menuBtn.addEventListener('click', function () { setMenu(!navLinks.classList.contains('open')); });
   navLinks.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) setMenu(false, true);
+  });
+  var desktopMQ = window.matchMedia('(min-width: 761px)');
+  var onDesktop = function (m) { if (m.matches) closeMenu(); };
+  if (desktopMQ.addEventListener) desktopMQ.addEventListener('change', onDesktop); else desktopMQ.addListener(onDesktop);
 
   /* ---- Header shadow on scroll ---- */
   var header = document.getElementById('header');
@@ -639,26 +743,35 @@ img { max-width: 100%; display: block; }
       image: 'assets/hydradetect-card.svg',
       tags: ['Arduino', 'Python', 'Machine Learning', 'Signal Processing', 'Edge AI'],
       url: 'https://andyrcc.github.io/HydraDetect-AI/'
+    },
+    {
+      title: 'Hackatón MINSA 2017',
+      kicker: '1st place · Ministry of Health',
+      summary: 'Co-built a game-based app for preliminary depression screening with Team Vincere, the 10-student team that won Peru’s national health hackathon.',
+      image: 'assets/blog1.jpg',
+      tags: ['Healthtech', 'Mental health', 'Game-based screening'],
+      url: 'https://facultad-ciencias-ingenieria.pucp.edu.pe/2017/10/20/estudiantes-de-ingenieria-biomedica-obtienen-primer-puesto-en-hackaton-minsa-2017-2/',
+      cta: 'Read the story'
     }
-    /* , { title:'', kicker:'', summary:'', image:'assets/xxx.png', tags:['',''], url:'' } */
+    /* Template — copy, fill in and add after the last block (cta is optional, defaults to "Open"):
+       , { title:'', kicker:'', summary:'', image:'assets/your-image.png', tags:['',''], url:'', cta:'' } */
   ];
 
   function el(tag, cls, html) { var n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; }
 
   var grid = document.getElementById('projectsGrid');
   PROJECTS.forEach(function (p) {
-    var card = el('a', 'project-card reveal');
+    var card = el('a', 'project-card');
     card.href = p.url; card.target = '_blank'; card.rel = 'noopener';
-    card.setAttribute('aria-label', p.title + ' — open live project');
     var tags = p.tags.map(function (t) { return '<span class="chip">' + t + '</span>'; }).join('');
     card.innerHTML =
       '<div class="project-media">' +
-        '<img src="' + p.image + '" alt="' + p.title + ' preview" loading="lazy">' +
-        '<span class="open-pill"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open</span>' +
+        '<img src="' + p.image + '" alt="" loading="lazy" decoding="async">' +
+        '<span class="open-pill" aria-hidden="true"><svg class="ic ic-arrow-up-right-from-square" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right-from-square"/></svg> ' + (p.cta || 'Open') + '</span>' +
       '</div>' +
       '<div class="project-body">' +
         '<span class="project-kicker">' + p.kicker + '</span>' +
-        '<h3>' + p.title + '</h3>' +
+        '<h3>' + p.title + '<span class="sr-only"> (opens in a new tab)</span></h3>' +
         '<p>' + p.summary + '</p>' +
         '<div class="project-tags">' + tags + '</div>' +
       '</div>';
@@ -666,9 +779,9 @@ img { max-width: 100%; display: block; }
   });
 
   /* placeholder "next build" card */
-  var next = el('a', 'project-next reveal');
+  var next = el('a', 'project-next');
   next.href = 'https://github.com/AndyRCC'; next.target = '_blank'; next.rel = 'noopener';
-  next.innerHTML = '<span class="plus"><i class="fa-solid fa-plus"></i></span><span>Your next build loads here</span><small>more coming soon · see my GitHub</small>';
+  next.innerHTML = '<span class="plus"><svg class="ic ic-plus" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></span><span>Your next build loads here</span><small>more coming soon · see my GitHub<span class="sr-only"> (opens in a new tab)</span></small>';
   grid.appendChild(next);
 
   /* ---- Scroll reveal ---- */
@@ -683,30 +796,47 @@ img { max-width: 100%; display: block; }
   }
 
   /* ---- Active nav link on scroll ---- */
-  var sections = ['about', 'skills', 'projects', 'contact'].map(function (id) { return document.getElementById(id); });
+  /* 'home' has no link, so reaching the hero clears the highlight */
+  var sections = ['home', 'about', 'skills', 'projects', 'contact'].map(function (id) { return document.getElementById(id); });
   var linkFor = {};
-  document.querySelectorAll('.nav-links a').forEach(function (a) { linkFor[a.getAttribute('href').slice(1)] = a; });
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(function (a) { linkFor[a.getAttribute('href').slice(1)] = a; });
+  function setActive(id) { Object.keys(linkFor).forEach(function (k) { linkFor[k].classList.toggle('active', k === id); }); }
   if ('IntersectionObserver' in window) {
     var navIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          Object.values(linkFor).forEach(function (a) { a.classList.remove('active'); });
-          var active = linkFor[e.target.id];
-          if (active) active.classList.add('active');
-        }
+        if (e.isIntersecting) setActive(e.target.id);
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach(function (s) { if (s) navIO.observe(s); });
   }
+  /* The short contact section may never reach the middle band, so light it at the bottom of the page */
+  window.addEventListener('scroll', function () {
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) setActive('contact');
+  }, { passive: true });
 
   /* ---- Hero typed effect ---- */
-  var phrases = ['debugging a circuit board.', 'polishing a user interface.', 'chasing the perfect lap.', 'catching water thieves with AI.'];
+  var phrases = ['debugging a circuit board.', 'benchmarking flowmeters.', 'polishing a user interface.', 'chasing the perfect lap.', 'catching water thieves with AI.'];
   var typedEl = document.getElementById('typed');
+  var typedBox = document.getElementById('heroTyped');
+  var typedLive = typedBox.querySelector('.typed-live');
+  /* Screen readers get one complete sentence; the animated copy is hidden from them */
+  var sr = el('span', 'sr-only');
+  var bare = phrases.map(function (t) { return t.replace(/\.$/, ''); });
+  sr.textContent = 'Just as comfortable ' + bare.slice(0, -1).join(', ') + ', or ' + bare[bare.length - 1] + '.';
+  typedBox.appendChild(sr);
+  typedLive.setAttribute('aria-hidden', 'true');
+  /* Invisible copies of every phrase reserve the tallest line */
+  phrases.forEach(function (t) {
+    var ghost = el('span', 'typed-ghost', '<span class="static">Just as comfortable&nbsp;</span>' + t + '<span class="cursor"></span>');
+    ghost.setAttribute('aria-hidden', 'true');
+    typedBox.insertBefore(ghost, typedLive);
+  });
   if (reduceMotion) {
     typedEl.textContent = phrases[0];
   } else {
     var pi = 0, ci = 0, deleting = false;
     function tick() {
+      if (document.hidden) { setTimeout(tick, 800); return; } /* idle in background tabs */
       var word = phrases[pi];
       ci += deleting ? -1 : 1;
       typedEl.textContent = word.slice(0, ci);
@@ -715,6 +845,7 @@ img { max-width: 100%; display: block; }
       else if (deleting && ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; delay = 320; }
       setTimeout(tick, delay);
     }
+    pi = 0; ci = 0; typedEl.textContent = '';
     setTimeout(tick, 600);
   }
 })();

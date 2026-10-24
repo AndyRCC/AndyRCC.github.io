@@ -3,494 +3,323 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Andy Casafranca — Curriculum Vitae</title>
-<meta name="description" content="Andy Casafranca — Mechatronics Engineering graduate · Instrumentation, Control & Automation. Interactive CV, viewable in English or Spanish.">
+<title>Andy Casafranca — CV</title>
+<meta name="description" content="Andy Casafranca — Mechatronics Engineering graduate (UPC) focused on instrumentation, control and automation. CV in English and Spanish.">
 <link rel="icon" href="../assets/mclaren.png">
-<meta name="theme-color" content="#05080b">
+<meta name="theme-color" content="#0e1419">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Dosis:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Dosis:wght@600;700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
   :root{
-    --bg:#0e1419; --side:#0a1014; --surface:#141b21; --surface-2:#1a222a; --page:#05080b;
-    --border:#232a31; --border-2:#2e3741;
-    --heading:#f5f7f8; --text:#c4cad0; --soft:#8c949c;
-    --teal:#19d3bd; --teal-deep:#0aa697; --papaya:#ff8000; --papaya-soft:#ffa040;
-    --font:'DM Sans',system-ui,sans-serif; --display:'Dosis','DM Sans',sans-serif; --mono:'JetBrains Mono',monospace;
+    --frame:#0e1419; --frame-line:#232a31; --frame-text:#c4cad0; --frame-soft:#8c949c;
+    --paper:#ffffff; --ink:#1b2128; --soft:#59626b; --rule:#dde2e6;
+    --papaya:#ff8000; --papaya-ink:#b35900; --teal:#0aa697; --teal-ink:#086f66;
+    --font:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --display:'Dosis','DM Sans',sans-serif;
+    --axis:150px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
-  html{ -webkit-text-size-adjust:100%; }
-  body{ font-family:var(--font); background:var(--page); -webkit-font-smoothing:antialiased; color:var(--text); }
+  html{-webkit-text-size-adjust:100%;}
+  body{font-family:var(--font);background:var(--frame);color:var(--ink);-webkit-font-smoothing:antialiased;}
+  a{color:var(--teal-ink);}
+  :focus-visible{outline:3px solid var(--papaya);outline-offset:2px;border-radius:4px;}
 
-  /* ---------- Toolbar (screen only) ---------- */
-  .toolbar{
-    position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:14px;
-    padding:12px 18px; background:rgba(8,12,16,.82); backdrop-filter:saturate(160%) blur(12px);
-    border-bottom:1px solid var(--border);
-  }
-  .tb-left{ display:inline-flex; align-items:center; gap:10px; font-family:var(--display); font-weight:800; color:var(--heading); font-size:16px; }
-  .tb-left img{ width:24px; }
-  .tb-back{ color:var(--soft); font-weight:600; font-size:13px; text-decoration:none; }
-  .tb-back:hover{ color:var(--papaya); }
-  .tb-right{ display:flex; align-items:center; gap:10px; }
-  .lang-switch{ display:inline-flex; border:1px solid var(--border-2); border-radius:999px; overflow:hidden; }
-  .lang-switch button{
-    font-family:var(--font); font-weight:700; font-size:13px; padding:8px 14px; min-height:40px; border:0; cursor:pointer;
-    background:transparent; color:var(--soft); transition:background .2s,color .2s;
-  }
-  .lang-switch button.active{ background:var(--teal-deep); color:#fff; }
-  .dl-btn{
-    display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:14px; min-height:40px;
-    padding:9px 18px; border-radius:999px; background:var(--papaya); color:#1a1205; text-decoration:none;
-    border:0; cursor:pointer; transition:transform .15s, background .2s;
-  }
-  .dl-btn:hover{ background:var(--papaya-soft); transform:translateY(-1px); }
-
-  .stage{ padding:26px 16px 48px; display:flex; justify-content:center; }
+  /* ---------- Toolbar (same frame as the rest of the site) ---------- */
+  .toolbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:10px 18px;background:rgba(14,20,25,.92);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--frame-line);}
+  .back{display:inline-flex;align-items:center;gap:10px;min-height:40px;color:var(--frame-text);font-weight:500;font-size:14px;text-decoration:none;}
+  .back img{width:22px;height:auto;}
+  .back:hover{color:#fff;}
+  .tools{display:flex;align-items:center;gap:10px;}
+  .lang{display:inline-flex;border:1px solid #2e3741;border-radius:999px;overflow:hidden;}
+  .lang button{font:600 13px var(--font);padding:8px 14px;min-height:40px;border:0;background:transparent;color:var(--frame-soft);cursor:pointer;}
+  .lang button[aria-pressed="true"]{background:var(--teal);color:#06231f;}
+  .dl{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:9px 18px;border-radius:999px;
+    background:var(--papaya);color:#1a1205;font-weight:700;font-size:14px;text-decoration:none;}
+  .dl:hover{background:#ffa040;}
 
   /* ---------- The sheet ---------- */
-  .sheet{
-    width:794px; background:var(--bg); color:var(--text); display:grid; grid-template-columns:276px 1fr;
-    position:relative; overflow:hidden; border-radius:8px; box-shadow:0 30px 80px rgba(0,0,0,.55);
+  .stage{padding:32px 16px 56px;}
+  .sheet{max-width:860px;margin:0 auto;background:var(--paper);border-radius:6px;padding:52px 60px 40px;
+    box-shadow:0 24px 60px rgba(0,0,0,.45);}
+
+  .head{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;}
+  .photo{width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:center top;background:#e9edf0;}
+  h1{font-family:var(--display);font-weight:700;font-size:40px;line-height:1.05;color:var(--ink);}
+  .headline{margin-top:6px;font-size:17px;line-height:1.4;color:var(--soft);}
+  .contact{list-style:none;display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:12px;font-size:14.5px;}
+  .contact li{display:inline-flex;align-items:center;gap:8px;color:var(--soft);}
+  .contact i{color:var(--papaya-ink);font-size:13px;width:14px;text-align:center;}
+  .contact a{text-decoration:none;font-weight:500;}
+  .contact a:hover{text-decoration:underline;}
+
+  /* Signature element: an instrument scale under the header */
+  .scale{height:12px;margin:28px 0 4px;border-bottom:1.5px solid var(--papaya);
+    background:
+      repeating-linear-gradient(90deg,var(--papaya) 0 2px,transparent 2px 60px) left bottom/100% 12px no-repeat,
+      repeating-linear-gradient(90deg,var(--papaya) 0 1px,transparent 1px 12px) left bottom/100% 6px no-repeat;}
+
+  section{margin-top:30px;}
+  h2{font-family:var(--display);font-weight:700;font-size:21px;line-height:1.2;color:var(--ink);
+    padding-bottom:8px;margin-bottom:12px;border-bottom:1px solid var(--rule);}
+  .profile{font-size:16px;line-height:1.65;max-width:70ch;}
+
+  .entry{display:grid;grid-template-columns:var(--axis) 1fr;column-gap:24px;padding:9px 0;}
+  .when{font-size:14px;line-height:1.5;color:var(--soft);padding-top:1px;font-variant-numeric:tabular-nums;}
+  .when span{display:block;}
+  h3{font-size:16px;font-weight:700;line-height:1.4;}
+  h3 a{color:inherit;text-decoration:underline;text-decoration-color:var(--rule);text-decoration-thickness:2px;text-underline-offset:4px;}
+  h3 a:hover{text-decoration-color:var(--teal-ink);}
+  .org{font-size:15px;line-height:1.45;color:var(--soft);margin-top:1px;}
+  .entry ul{list-style:none;margin-top:6px;display:grid;gap:4px;}
+  .entry li{position:relative;padding-left:16px;font-size:15.5px;line-height:1.55;max-width:70ch;}
+  .entry li::before{content:"";position:absolute;left:1px;top:.75em;width:7px;height:2px;background:var(--papaya);}
+
+  .skills{display:grid;grid-template-columns:var(--axis) 1fr;column-gap:24px;row-gap:8px;}
+  .skills dt{font-size:14px;line-height:1.5;color:var(--soft);padding-top:1px;}
+  .skills dd{font-size:15.5px;line-height:1.55;}
+
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;margin-top:36px;padding-top:12px;
+    border-top:1px solid var(--rule);font-size:13.5px;color:var(--soft);}
+
+  /* ---------- Small screens ---------- */
+  @media (max-width:700px){
+    .toolbar{padding:8px 12px;}
+    .stage{padding:16px 10px 40px;}
+    .sheet{padding:28px 20px 24px;border-radius:4px;}
+    .head{grid-template-columns:1fr;gap:14px;}
+    .photo{width:72px;height:72px;}
+    h1{font-size:31px;}
+    .headline{font-size:16px;}
+    .scale{margin-top:22px;}
+    .entry,.skills{grid-template-columns:1fr;}
+    .when span{display:inline;}
+    .when span + span::before{content:", ";}
+    .entry h3{margin-top:2px;}
+    .skills dt{margin-top:6px;}
   }
-  .sheet::before{ content:""; position:absolute; right:-80px; top:-80px; width:320px; height:320px;
-    background:radial-gradient(circle,rgba(255,128,0,.13),transparent 65%); pointer-events:none; }
-
-  .side{ background:var(--side); border-right:1px solid var(--border); padding:34px 26px 40px; }
-  .avatar-wrap{ position:relative; width:150px; height:150px; margin:0 auto 10px; }
-  .avatar{ width:150px; height:150px; border-radius:50%; overflow:hidden;
-    background:radial-gradient(120% 120% at 50% 0%, #1d3a40, #0a1418); border:2px solid var(--teal-deep); box-shadow:0 0 0 6px rgba(10,166,151,.12); }
-  .avatar img{ width:100%; height:100%; object-fit:cover; object-position:center top; }
-  .seal{ position:absolute; right:2px; bottom:2px; width:42px; height:42px; border-radius:50%;
-    background:var(--bg); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; }
-  .seal img{ width:24px; }
-
-  .side-eyebrow{ display:flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:2px;
-    text-transform:uppercase; color:var(--papaya); margin:26px 0 12px; }
-  .side-eyebrow::before{ content:""; width:18px; height:2px; background:var(--papaya); border-radius:2px; }
-
-  .contact{ list-style:none; display:flex; flex-direction:column; gap:11px; }
-  .contact li{ display:flex; gap:11px; align-items:flex-start; font-size:12.5px; line-height:1.4; }
-  .contact i{ color:var(--teal); width:15px; text-align:center; margin-top:2px; flex:0 0 15px; }
-  .contact b{ color:var(--heading); font-weight:500; }
-
-  .skill-group{ margin-bottom:14px; }
-  .skill-group h4{ font-size:12px; font-weight:700; color:var(--heading); margin-bottom:8px; }
-  .pills{ display:flex; flex-wrap:wrap; gap:6px; }
-  .pill{ font-size:10.5px; font-weight:600; padding:4px 9px; border-radius:999px;
-    background:rgba(10,166,151,.10); border:1px solid rgba(10,166,151,.26); color:var(--teal); font-family:var(--mono); }
-  .pill.dark{ background:var(--surface); border-color:var(--border-2); color:var(--text); }
-
-  .lang{ margin-bottom:13px; }
-  .lang-row{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; }
-  .lang-row b{ color:var(--heading); font-size:13px; font-weight:700; }
-  .lang-row span{ color:var(--soft); font-size:10.5px; letter-spacing:.5px; text-transform:uppercase; }
-  .bar{ height:5px; border-radius:5px; background:rgba(255,255,255,.08); overflow:hidden; }
-  .bar i{ display:block; height:100%; background:linear-gradient(90deg,var(--papaya),var(--teal-deep)); border-radius:5px; }
-
-  .interests{ display:flex; flex-wrap:wrap; gap:7px; }
-  .chip-i{ display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:500; color:var(--text);
-    padding:6px 11px; border-radius:999px; background:var(--surface); border:1px solid var(--border); }
-  .chip-i i{ color:var(--papaya); font-size:11px; }
-
-  .main{ padding:34px 36px 40px; position:relative; z-index:1; }
-  .topline{ font-family:var(--mono); font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--soft); margin-bottom:10px; }
-  .topline b{ color:var(--papaya); }
-  h1{ font-family:var(--display); font-weight:800; font-size:46px; line-height:1; color:#fff; letter-spacing:-.5px; }
-  h1 .dot{ color:var(--papaya); }
-  .role{ font-size:15px; font-weight:500; color:var(--teal); margin-top:8px; }
-
-  .echo{ margin:18px 0 4px; line-height:0; }
-  .echo svg{ width:100%; height:20px; display:block; }
-
-  .sec{ margin-top:22px; }
-  .sec-head{ display:flex; align-items:center; gap:10px; margin-bottom:13px; }
-  .sec-num{ font-family:var(--mono); font-size:12px; font-weight:600; color:var(--papaya); }
-  .sec-title{ font-size:14px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--heading); }
-  .sec-rule{ flex:1; height:1px; background:linear-gradient(90deg,var(--border-2),transparent); }
-
-  .profile{ font-size:13px; line-height:1.7; }
-  .profile b{ color:var(--heading); font-weight:700; }
-
-  .item{ display:grid; grid-template-columns:118px 1fr; gap:16px; padding:13px 0; border-bottom:1px solid var(--border); }
-  .item:last-child{ border-bottom:0; }
-  .meta{ font-size:11px; color:var(--soft); line-height:1.6; }
-  .meta .when{ color:var(--heading); font-weight:700; font-size:12px; display:block; margin-bottom:3px; }
-  .badge{ display:inline-block; margin-top:7px; font-family:var(--mono); font-size:9.5px; font-weight:600; letter-spacing:1px; text-transform:uppercase;
-    color:var(--papaya); border:1px solid rgba(255,128,0,.4); border-radius:4px; padding:2px 6px; }
-  .item h3{ font-size:14.5px; color:var(--heading); font-weight:700; line-height:1.2; }
-  .org{ font-size:12px; color:var(--teal); font-weight:600; margin:2px 0 7px; }
-  .bullets{ list-style:none; display:flex; flex-direction:column; gap:5px; }
-  .bullets li{ position:relative; padding-left:15px; font-size:12px; line-height:1.55; }
-  .bullets li::before{ content:""; position:absolute; left:0; top:7px; width:6px; height:2px; background:var(--papaya); border-radius:2px; }
-  .bullets b{ color:var(--heading); font-weight:700; }
-  .tagline{ display:flex; flex-wrap:wrap; gap:5px; margin-top:8px; }
-  .tag{ font-family:var(--mono); font-size:9.5px; color:var(--soft); border:1px solid var(--border); border-radius:4px; padding:2px 7px; }
-
-  .proj-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-  .proj{ display:block; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 15px; color:inherit; text-decoration:none; transition:border-color .2s, transform .2s; }
-  .proj[href]:hover{ border-color:rgba(255,128,0,.5); transform:translateY(-2px); }
-  .proj-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:3px; }
-  .proj h4{ font-size:13.5px; color:var(--heading); font-weight:700; line-height:1.2; }
-  .proj .flag{ font-family:var(--mono); font-size:8.5px; font-weight:600; letter-spacing:.8px; text-transform:uppercase; color:var(--papaya); white-space:nowrap; }
-  .proj .pkick{ font-family:var(--mono); font-size:10px; color:var(--teal); margin-bottom:7px; }
-  .proj p{ font-size:11.5px; line-height:1.55; color:var(--soft); margin-bottom:9px; }
-  .proj .ptags{ font-family:var(--mono); font-size:9.5px; color:var(--teal); }
-
-  .foot{ margin-top:24px; padding-top:14px; border-top:1px dashed var(--border-2); display:flex; justify-content:space-between; gap:10px;
-    font-family:var(--mono); font-size:10px; letter-spacing:1px; color:var(--soft); }
-  .foot b{ color:var(--text); }
-
-  /* ---------- Responsive (screen) ---------- */
-  @media (max-width:833px){
-    .toolbar{ flex-wrap:wrap; gap:10px; padding:10px 14px; }
-    .tb-left span.tb-title{ display:none; }
-    .stage{ padding:16px 10px 40px; }
-    .sheet{ width:100%; max-width:560px; grid-template-columns:1fr; border-radius:10px; }
-    .side{ border-right:0; border-bottom:1px solid var(--border); padding:28px 22px 26px; }
-    .main{ padding:28px 22px 32px; }
-    h1{ font-size:38px; }
-    .item{ grid-template-columns:1fr; gap:6px; }
-    .meta{ display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center; }
-    .meta .when{ margin-bottom:0; }
-    .badge{ margin-top:0; }
-    .proj-grid{ grid-template-columns:1fr; }
-  }
-  @media (max-width:420px){
-    .dl-btn span{ display:none; }
-    .dl-btn{ padding:9px 13px; }
-    h1{ font-size:32px; }
+  @media (max-width:430px){
+    .back span{display:none;}
+    .dl span{display:none;}
+    .dl{padding:9px 14px;}
   }
 
-  /* ---------- Print / PDF ---------- */
-  @page{ size:210mm 980mm; margin:0; }
+  /* ---------- Print ---------- */
+  @page{size:A4;margin:14mm;}
   @media print{
-    body{ background:var(--bg); }
-    .toolbar{ display:none !important; }
-    .stage{ padding:0; }
-    .sheet{ width:794px; grid-template-columns:276px 1fr; border-radius:0; box-shadow:none; }
+    body{background:#fff;}
+    .toolbar{display:none;}
+    .stage{padding:0;}
+    .sheet{max-width:none;padding:0;border-radius:0;box-shadow:none;}
+    .entry{break-inside:avoid;}
+    a{color:inherit;text-decoration:none;}
   }
-  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 </style>
 </head>
 <body>
 
-<div class="toolbar">
-  <div class="tb-left">
-    <img src="../assets/mclaren.png" alt=""><span class="tb-title">Andy Casafranca</span>
-    <a class="tb-back" href="../index.html" id="backLink">← Back to site</a>
-  </div>
-  <div class="tb-right">
-    <div class="lang-switch" role="group" aria-label="Language">
-      <button type="button" data-lang="en" id="btnEn">EN</button>
-      <button type="button" data-lang="es" id="btnEs">ES</button>
+<header class="toolbar">
+  <a class="back" href="../index.html"><img src="../assets/mclaren.png" alt=""><span id="t_back">Back to site</span></a>
+  <div class="tools">
+    <div class="lang" role="group" id="langGroup" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
     </div>
-    <a class="dl-btn" id="downloadBtn" href="cv-en.pdf" download>
-      <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i><span id="dlText">Download</span>
+    <a class="dl" id="dl" href="cv-en.pdf" download>
+      <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i><span id="t_dl">Download PDF</span>
     </a>
   </div>
-</div>
+</header>
 
-<div class="stage">
-  <div class="sheet">
-    <aside class="side">
-      <div class="avatar-wrap">
-        <div class="avatar"><img src="../assets/banner.png" alt="Andy Casafranca"></div>
-        <div class="seal"><img src="../assets/mclaren.png" alt=""></div>
-      </div>
-      <div class="side-eyebrow" id="t_contact">Contact</div>
-      <ul class="contact">
-        <li><i class="fa-solid fa-location-dot"></i><span>Lima, Perú · <b>UTC−5 (PET)</b></span></li>
-        <li><i class="fa-solid fa-envelope"></i><span>andycasafranca@hotmail.com</span></li>
-        <li><i class="fa-solid fa-globe"></i><span>andyrcc.github.io</span></li>
-        <li><i class="fa-brands fa-linkedin-in"></i><span>linkedin.com/in/andy-ricardo-<br>casafranca-carrascal-215982115</span></li>
-        <li><i class="fa-brands fa-github"></i><span>github.com/AndyRCC</span></li>
-        <li><i class="fa-brands fa-youtube"></i><span>youtube.com/@Andy_Casafranca</span></li>
-      </ul>
-      <div class="side-eyebrow" id="t_skills">Technical Skills</div>
-      <div id="skillsMount"></div>
-      <div class="side-eyebrow" id="t_langs">Languages</div>
-      <div id="langsMount"></div>
-      <div class="side-eyebrow" id="t_interests">Interests</div>
-      <div class="interests" id="interestsMount"></div>
-    </aside>
-
-    <main class="main">
-      <div class="topline" id="topline">Curriculum Vitae · <b>2026</b></div>
-      <h1>Andy Casafranca<span class="dot">.</span></h1>
-      <div class="role" id="role"></div>
-      <div class="echo" aria-hidden="true">
-        <svg viewBox="0 0 700 20" preserveAspectRatio="none" fill="none">
-          <defs><linearGradient id="g" x1="0" y1="0" x2="700" y2="0" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#ff8000"/><stop offset="0.5" stop-color="#0aa697"/><stop offset="1" stop-color="#ff8000"/>
-          </linearGradient></defs>
-          <path d="M0 14 Q 35 2 70 14 T 140 14 T 210 14 T 280 14 T 350 14 T 420 14 T 490 14 T 560 14 T 630 14 T 700 14" stroke="url(#g)" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </div>
-
-      <section class="sec">
-        <div class="sec-head"><span class="sec-num">01</span><span class="sec-title" id="t_profile">Profile</span><span class="sec-rule"></span></div>
-        <p class="profile" id="profile"></p>
-      </section>
-
-      <section class="sec">
-        <div class="sec-head"><span class="sec-num">02</span><span class="sec-title" id="t_experience">Experience</span><span class="sec-rule"></span></div>
-        <div id="expMount"></div>
-      </section>
-
-      <section class="sec">
-        <div class="sec-head"><span class="sec-num">03</span><span class="sec-title" id="t_projects">Selected Projects</span><span class="sec-rule"></span></div>
-        <div class="proj-grid" id="projMount"></div>
-      </section>
-
-      <section class="sec">
-        <div class="sec-head"><span class="sec-num">04</span><span class="sec-title" id="t_education">Education</span><span class="sec-rule"></span></div>
-        <div id="eduMount"></div>
-      </section>
-
-      <div class="foot"><span><b>Andy Casafranca</b> · <span id="f_cv">Curriculum Vitae</span></span><span id="f_upd">Last updated · October 2026</span></div>
-    </main>
-  </div>
-</div>
+<main class="stage">
+  <article class="sheet" id="cv" aria-live="polite"></article>
+</main>
 
 <script>
 (function(){
   "use strict";
 
+  var CONTACT = {
+    email:"andycasafranca@hotmail.com",
+    linkedin:"https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115/",
+    github:"https://github.com/AndyRCC"
+  };
+
   var DATA = {
     en: {
-      ui:{ download:"Download", back:"← Back to site", contact:"Contact", skills:"Technical Skills",
-           langs:"Languages", interests:"Interests", profile:"Profile", experience:"Experience",
-           projects:"Selected Projects", education:"Education & Courses", topline:'Curriculum Vitae · <b>2026</b>',
-           cv:"Curriculum Vitae", updated:"Last updated · October 2026",
-           role:"Mechatronics Engineering Graduate · Instrumentation, Control & Automation" },
-      profile:"Mechatronics Engineering graduate (Bachelor's degree, UPC), ranked in the <b>top 10%</b> of my class. Field experience validating flowmeters with <b>clamp-on ultrasonic meters</b> at EMAPICA wells and reservoirs. <b>Lead author</b> of a paper under review at <b>IEEE Access</b> on detecting illegal water connections with machine learning. I combine instrumentation, <b>Siemens S7-1200 PLCs</b>, embedded systems and signal processing, with advanced English (C1).",
-      skillGroups:[
-        { h:"Control · Automation", soft:false, items:["Siemens S7-1200","TIA Portal","PID","Control systems","Robotics"] },
-        { h:"Instrumentation", soft:true, items:["Clamp-on ultrasonic","Flow measurement","Analog front-end","Signal acquisition"] },
-        { h:"Embedded · Hardware", soft:true, items:["STM32","ESP32","Arduino","RTOS","PWM","I²C","UART","PCB design","QMK"] },
-        { h:"AI · Signals", soft:false, items:["PyTorch","TensorFlow","OpenCV","DSP","FFT","EEG/EMG"] },
-        { h:"Programming", soft:false, items:["Python","C","C++","C#","JavaScript","ASM","MATLAB"] },
-        { h:"Data · Tools", soft:true, items:["Power BI","Excel","Git","Linux","Docker"] },
-        { h:"CAD", soft:true, items:["SolidWorks","Fusion 360","KiCad"] },
-        { h:"Frontend", soft:true, items:["React","WebSockets","HTML/CSS","Figma"] },
-        { h:"Security", soft:true, items:["Burp Suite","Nmap","Wireshark","Metasploit"] }
+      ui:{ back:"Back to site", dl:"Download PDF", lang:"Language", title:"Andy Casafranca — CV",
+           updated:"Updated October 2026", skills:"Skills", photo:"Photo of Andy Casafranca" },
+      headline:"Mechatronics Engineering graduate focused on instrumentation, control and automation",
+      location:"Lima, Peru",
+      profileTitle:"Profile",
+      profile:"Mechatronics Engineering graduate from UPC, ranked in the top 10% of my class. I have field experience in instrumentation and I am the lead author of a paper under review at IEEE Access on detecting illegal water connections with machine learning. I combine Siemens S7-1200 PLCs, embedded systems and signal processing with advanced English (C1).",
+      sections:[
+        { title:"Engineering experience", entries:[
+          { when:["Sep 2026","Ica, Peru"], title:"Instrumentation Engineer", org:"LabProjects, for EMAPICA",
+            bullets:[ "Validated flow at EMAPICA wells and reservoirs using clamp-on ultrasonic flowmeters as the reference.",
+                      "Adjusted the correction factors of installed meters to ensure accurate field data." ] }
+        ]},
+        { title:"Research and projects", entries:[
+          { when:["In progress"], title:"HydraDetect-AI", url:"https://andyrcc.github.io/HydraDetect-AI/",
+            org:"Detection of illegal drinking-water connections",
+            bullets:[ "Portable system that detects illegal connections from pressure transients (water hammer) with machine learning: 89% field accuracy with offline on-device inference.",
+                      "Built the full pipeline: sensor acquisition, feature extraction (FFT, Welch PSD, wavelets), classification and a Python desktop app for field use.",
+                      "Lead author of the resulting paper, under review at IEEE Access." ] },
+          { when:["2023 – 2024","UPC"], title:"EEG/EMG signal acquisition and classification", org:"Academic project",
+            bullets:[ "Designed the analog front-end of an EEG/EMG headset and its STM32 firmware for real-time capture.",
+                      "Developed a Python pipeline (NumPy, SciPy) reaching 87% accuracy in motor-imagery classification (8 channels)." ] },
+          { when:["2022 – 2023"], title:"ESP32 IoT projects", org:"Academic and personal projects",
+            bullets:[ "Built 3 end-to-end IoT projects (hardware, firmware and dashboards), including a smart-greenhouse mesh network and a water-quality monitor.",
+                      "Wrote ESP32 firmware in C/C++ with mesh networking and OTA updates, feeding React dashboards over WebSocket." ] },
+          { when:["2017"], title:"1st place, MINSA National Health Hackathon",
+            url:"https://facultad-ciencias-ingenieria.pucp.edu.pe/2017/10/20/estudiantes-de-ingenieria-biomedica-obtienen-primer-puesto-en-hackaton-minsa-2017-2/",
+            org:"Video-game-based depression screening app, with team Vincere", bullets:[] }
+        ]},
+        { title:"Additional experience", entries:[
+          { when:["Feb – Jun 2025","Remote"], title:"Bilingual Agent (English/Spanish)", org:"TP (Teleperformance), U.S. last-mile delivery account",
+            bullets:[ "Supported drivers with orders, routes and payments via chat and phone, meeting strict response-time and quality targets." ] },
+          { when:["Feb – Aug 2023","Lima"], title:"Provider Service Representative", org:"Teleperformance, Centene Corporation account",
+            bullets:[ "Advised U.S. healthcare providers in English on claims, eligibility and benefits.",
+                      "Built an internal web tool used by my team." ] }
+        ]},
+        { title:"Education", entries:[
+          { when:["2019 – 2026","Lima"], title:"Bachelor's Degree in Mechatronics Engineering", org:"Universidad Peruana de Ciencias Aplicadas (UPC)",
+            bullets:[ "Top 10% of my class (Décimo Superior). Professional engineering title in progress.",
+                      "Coursework: Control Systems, Digital Signal Processing, Microprocessors, Robotics, Machine Learning." ] },
+          { when:["2019 – 2023","Lima"], title:"Interpretation and Translation (English)", org:"ICPNA", bullets:[] }
+        ]},
+        { title:"Certifications and courses", entries:[
+          { when:["Oct 2024","Spain"], title:"Applied Engineering for Mobile and Industrial Robotics", org:"Universidad de Alcalá, international academic mission (10 h)", bullets:[] },
+          { when:[], title:"IBM Cybersecurity Analyst Specialization", org:"IBM", bullets:[] },
+          { when:["2024"], title:"Practical Ethical Hacking & Network Security", org:"TCM Security and TryHackMe", bullets:[] }
+        ]}
       ],
-      languages:[ {name:"Spanish", level:"Native", pct:100}, {name:"English", level:"Professional · C1", pct:82} ],
-      interests:[ {i:"fa-flag-checkered",t:"Formula 1"},{i:"fa-road",t:"Road trips"},{i:"fa-water",t:"Ocean"},{i:"fa-gamepad",t:"Gaming"},{i:"fa-camera",t:"Photography"} ],
-      experience:[
-        { when:"Sep 2026", where:"Ica, Perú", badge:"Field",
-          title:"Instrumentation Engineer", org:"LabProjects · EMAPICA wells & reservoirs",
-          bullets:[ "Validated flow at EMAPICA wells and reservoirs using <b>clamp-on ultrasonic flowmeters</b> as the reference.",
-            "Adjusted the correction factors of installed meters to ensure accurate field data." ],
-          tags:["Flow measurement","Ultrasonic clamp-on","Calibration","Field work"] },
-        { when:"Feb 2025 — Jun 2025", where:"Lima, Perú", badge:"Remote",
-          title:"Bilingual Customer Support Agent", org:"TP (Teleperformance) · U.S. last-mile delivery platform",
-          bullets:[ "Supported delivery drivers for a leading U.S. last-mile delivery platform, resolving order, routing, and payment issues in real time over chat and phone.",
-            "Handled a high volume of bilingual (English/Spanish) interactions while consistently meeting strict response-time and quality targets.",
-            "De-escalated time-sensitive incidents and coordinated fast resolutions to keep deliveries on track." ],
-          tags:["EN / ES","Real-time support","Logistics","CRM tooling"] },
-        { when:"Feb 2023 — Aug 2023", where:"Lima, Perú", badge:"On-site",
-          title:"Provider Service Representative", org:"Teleperformance · Centene Corporation account",
-          bullets:[ "Assisted U.S. healthcare providers with claims, eligibility, and benefits inquiries under strict regulatory protocols.",
-            "Delivered accurate bilingual (English/Spanish) support in a regulated, high-volume on-site call-center environment.",
-            "Built an <b>internal web tool</b> used by my team." ],
-          tags:["EN / ES","Healthcare","Regulated environment","Claims & eligibility"] }
-      ],
-      projects:[
-        { title:"HydraDetect-AI", flag:"In review", kicker:"Illegal water-connection detection",
-          desc:"Detects clandestine water connections in city pipes using a controlled water hammer and machine learning — 89% field accuracy on an offline Arduino edge device. Lead author of the paper, under review at IEEE Access.",
-          tags:"Python · Signal processing · Machine Learning · Edge AI", url:"https://andyrcc.github.io/HydraDetect-AI/" },
-        { title:"EEG/EMG Acquisition", flag:"Academic", kicker:"UPC · 2023 — 2024",
-          desc:"Custom analog front-end and STM32 firmware for real-time EEG/EMG capture, plus a Python pipeline (NumPy, SciPy) reaching 87% motor-imagery classification accuracy across 8 channels.",
-          tags:"STM32 · Analog design · Python · SciPy", url:"" },
-        { title:"ESP32 IoT Projects", flag:"", kicker:"Academic & personal · 2022 — 2023",
-          desc:"Three end-to-end IoT builds — hardware, firmware and dashboards — including a smart-greenhouse mesh and a water-quality monitor, with OTA updates and React dashboards over WebSocket.",
-          tags:"ESP32 · C/C++ · MQTT · React", url:"" },
-        { title:"Hackatón MINSA 2017", flag:"1st place", kicker:"Ministry of Health · Team Vincere",
-          desc:"Part of the 10-student team “Vincere” that won first place at Peru's national MINSA health hackathon, building a video-game-based app for preliminary depression screening.",
-          tags:"Healthtech · Mental health · Game-based screening", url:"https://facultad-ciencias-ingenieria.pucp.edu.pe/2017/10/20/estudiantes-de-ingenieria-biomedica-obtienen-primer-puesto-en-hackaton-minsa-2017-2/" }
-      ],
-      education:[
-        { when:"2019 — 2026", where:"Lima, Perú", badge:"Bachelor",
-          title:"Bachelor's Degree in Mechatronics Engineering", org:"Universidad Peruana de Ciencias Aplicadas (UPC)",
-          bullets:[ "<b>Top 10%</b> of my class (Décimo Superior). Professional engineering title in progress.",
-            "Focus areas: <b>control systems, instrumentation, embedded firmware, and applied AI</b>.",
-            "Selected coursework: Digital Signal Processing · Control Systems · Microprocessors · Robotics · Machine Learning · Bioengineering." ] },
-        { when:"Oct 2024", where:"Alcalá de Henares, Spain", badge:"Course",
-          title:"Applied Engineering for Mobile & Industrial Robotics", org:"Universidad de Alcalá · International Academic Mission",
-          bullets:[ "10-hour on-site course taught by the university's Department of Electronics." ] },
-        { when:"2019 — 2023", where:"Lima, Perú", badge:"English",
-          title:"Interpretation and Translation (English)", org:"ICPNA",
-          bullets:[] },
-        { when:"Online", where:"", badge:"Cert.",
-          title:"IBM Cybersecurity Analyst Specialization", org:"IBM",
-          bullets:[] },
-        { when:"2024", where:"Online", badge:"Cert.",
-          title:"Practical Ethical Hacking & Network Security", org:"Self-directed · TCM Security · TryHackMe",
-          bullets:[ "Hands-on penetration-testing labs covering OWASP Top-10 and active-directory exploitation paths." ] }
+      skillRows:[
+        ["Instrumentation","Clamp-on ultrasonic flowmeters, correction factors, analog front-end design"],
+        ["Control and automation","Siemens S7-1200 PLC (TIA Portal), PID, control systems, industrial and mobile robotics"],
+        ["Embedded systems","STM32, ESP32, Arduino, RTOS, I²C, UART, PWM, PCB design"],
+        ["Programming and data","Python (NumPy, SciPy, PyTorch, TensorFlow, OpenCV), C/C++, MATLAB, Power BI, Excel"],
+        ["Design and tools","SolidWorks, Fusion 360, KiCad, Git, Linux, Docker"],
+        ["Languages","Spanish (native), English (advanced, C1)"]
       ]
     },
     es: {
-      ui:{ download:"Descargar", back:"← Volver al sitio", contact:"Contacto", skills:"Habilidades Técnicas",
-           langs:"Idiomas", interests:"Intereses", profile:"Perfil", experience:"Experiencia",
-           projects:"Proyectos Destacados", education:"Educación y Cursos", topline:'Currículum Vitae · <b>2026</b>',
-           cv:"Currículum Vitae", updated:"Última actualización · Octubre 2026",
-           role:"Bachiller en Ingeniería Mecatrónica · Instrumentación, Control y Automatización" },
-      profile:"Bachiller en Ingeniería Mecatrónica por la UPC, <b>Décimo Superior</b> de mi promoción. Experiencia de campo validando caudalímetros con <b>medidores ultrasónicos clamp-on</b> en pozos y reservorios de EMAPICA. <b>Autor principal</b> de un artículo en revisión en <b>IEEE Access</b> sobre detección de conexiones clandestinas de agua con machine learning. Combino instrumentación, <b>PLC Siemens S7-1200</b>, sistemas embebidos y procesamiento de señales, con inglés avanzado (C1).",
-      skillGroups:[
-        { h:"Control · Automatización", soft:false, items:["Siemens S7-1200","TIA Portal","PID","Sistemas de control","Robótica"] },
-        { h:"Instrumentación", soft:true, items:["Ultrasónico clamp-on","Medición de caudal","Front-end analógico","Adquisición de señales"] },
-        { h:"Embebidos · Hardware", soft:true, items:["STM32","ESP32","Arduino","RTOS","PWM","I²C","UART","Diseño PCB","QMK"] },
-        { h:"IA · Señales", soft:false, items:["PyTorch","TensorFlow","OpenCV","DSP","FFT","EEG/EMG"] },
-        { h:"Programación", soft:false, items:["Python","C","C++","C#","JavaScript","ASM","MATLAB"] },
-        { h:"Datos · Herramientas", soft:true, items:["Power BI","Excel","Git","Linux","Docker"] },
-        { h:"CAD", soft:true, items:["SolidWorks","Fusion 360","KiCad"] },
-        { h:"Frontend", soft:true, items:["React","WebSockets","HTML/CSS","Figma"] },
-        { h:"Seguridad", soft:true, items:["Burp Suite","Nmap","Wireshark","Metasploit"] }
+      ui:{ back:"Volver al sitio", dl:"Descargar PDF", lang:"Idioma", title:"Andy Casafranca — CV",
+           updated:"Actualizado en octubre de 2026", skills:"Habilidades", photo:"Foto de Andy Casafranca" },
+      headline:"Bachiller en Ingeniería Mecatrónica enfocado en instrumentación, control y automatización",
+      location:"Lima, Perú",
+      profileTitle:"Perfil",
+      profile:"Bachiller en Ingeniería Mecatrónica por la UPC y Décimo Superior de mi promoción. Tengo experiencia de campo en instrumentación y soy autor principal de un artículo en revisión en IEEE Access sobre detección de conexiones clandestinas de agua con machine learning. Combino PLC Siemens S7-1200, sistemas embebidos y procesamiento de señales con inglés avanzado (C1).",
+      sections:[
+        { title:"Experiencia en ingeniería", entries:[
+          { when:["sep 2026","Ica, Perú"], title:"Ingeniero de Instrumentación", org:"LabProjects, para EMAPICA",
+            bullets:[ "Validé el caudal en pozos y reservorios de EMAPICA usando caudalímetros ultrasónicos clamp-on como referencia.",
+                      "Ajusté los factores de corrección de los medidores instalados para asegurar la exactitud de los datos de campo." ] }
+        ]},
+        { title:"Investigación y proyectos", entries:[
+          { when:["En curso"], title:"HydraDetect-AI", url:"https://andyrcc.github.io/HydraDetect-AI/",
+            org:"Detección de conexiones clandestinas de agua potable",
+            bullets:[ "Sistema portátil que detecta conexiones ilegales analizando transitorios de presión (golpe de ariete) con machine learning: 89 % de precisión en campo, con inferencia offline en el dispositivo.",
+                      "Desarrollé el pipeline completo: adquisición con sensores, extracción de características (FFT, PSD de Welch, wavelets), clasificación y aplicación de escritorio en Python para operar en campo.",
+                      "Autor principal del artículo derivado, en revisión en IEEE Access." ] },
+          { when:["2023 – 2024","UPC"], title:"Adquisición y clasificación de señales EEG/EMG", org:"Proyecto académico",
+            bullets:[ "Diseñé el front-end analógico de un casco EEG/EMG y su firmware en STM32 para captura en tiempo real.",
+                      "Desarrollé un pipeline en Python (NumPy, SciPy) con 87 % de precisión al clasificar imaginería motora (8 canales)." ] },
+          { when:["2022 – 2023"], title:"Proyectos IoT con ESP32", org:"Proyectos académicos y personales",
+            bullets:[ "Desarrollé 3 proyectos IoT completos (hardware, firmware y dashboards), entre ellos un invernadero inteligente en red mesh y un monitor de calidad de agua.",
+                      "Programé firmware en C/C++ para ESP32 con red mesh y actualizaciones OTA, con dashboards en React vía WebSocket." ] },
+          { when:["2017"], title:"1.er puesto en la Hackatón Nacional MINSA",
+            url:"https://facultad-ciencias-ingenieria.pucp.edu.pe/2017/10/20/estudiantes-de-ingenieria-biomedica-obtienen-primer-puesto-en-hackaton-minsa-2017-2/",
+            org:"App de tamizaje de depresión basada en videojuego, con el equipo Vincere", bullets:[] }
+        ]},
+        { title:"Experiencia adicional", entries:[
+          { when:["feb – jun 2025","Remoto"], title:"Agente Bilingüe (inglés/español)", org:"TP (Teleperformance), cuenta de una plataforma de entregas de EE. UU.",
+            bullets:[ "Atendí a conductores por chat y teléfono (pedidos, rutas y pagos), cumpliendo metas estrictas de tiempo de respuesta y calidad." ] },
+          { when:["feb – ago 2023","Lima"], title:"Provider Service Representative", org:"Teleperformance, cuenta Centene Corporation",
+            bullets:[ "Orienté en inglés a proveedores de salud de EE. UU. sobre reclamos, elegibilidad y beneficios.",
+                      "Desarrollé una herramienta web interna que usó mi equipo." ] }
+        ]},
+        { title:"Educación", entries:[
+          { when:["2019 – 2026","Lima"], title:"Bachiller en Ingeniería Mecatrónica", org:"Universidad Peruana de Ciencias Aplicadas (UPC)",
+            bullets:[ "Décimo Superior de la promoción. Titulación en curso.",
+                      "Cursos: Sistemas de Control, Procesamiento Digital de Señales, Microprocesadores, Robótica, Machine Learning." ] },
+          { when:["2019 – 2023","Lima"], title:"Interpretación y Traducción (inglés)", org:"ICPNA", bullets:[] }
+        ]},
+        { title:"Certificaciones y cursos", entries:[
+          { when:["oct 2024","España"], title:"Ingeniería Aplicada a Robótica Móvil e Industrial", org:"Universidad de Alcalá, misión académica internacional (10 h)", bullets:[] },
+          { when:[], title:"IBM Cybersecurity Analyst Specialization", org:"IBM", bullets:[] },
+          { when:["2024"], title:"Practical Ethical Hacking & Network Security", org:"TCM Security y TryHackMe", bullets:[] }
+        ]}
       ],
-      languages:[ {name:"Español", level:"Nativo", pct:100}, {name:"Inglés", level:"Profesional · C1", pct:82} ],
-      interests:[ {i:"fa-flag-checkered",t:"Fórmula 1"},{i:"fa-road",t:"Viajes"},{i:"fa-water",t:"El mar"},{i:"fa-gamepad",t:"Videojuegos"},{i:"fa-camera",t:"Fotografía"} ],
-      experience:[
-        { when:"Sep 2026", where:"Ica, Perú", badge:"Campo",
-          title:"Ingeniero de Instrumentación", org:"LabProjects · Pozos y reservorios de EMAPICA",
-          bullets:[ "Validé el caudal en pozos y reservorios de EMAPICA usando <b>caudalímetros ultrasónicos clamp-on</b> como referencia.",
-            "Ajusté los factores de corrección de los medidores instalados para asegurar la exactitud de los datos de campo." ],
-          tags:["Medición de caudal","Ultrasónico clamp-on","Calibración","Trabajo de campo"] },
-        { when:"Feb 2025 — Jun 2025", where:"Lima, Perú", badge:"Remoto",
-          title:"Agente de Soporte al Cliente Bilingüe", org:"TP (Teleperformance) · Plataforma de delivery de última milla (EE. UU.)",
-          bullets:[ "Brindé soporte a repartidores de una importante plataforma de delivery de última milla en EE. UU., resolviendo problemas de pedidos, rutas y pagos en tiempo real por chat y teléfono.",
-            "Atendí un alto volumen de interacciones bilingües (inglés/español) cumpliendo de forma constante estrictas metas de tiempo de respuesta y calidad.",
-            "Desescalé incidentes urgentes y coordiné soluciones rápidas para mantener las entregas en curso." ],
-          tags:["EN / ES","Soporte en tiempo real","Logística","Herramientas CRM"] },
-        { when:"Feb 2023 — Ago 2023", where:"Lima, Perú", badge:"Presencial",
-          title:"Provider Service Representative", org:"Teleperformance · Cuenta Centene Corporation",
-          bullets:[ "Asistí a proveedores de salud de EE. UU. con consultas de reclamos, elegibilidad y beneficios, bajo estrictos protocolos regulatorios.",
-            "Brindé soporte bilingüe (inglés/español) preciso en un entorno de call center presencial, regulado y de alto volumen.",
-            "Desarrollé una <b>herramienta web interna</b> que usó mi equipo." ],
-          tags:["EN / ES","Salud","Entorno regulado","Reclamos y elegibilidad"] }
-      ],
-      projects:[
-        { title:"HydraDetect-AI", flag:"En revisión", kicker:"Detección de tomas clandestinas de agua",
-          desc:"Detecta conexiones clandestinas de agua en tuberías mediante un golpe de ariete controlado y machine learning — 89% de precisión en campo, en un dispositivo Arduino edge sin conexión. Autor principal del artículo, en revisión en IEEE Access.",
-          tags:"Python · Procesamiento de señales · Machine Learning · Edge AI", url:"https://andyrcc.github.io/HydraDetect-AI/" },
-        { title:"Adquisición EEG/EMG", flag:"Académico", kicker:"UPC · 2023 — 2024",
-          desc:"Front-end analógico a medida y firmware en STM32 para captura de señales EEG/EMG en tiempo real, con un pipeline en Python (NumPy, SciPy) que alcanzó 87% de precisión en imaginería motora en 8 canales.",
-          tags:"STM32 · Diseño analógico · Python · SciPy", url:"" },
-        { title:"Proyectos IoT con ESP32", flag:"", kicker:"Académicos y personales · 2022 — 2023",
-          desc:"Tres proyectos IoT completos — hardware, firmware y dashboards — incluyendo una malla de invernadero inteligente y un monitor de calidad de agua, con actualizaciones OTA y dashboards en React sobre WebSocket.",
-          tags:"ESP32 · C/C++ · MQTT · React", url:"" },
-        { title:"Hackatón MINSA 2017", flag:"1er puesto", kicker:"Ministerio de Salud · Equipo Vincere",
-          desc:"Parte del equipo de 10 estudiantes “Vincere” que obtuvo el primer puesto en la hackatón nacional de salud del MINSA, desarrollando una app tipo videojuego para el tamizaje preliminar de depresión.",
-          tags:"Healthtech · Salud mental · Tamizaje lúdico", url:"https://facultad-ciencias-ingenieria.pucp.edu.pe/2017/10/20/estudiantes-de-ingenieria-biomedica-obtienen-primer-puesto-en-hackaton-minsa-2017-2/" }
-      ],
-      education:[
-        { when:"2019 — 2026", where:"Lima, Perú", badge:"Bachiller",
-          title:"Bachiller en Ingeniería Mecatrónica", org:"Universidad Peruana de Ciencias Aplicadas (UPC)",
-          bullets:[ "<b>Décimo Superior</b> de la promoción. Titulación en curso.",
-            "Áreas de enfoque: <b>sistemas de control, instrumentación, firmware embebido e IA aplicada</b>.",
-            "Cursos seleccionados: Procesamiento Digital de Señales · Sistemas de Control · Microprocesadores · Robótica · Machine Learning · Bioingeniería." ] },
-        { when:"Oct 2024", where:"Alcalá de Henares, España", badge:"Curso",
-          title:"Ingeniería Aplicada a Robótica Móvil e Industrial", org:"Universidad de Alcalá · Misión Académica Internacional",
-          bullets:[ "Curso presencial de 10 horas impartido por el Departamento de Electrónica de la universidad." ] },
-        { when:"2019 — 2023", where:"Lima, Perú", badge:"Inglés",
-          title:"Interpretación y Traducción (inglés)", org:"ICPNA",
-          bullets:[] },
-        { when:"En línea", where:"", badge:"Cert.",
-          title:"IBM Cybersecurity Analyst Specialization", org:"IBM",
-          bullets:[] },
-        { when:"2024", where:"En línea", badge:"Cert.",
-          title:"Hacking Ético y Seguridad de Redes (Práctico)", org:"Autodidacta · TCM Security · TryHackMe",
-          bullets:[ "Laboratorios prácticos de pruebas de penetración cubriendo OWASP Top-10 y rutas de explotación de Active Directory." ] }
+      skillRows:[
+        ["Instrumentación","Caudalímetros ultrasónicos clamp-on, factores de corrección, front-end analógico"],
+        ["Control y automatización","PLC Siemens S7-1200 (TIA Portal), PID, sistemas de control, robótica industrial y móvil"],
+        ["Sistemas embebidos","STM32, ESP32, Arduino, RTOS, I²C, UART, PWM, diseño de PCB"],
+        ["Programación y datos","Python (NumPy, SciPy, PyTorch, TensorFlow, OpenCV), C/C++, MATLAB, Power BI, Excel"],
+        ["Diseño y herramientas","SolidWorks, Fusion 360, KiCad, Git, Linux, Docker"],
+        ["Idiomas","Español nativo, inglés avanzado (C1)"]
       ]
     }
   };
 
-  function esc(s){ return s; }
-  function itemHTML(it){
-    var bullets = it.bullets.map(function(b){ return '<li>'+b+'</li>'; }).join('');
-    var tags = (it.tags||[]).map(function(t){ return '<span class="tag">'+t+'</span>'; }).join('');
-    return '<div class="item">'+
-      '<div class="meta"><span class="when">'+it.when+'</span>'+it.where+'<span class="badge">'+it.badge+'</span></div>'+
-      '<div><h3>'+it.title+'</h3><div class="org">'+it.org+'</div>'+
-      '<ul class="bullets">'+bullets+'</ul>'+
-      (tags?'<div class="tagline">'+tags+'</div>':'')+'</div></div>';
+  function entryHTML(e){
+    var title = e.url ? '<a href="'+e.url+'" target="_blank" rel="noopener">'+e.title+'</a>' : e.title;
+    var bullets = e.bullets.length ? '<ul>'+e.bullets.map(function(b){ return '<li>'+b+'</li>'; }).join('')+'</ul>' : '';
+    return '<div class="entry">'+
+      '<div class="when">'+e.when.map(function(w){ return '<span>'+w+'</span>'; }).join('')+'</div>'+
+      '<div><h3>'+title+'</h3><p class="org">'+e.org+'</p>'+bullets+'</div></div>';
   }
 
   function render(lang){
     var d = DATA[lang], u = d.ui;
     document.documentElement.lang = lang;
-    // titles
-    document.getElementById('t_contact').textContent = u.contact;
-    document.getElementById('t_skills').textContent = u.skills;
-    document.getElementById('t_langs').textContent = u.langs;
-    document.getElementById('t_interests').textContent = u.interests;
-    document.getElementById('t_profile').textContent = u.profile;
-    document.getElementById('t_experience').textContent = u.experience;
-    document.getElementById('t_projects').textContent = u.projects;
-    document.getElementById('t_education').textContent = u.education;
-    document.getElementById('topline').innerHTML = u.topline;
-    document.getElementById('role').textContent = u.role;
-    document.getElementById('profile').innerHTML = d.profile;
-    document.getElementById('f_cv').textContent = u.cv;
-    document.getElementById('f_upd').textContent = u.updated;
-    document.getElementById('dlText').textContent = u.download;
-    document.getElementById('backLink').textContent = u.back;
+    document.title = u.title;
+    document.getElementById('t_back').textContent = u.back;
+    document.getElementById('t_dl').textContent = u.dl;
+    // on small screens only the icons show, so keep an accessible name on both links
+    document.querySelector('.back').setAttribute('aria-label', u.back);
+    document.getElementById('dl').setAttribute('aria-label', u.dl);
+    document.getElementById('langGroup').setAttribute('aria-label', u.lang);
 
-    // skills
-    document.getElementById('skillsMount').innerHTML = d.skillGroups.map(function(g){
-      var pills = g.items.map(function(it){ return '<span class="pill'+(g.soft?' dark':'')+'">'+it+'</span>'; }).join('');
-      return '<div class="skill-group"><h4>'+g.h+'</h4><div class="pills">'+pills+'</div></div>';
-    }).join('');
-    // languages
-    document.getElementById('langsMount').innerHTML = d.languages.map(function(l){
-      return '<div class="lang"><div class="lang-row"><b>'+l.name+'</b><span>'+l.level+'</span></div>'+
-             '<div class="bar"><i style="width:'+l.pct+'%"></i></div></div>';
-    }).join('');
-    // interests
-    document.getElementById('interestsMount').innerHTML = d.interests.map(function(x){
-      return '<span class="chip-i"><i class="fa-solid '+x.i+'"></i>'+x.t+'</span>';
-    }).join('');
-    // experience / education
-    document.getElementById('expMount').innerHTML = d.experience.map(itemHTML).join('');
-    document.getElementById('eduMount').innerHTML = d.education.map(itemHTML).join('');
-    // projects
-    document.getElementById('projMount').innerHTML = d.projects.map(function(p){
-      var flag = p.flag ? '<span class="flag">'+p.flag+'</span>' : '';
-      var open = p.url ? ' href="'+p.url+'" target="_blank" rel="noopener"' : '';
-      return '<a class="proj"'+open+'>'+
-        '<div class="proj-top"><h4>'+p.title+'</h4>'+flag+'</div>'+
-        '<div class="pkick">'+p.kicker+'</div>'+
-        '<p>'+p.desc+'</p>'+
-        '<div class="ptags">'+p.tags+'</div></a>';
-    }).join('');
+    var html =
+      '<header class="head">'+
+        '<img class="photo" src="../assets/banner.png" alt="'+u.photo+'" width="88" height="88">'+
+        '<div><h1>Andy Ricardo Casafranca Carrascal</h1>'+
+          '<p class="headline">'+d.headline+'</p>'+
+          '<ul class="contact">'+
+            '<li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>'+d.location+'</li>'+
+            '<li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:'+CONTACT.email+'">'+CONTACT.email+'</a></li>'+
+            '<li><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><a href="'+CONTACT.linkedin+'" target="_blank" rel="noopener">LinkedIn</a></li>'+
+            '<li><i class="fa-brands fa-github" aria-hidden="true"></i><a href="'+CONTACT.github+'" target="_blank" rel="noopener">GitHub</a></li>'+
+          '</ul></div>'+
+      '</header>'+
+      '<div class="scale" aria-hidden="true"></div>'+
+      '<section><h2>'+d.profileTitle+'</h2><p class="profile">'+d.profile+'</p></section>';
 
-    // toolbar state
-    document.getElementById('btnEn').classList.toggle('active', lang==='en');
-    document.getElementById('btnEs').classList.toggle('active', lang==='es');
-    var dl = document.getElementById('downloadBtn');
+    d.sections.forEach(function(s){
+      html += '<section><h2>'+s.title+'</h2>'+s.entries.map(entryHTML).join('')+'</section>';
+    });
+
+    html += '<section><h2>'+u.skills+'</h2><dl class="skills">'+
+      d.skillRows.map(function(r){ return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>'; }).join('')+'</dl></section>'+
+      '<footer class="foot"><span>Andy Ricardo Casafranca Carrascal</span><span>'+u.updated+'</span></footer>';
+
+    document.getElementById('cv').innerHTML = html;
+
+    Array.prototype.forEach.call(document.querySelectorAll('.lang button'), function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+    });
+    var dl = document.getElementById('dl');
     dl.setAttribute('href', 'cv-'+lang+'.pdf');
     dl.setAttribute('download', 'Andy-Casafranca-CV-'+lang.toUpperCase()+'.pdf');
     try { localStorage.setItem('cvLang', lang); } catch(e){}
-    setPageSize();
-  }
-
-  // Auto-size the printed/exported page to the rendered sheet (so each language
-  // produces a tight single-page PDF). Only meaningful at desktop width / print.
-  function setPageSize(){
-    var sheet = document.querySelector('.sheet');
-    if (!sheet || window.innerWidth < 834) return;
-    if (new URLSearchParams(location.search).get('fixed')) return; /* PDF build trims instead */
-    var mm = Math.ceil(sheet.offsetHeight / 96 * 25.4) + 12;
-    var st = document.getElementById('pagestyle');
-    if (!st){ st = document.createElement('style'); st.id = 'pagestyle'; document.head.appendChild(st); }
-    st.textContent = '@page{size:210mm ' + mm + 'mm;margin:0;}';
   }
 
   // initial language: ?lang= > saved > browser > en
-  var params = new URLSearchParams(location.search);
-  var initial = params.get('lang');
+  var initial = new URLSearchParams(location.search).get('lang');
   if (initial !== 'en' && initial !== 'es') {
     try { initial = localStorage.getItem('cvLang'); } catch(e){}
   }
@@ -498,11 +327,10 @@
     initial = (navigator.language||'en').toLowerCase().indexOf('es')===0 ? 'es' : 'en';
   }
   render(initial);
-  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(setPageSize); }
-  window.addEventListener('resize', setPageSize);
 
-  document.getElementById('btnEn').addEventListener('click', function(){ render('en'); });
-  document.getElementById('btnEs').addEventListener('click', function(){ render('es'); });
+  Array.prototype.forEach.call(document.querySelectorAll('.lang button'), function(b){
+    b.addEventListener('click', function(){ render(b.getAttribute('data-lang')); });
+  });
 })();
 </script>
 </body>

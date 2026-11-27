@@ -1081,8 +1081,8 @@ dialog.sheet::backdrop {
   transition: background .28s ease, color .28s ease;
 }
 
-.card:not(.next):hover,
-.card:not(.next):focus-within {
+.card:not(.next):not(.blank):hover,
+.card:not(.next):not(.blank):focus-within {
   background: var(--ink);
   color: var(--paper);
   --pap-text: var(--pap-text-inv);
@@ -1093,14 +1093,20 @@ dialog.sheet::backdrop {
   flex: 1;
   min-height: 0;
   border: var(--rule);
-  overflow: hidden;
   background: var(--paper-2);
   display: flex;
   flex-direction: column;
 }
 
-.card:not(.next):hover .media,
-.card:not(.next):focus-within .media {
+.card .media-clip {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.card:not(.next):not(.blank):hover .media,
+.card:not(.next):not(.blank):focus-within .media {
   border-color: var(--paper);
 }
 
@@ -1113,7 +1119,7 @@ dialog.sheet::backdrop {
   transition: transform .5s ease;
 }
 
-.card:not(.next):hover .media .ill {
+.card:not(.next):not(.blank):hover .media .ill {
   transform: scale(1.04);
 }
 
@@ -1124,9 +1130,9 @@ dialog.sheet::backdrop {
   color: var(--hero-ink);
   padding: 10px 12px;
   font-size: var(--fs-sum);
-  line-height: 1.4;
+  line-height: 1.32;
   opacity: 0;
-  transform: translateY(6%);
+  transform: scale(.985);
   transition: opacity .24s ease, transform .24s ease;
   display: flex;
   align-items: flex-end;
@@ -1155,9 +1161,7 @@ dialog.sheet::backdrop {
 
 .card .kick-text {
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.25;
 }
 
 .card .no {
@@ -1166,8 +1170,8 @@ dialog.sheet::backdrop {
   flex-shrink: 0;
 }
 
-.card:not(.next):hover .no,
-.card:not(.next):focus-within .no {
+.card:not(.next):not(.blank):hover .no,
+.card:not(.next):not(.blank):focus-within .no {
   color: var(--paper);
   opacity: .78;
 }
@@ -1199,35 +1203,37 @@ dialog.sheet::backdrop {
 }
 
 .card .foot {
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
+  align-items: flex-end;
+  gap: 6px;
   margin-top: auto;
 }
 
 .card .tags {
   font-size: var(--fs-micro);
   font-weight: 700;
-  letter-spacing: .07em;
+  letter-spacing: .04em;
   text-transform: uppercase;
   opacity: var(--muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.24;
   min-width: 0;
 }
 
 .card .foot-actions {
   display: inline-flex;
   align-items: baseline;
-  gap: 10px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
 .card .extra-link {
   position: relative;
   z-index: 3;
+  pointer-events: auto;
   font-size: var(--fs-micro);
   font-weight: 700;
   letter-spacing: .11em;
@@ -1256,8 +1262,8 @@ dialog.sheet::backdrop {
   display: block;
 }
 
-.card:not(.next):hover .open,
-.card:not(.next):focus-within .open {
+.card:not(.next):not(.blank):hover .open,
+.card:not(.next):not(.blank):focus-within .open {
   color: var(--pap-text);
 }
 
@@ -1359,6 +1365,11 @@ dialog.sheet::backdrop {
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
+}
+
+.card.blank {
+  cursor: default;
+  pointer-events: none;
 }
 
 /* Empty filter state */
@@ -1481,7 +1492,16 @@ dialog.sheet::backdrop {
   }
 
   .card .sum {
-    padding: calc(var(--u) * .7) calc(var(--u) * .8);
+    padding: calc(var(--u) * .55) calc(var(--u) * .7);
+  }
+
+  /* On narrower fit viewports, let hover summary extend cleanly below .media over kicker */
+  @media (hover: hover) and (max-width: 1119.98px), (hover: hover) and (max-height: 649.98px) {
+    .card:not(.feature) .sum {
+      bottom: auto;
+      min-height: 100%;
+      border-bottom: var(--rule);
+    }
   }
 
   .card.feature {

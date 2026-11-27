@@ -27,7 +27,10 @@
 
     const media = el('div', 'media');
     media.style.viewTransitionName = `vt-${p.id}`;
-    media.innerHTML = window.SITE_FIGURES?.[p.id] || '';
+    const clip = el('div', 'media-clip');
+    clip.innerHTML = window.SITE_FIGURES?.[p.id] || '';
+    clip.querySelector('svg')?.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    media.appendChild(clip);
     if (!isFeature && fit) {
       const sum = el('div', 'sum');
       sum.appendChild(el('span', 'sum-text', p.summary));
@@ -163,6 +166,14 @@
       frag.appendChild(buildCard(cur.feature, true, fit));
       cur.items.forEach(item => frag.appendChild(buildCard(item, false, fit)));
       if (cur.showNext) frag.appendChild(buildNextCard(projects.length + 1));
+      if (fit) {
+        const used = cur.items.length + (cur.showNext ? 1 : 0);
+        for (let i = used; i < 6; i++) {
+          const blank = el('div', 'card blank');
+          blank.setAttribute('aria-hidden', 'true');
+          frag.appendChild(blank);
+        }
+      }
     }
     grid.textContent = '';
     grid.appendChild(frag);

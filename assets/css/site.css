@@ -1843,6 +1843,132 @@ dialog.sheet::backdrop {
 }
 
 /* ==========================================================================
+   404 Page (/404.html, SPEC §14)
+   ========================================================================== */
+
+.page-404 {
+  min-height: 100dvh;
+  display: flex;
+  padding: var(--gap-page);
+}
+
+.nf-shell {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.nf-frame {
+  width: min(760px, 100%);
+  border: var(--rule);
+  background: var(--paper);
+}
+
+.nf-hero {
+  background: var(--hero-bg);
+  color: var(--hero-ink);
+  padding: clamp(20px, 3vw, 36px);
+  border-bottom: var(--rule);
+}
+
+.nf-hero :focus-visible {
+  outline: 3px solid var(--hero-ink);
+  outline-offset: 3px;
+}
+
+.nf-top {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 12px;
+  border-bottom: 1.5px solid var(--hero-ink);
+}
+
+.nf-code {
+  margin: 18px 0 0;
+  font-family: var(--font-serif);
+  font-size: clamp(96px, 18vw, 176px);
+  line-height: .82;
+  letter-spacing: -.04em;
+}
+
+.nf-title {
+  margin: 14px 0 6px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1;
+  letter-spacing: -.015em;
+}
+
+.nf-sub {
+  margin: 0;
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.nf-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.nf-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px 24px;
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+  transition: background .25s ease, color .25s ease;
+}
+
+.nf-link + .nf-link {
+  border-left: var(--rule);
+}
+
+.nf-link:hover {
+  background: var(--ink);
+  color: var(--paper);
+  --pap-text: var(--pap-text-inv);
+}
+
+.nf-link:focus-visible {
+  outline-offset: -4px;
+}
+
+.nf-link .arrow-l {
+  display: inline-block;
+  transition: transform .25s ease;
+}
+
+.nf-link:hover .arrow-l {
+  transform: translateX(-5px);
+}
+
+.nf-link:hover .arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 479.98px) {
+  .nf-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .nf-link + .nf-link {
+    border-left: 0;
+    border-top: var(--rule);
+  }
+}
+
+/* ==========================================================================
    Cross-Document & Same-Document View Transitions (SPEC §6.6)
    ========================================================================== */
 

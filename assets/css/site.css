@@ -1085,7 +1085,7 @@ dialog.sheet::backdrop {
 }
 
 .card:not(.next):not(.blank):hover,
-.card:not(.next):not(.blank):focus-within {
+.card:not(.next):not(.blank):has(:focus-visible) {
   background: var(--ink);
   color: var(--paper);
   --pap-text: var(--pap-text-inv);
@@ -1111,7 +1111,7 @@ dialog.sheet::backdrop {
 }
 
 .card:not(.next):not(.blank):hover .media,
-.card:not(.next):not(.blank):focus-within .media {
+.card:not(.next):not(.blank):has(:focus-visible) .media {
   border-color: var(--paper);
 }
 
@@ -1146,7 +1146,7 @@ dialog.sheet::backdrop {
 }
 
 .card:hover .sum,
-.card:focus-within .sum {
+.card:has(:focus-visible) .sum {
   opacity: 1;
   transform: none;
 }
@@ -1176,7 +1176,7 @@ dialog.sheet::backdrop {
 }
 
 .card:not(.next):not(.blank):hover .no,
-.card:not(.next):not(.blank):focus-within .no {
+.card:not(.next):not(.blank):has(:focus-visible) .no {
   color: var(--paper);
   opacity: .78;
 }
@@ -1268,7 +1268,7 @@ dialog.sheet::backdrop {
 }
 
 .card:not(.next):not(.blank):hover .open,
-.card:not(.next):not(.blank):focus-within .open {
+.card:not(.next):not(.blank):has(:focus-visible) .open {
   color: var(--pap-text);
 }
 
@@ -1598,7 +1598,7 @@ dialog.sheet::backdrop {
     }
 
     .card:not(.feature):hover .sum,
-    .card:not(.feature):focus-within .sum {
+    .card:not(.feature):has(:focus-visible) .sum {
       background: var(--pap);
       color: var(--hero-ink);
     }
@@ -1798,7 +1798,7 @@ dialog.sheet::backdrop {
   }
 
   .card:not(.next):hover .sum--flow,
-  .card:not(.next):focus-within .sum--flow {
+  .card:not(.next):has(:focus-visible) .sum--flow {
     background: transparent;
     color: inherit;
     opacity: .92;

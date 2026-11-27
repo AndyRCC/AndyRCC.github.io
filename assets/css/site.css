@@ -24,6 +24,7 @@
 
   /* Rules */
   --rule: 1.5px solid var(--ink);
+  --muted: .68;
 
   /* Scale defaults (flow mode) */
   --fs-micro: 12px;
@@ -581,7 +582,7 @@ button {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .04em;
-  opacity: .65;
+  opacity: var(--muted);
   flex-shrink: 0;
 }
 
@@ -1043,7 +1044,7 @@ dialog.sheet::backdrop {
   border-bottom: 1.5px solid transparent;
   padding: 2px 0 3px;
   cursor: pointer;
-  opacity: .55;
+  opacity: var(--muted);
   letter-spacing: inherit;
   text-transform: inherit;
   font-weight: inherit;
@@ -1160,14 +1161,14 @@ dialog.sheet::backdrop {
 
 .card .no {
   color: var(--ink);
-  opacity: .6;
+  opacity: var(--muted);
   flex-shrink: 0;
 }
 
 .card:not(.next):hover .no,
 .card:not(.next):focus-within .no {
   color: var(--paper);
-  opacity: .75;
+  opacity: .78;
 }
 
 .card h2 {
@@ -1209,7 +1210,7 @@ dialog.sheet::backdrop {
   font-weight: 700;
   letter-spacing: .07em;
   text-transform: uppercase;
-  opacity: .68;
+  opacity: var(--muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1326,7 +1327,7 @@ dialog.sheet::backdrop {
   align-items: center;
   justify-content: center;
   text-align: center;
-  opacity: .76;
+  opacity: .78;
   cursor: default;
 }
 
@@ -1357,7 +1358,6 @@ dialog.sheet::backdrop {
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  opacity: .8;
 }
 
 /* Empty filter state */

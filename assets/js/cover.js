@@ -11,8 +11,6 @@
     document.querySelectorAll('[data-project-count]').forEach(n => {
       n.textContent = String(list.length);
     });
-    const tile = document.getElementById('projectsTile');
-    if (tile) tile.setAttribute('aria-label', `Projects, see all ${list.length}`);
 
     const shown = list.slice(0, 6);
     const center = (shown.length - 1) / 2;
@@ -87,6 +85,7 @@
 
     const syncFromHash = () => {
       const hashId = location.hash ? location.hash.slice(1).toLowerCase() : '';
+      if (hashId === 'projects') { location.replace('/projects/'); return; }
       if (dialogs[hashId]) openPanel(hashId, null, false);
       else Object.values(dialogs).forEach(d => { if (d.open) d.close(); });
     };

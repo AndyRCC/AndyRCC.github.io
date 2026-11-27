@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
 
-  <!-- Apply theme before first paint -->
-  <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <!-- Apply theme before first paint & redirect legacy #projects link -->
+  <script>(function(){if(location.hash.toLowerCase()==='#projects'){location.replace('/projects/');return;}try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
   <link rel="stylesheet" href="assets/css/site.css">
   <noscript><style>
     .page-cover { overflow: auto !important; }
@@ -126,7 +126,7 @@
     </section>
 
     <!-- 06 Contact -->
-    <section class="tile tile--group tile--interactive" data-fit="contact">
+    <section class="tile tile--group tile--interactive" id="contact" data-fit="contact">
       <div class="lab">
         <h2 class="lab-name">Contact</h2>
         <span class="n" aria-hidden="true">06</span>
@@ -141,11 +141,11 @@
     </section>
 
     <!-- 07 Projects -->
-    <a class="tile tile--link tile--interactive wide" id="projectsTile" href="/projects/" data-fit="projects" aria-label="Projects, see all 6">
+    <a class="tile tile--link tile--interactive wide" id="projectsTile" href="/projects/" data-fit="projects">
       <div class="copy">
-        <div class="lab">
+        <div class="lab" aria-hidden="true">
           <span>In this issue</span>
-          <span class="n" aria-hidden="true">07</span>
+          <span class="n">07</span>
         </div>
         <h2 class="ttl">Projects</h2>
         <span class="more">See all <span data-project-count>6</span> <span class="arrow" aria-hidden="true">→</span></span>

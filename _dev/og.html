@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OG Card · Andy Casafranca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    html, body {
+      width: 1200px;
+      height: 630px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: var(--hero-bg);
+      color: var(--hero-ink);
+    }
+
+    .og {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      padding: 40px 56px 44px;
+      display: flex;
+      flex-direction: column;
+      background: var(--hero-bg);
+      color: var(--hero-ink);
+    }
+
+    .og-frame {
+      position: relative;
+      flex: 1;
+      border: 2px solid var(--hero-ink);
+      padding: 34px 44px 36px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .og-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--hero-ink);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    .og-mast {
+      margin: 28px 0 0;
+      font-family: var(--font-serif);
+      font-weight: 400;
+      position: relative;
+      z-index: 2;
+    }
+
+    .og-first {
+      display: block;
+      font-size: 174px;
+      line-height: .78;
+      letter-spacing: -.03em;
+    }
+
+    .og-last {
+      display: block;
+      font-style: italic;
+      font-size: 88px;
+      line-height: 1;
+      margin: 6px 0 0 4px;
+      letter-spacing: -.015em;
+    }
+
+    .og-role {
+      margin: auto 0 0;
+      font-family: var(--font-sans);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      position: relative;
+      z-index: 2;
+      max-width: 540px;
+    }
+
+    .og-portrait {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 440px;
+      z-index: 1;
+    }
+
+    .og-portrait img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="og">
+    <div class="og-frame">
+      <div class="og-top">
+        <span>andyrcc.github.io</span>
+      </div>
+      <h1 class="og-mast">
+        <span class="og-first">Andy</span>
+        <span class="og-last">Casafranca</span>
+      </h1>
+      <p class="og-role">Instrumentation &amp; SCADA Engineer</p>
+      <div class="og-portrait">
+        <img src="../assets/banner.png" alt="Andy Casafranca" width="380" height="508">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

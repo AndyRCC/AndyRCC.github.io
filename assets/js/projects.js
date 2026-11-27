@@ -5,6 +5,7 @@
   const GH = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.98 10.98 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>';
   const svgIcon = d => `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="${d}"/></svg>`;
 
+  // Sync fit/flow threshold with assets/css/site.css and _dev/fit-check.js
   const fitMedia = window.matchMedia?.('(min-width: 900px) and (min-height: 560px)');
   let state = { filter: 'all', page: 1 };
   let totalPages = 1;
@@ -43,6 +44,7 @@
     const h2 = el('h2');
     const link = el('a', 'card-link', p.title);
     Object.assign(link, { href: p.url, target: '_blank', rel: 'noopener' });
+    link.appendChild(el('span', 'sr-only', ' (opens in a new tab)'));
     h2.appendChild(link);
     card.append(media, kick, h2);
 
@@ -65,7 +67,7 @@
     if (p.extra?.url) {
       const extra = el('a', 'extra-link', `${p.extra.label} ↗`);
       Object.assign(extra, { href: p.extra.url, target: '_blank', rel: 'noopener' });
-      extra.setAttribute('aria-label', `${p.title} — ${p.extra.label}`);
+      extra.appendChild(el('span', 'sr-only', ` — ${p.title} (opens in a new tab)`));
       actions.appendChild(extra);
     }
     const open = el('span', 'open');

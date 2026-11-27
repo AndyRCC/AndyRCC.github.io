@@ -53,7 +53,7 @@
   --pap-text: var(--pap-text-inv);
 }
 
-/* Fit mode fluid scale */
+/* Fit mode fluid scale — sync threshold with assets/js/projects.js and _dev/fit-check.js */
 @media (min-width: 900px) and (min-height: 560px) {
   :root {
     --u: min(1vw, 1.7778dvh);
@@ -588,6 +588,7 @@ button {
 
 /* ==========================================================================
    Cover Fit Mode (>= 900px wide & >= 560px tall)
+   Sync threshold with assets/js/projects.js and _dev/fit-check.js
    ========================================================================== */
 
 @media (min-width: 900px) and (min-height: 560px) {
@@ -1454,6 +1455,7 @@ dialog.sheet::backdrop {
 
 /* ==========================================================================
    Projects Fit Mode (>= 900px wide & >= 560px tall)
+   Sync threshold with assets/js/projects.js and _dev/fit-check.js
    ========================================================================== */
 
 @media (min-width: 900px) and (min-height: 560px) {
@@ -1603,6 +1605,7 @@ dialog.sheet::backdrop {
 /* ==========================================================================
    Flow Mode (Phones, Portrait Tablets, Zoomed Laptops, SPEC §6.5)
    Exact complement of fit mode: width < 900px OR height < 560px
+   Sync threshold with assets/js/projects.js and _dev/fit-check.js
    ========================================================================== */
 
 @media (max-width: 899.98px), (max-height: 559.98px) {
@@ -1658,8 +1661,15 @@ dialog.sheet::backdrop {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 4px 2px 12px;
-    scrollbar-width: thin;
+    padding: 4px 28px 12px 2px;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  }
+
+  .fan::-webkit-scrollbar,
+  .filters::-webkit-scrollbar {
+    display: none;
   }
 
   .print {
@@ -1710,8 +1720,12 @@ dialog.sheet::backdrop {
   .ptop-title {
     text-align: center;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 399.98px) {
+    .ptop-vol {
+      display: none;
+    }
   }
 
   .phead {
@@ -1735,7 +1749,15 @@ dialog.sheet::backdrop {
     -webkit-overflow-scrolling: touch;
     gap: 16px;
     padding-bottom: 4px;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+  }
+
+  @media (max-width: 479.98px) {
+    .filters {
+      padding-right: 28px;
+      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+      mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+    }
   }
 
   .pgrid {

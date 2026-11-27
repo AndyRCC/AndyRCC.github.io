@@ -592,10 +592,11 @@ button {
 
 @media (min-width: 900px) and (min-height: 560px) {
   .page-cover {
-    overflow: hidden;
+    padding: var(--gap-page);
   }
 
   .cover {
+    margin: 0;
     height: calc(100dvh - 2 * var(--gap-page));
     grid-template-columns: 1.4fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1.12fr;
@@ -1445,10 +1446,11 @@ dialog.sheet::backdrop {
 
 @media (min-width: 900px) and (min-height: 560px) {
   .page-projects {
-    overflow: hidden;
+    padding: var(--gap-page);
   }
 
   .projects-shell {
+    margin: 0;
     height: calc(100dvh - 2 * var(--gap-page));
   }
 

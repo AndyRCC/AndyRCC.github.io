@@ -1092,6 +1092,7 @@ dialog.sheet::backdrop {
 .card .media {
   position: relative;
   z-index: 2;
+  pointer-events: none;
   flex: 1;
   min-height: 0;
   border: var(--rule);
@@ -1790,7 +1791,7 @@ dialog.sheet::backdrop {
     font-size: var(--fs-sum);
     line-height: 1.5;
     display: block;
-    pointer-events: auto;
+    pointer-events: none;
     opacity: .84;
   }
 

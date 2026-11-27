@@ -65,9 +65,11 @@
 
     const actions = el('div', 'foot-actions');
     if (p.extra?.url) {
-      const extra = el('a', 'extra-link', `${p.extra.label} ↗`);
+      const extra = el('a', 'extra-link', `${p.extra.label} `);
       Object.assign(extra, { href: p.extra.url, target: '_blank', rel: 'noopener' });
-      extra.appendChild(el('span', 'sr-only', ` — ${p.title} (opens in a new tab)`));
+      const arr = el('span', null, '↗');
+      arr.setAttribute('aria-hidden', 'true');
+      extra.append(arr, el('span', 'sr-only', ` — ${p.title} (opens in a new tab)`));
       actions.appendChild(extra);
     }
     const open = el('span', 'open');

@@ -5,142 +5,87 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Andy Casafranca — CV</title>
 <meta name="description" content="Andy Casafranca — Instrumentation &amp; SCADA Engineer at LabProjects and Mechatronics Engineering graduate (UPC). CV in English and Spanish.">
-<link rel="icon" href="../assets/mclaren.png">
-<meta name="theme-color" content="#0e1419">
+<meta name="author" content="Andy Casafranca">
+<meta name="theme-color" content="#f2ede3">
+<link rel="icon" href="/assets/mclaren.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Andy Casafranca — CV">
+<meta property="og:description" content="Instrumentation &amp; SCADA Engineer at LabProjects · Mechatronics Engineering graduate focused on instrumentation, SCADA and automation">
+<meta property="og:image" content="https://andyrcc.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Andy Casafranca, Instrumentation &amp; SCADA Engineer">
+<meta property="og:url" content="https://andyrcc.github.io/cv/">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Dosis:wght@600;700&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-  :root{
-    --frame:#0e1419; --frame-line:#232a31; --frame-text:#c4cad0; --frame-soft:#8c949c;
-    --paper:#ffffff; --ink:#1b2128; --soft:#59626b; --rule:#dde2e6;
-    --papaya:#ff8000; --papaya-ink:#b35900; --teal:#0aa697; --teal-ink:#086f66;
-    --font:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
-    --display:'Dosis','DM Sans',sans-serif;
-    --axis:150px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{-webkit-text-size-adjust:100%;}
-  body{font-family:var(--font);background:var(--frame);color:var(--ink);-webkit-font-smoothing:antialiased;}
-  a{color:var(--teal-ink);}
-  :focus-visible{outline:3px solid var(--papaya);outline-offset:2px;border-radius:4px;}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
 
-  /* ---------- Toolbar (same frame as the rest of the site) ---------- */
-  .toolbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;
-    padding:10px 18px;background:rgba(14,20,25,.92);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--frame-line);}
-  .back{display:inline-flex;align-items:center;gap:10px;min-height:40px;color:var(--frame-text);font-weight:500;font-size:14px;text-decoration:none;}
-  .back img{width:22px;height:auto;}
-  .back:hover{color:#fff;}
-  .tools{display:flex;align-items:center;gap:10px;}
-  .lang{display:inline-flex;border:1px solid #2e3741;border-radius:999px;overflow:hidden;}
-  .lang button{font:600 13px var(--font);padding:8px 14px;min-height:40px;border:0;background:transparent;color:var(--frame-soft);cursor:pointer;}
-  .lang button[aria-pressed="true"]{background:var(--teal);color:#06231f;}
-  .dl{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:9px 18px;border-radius:999px;
-    background:var(--papaya);color:#1a1205;font-weight:700;font-size:14px;text-decoration:none;}
-  .dl:hover{background:#ffa040;}
-
-  /* ---------- The sheet ---------- */
-  .stage{padding:32px 16px 56px;}
-  .sheet{max-width:860px;margin:0 auto;background:var(--paper);border-radius:6px;padding:52px 60px 40px;
-    box-shadow:0 24px 60px rgba(0,0,0,.45);}
-
-  .head{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;}
-  .photo{width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:center top;background:#e9edf0;}
-  h1{font-family:var(--display);font-weight:700;font-size:40px;line-height:1.05;color:var(--ink);}
-  .headline{margin-top:6px;font-size:17px;line-height:1.4;color:var(--soft);}
-  .contact{list-style:none;display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:12px;font-size:14.5px;}
-  .contact li{display:inline-flex;align-items:center;gap:8px;color:var(--soft);}
-  .contact i{color:var(--papaya-ink);font-size:13px;width:14px;text-align:center;}
-  .contact a{text-decoration:none;font-weight:500;}
-  .contact a:hover{text-decoration:underline;}
-
-  /* Signature element: an instrument scale under the header */
-  .scale{height:12px;margin:28px 0 4px;border-bottom:1.5px solid var(--papaya);
-    background:
-      repeating-linear-gradient(90deg,var(--papaya) 0 2px,transparent 2px 60px) left bottom/100% 12px no-repeat,
-      repeating-linear-gradient(90deg,var(--papaya) 0 1px,transparent 1px 12px) left bottom/100% 6px no-repeat;}
-
-  section{margin-top:30px;}
-  h2{font-family:var(--display);font-weight:700;font-size:21px;line-height:1.2;color:var(--ink);
-    padding-bottom:8px;margin-bottom:12px;border-bottom:1px solid var(--rule);}
-  .profile{font-size:16px;line-height:1.65;max-width:70ch;}
-
-  .entry{display:grid;grid-template-columns:var(--axis) 1fr;column-gap:24px;padding:9px 0;}
-  .when{font-size:14px;line-height:1.5;color:var(--soft);padding-top:1px;font-variant-numeric:tabular-nums;}
-  .when span{display:block;}
-  h3{font-size:16px;font-weight:700;line-height:1.4;}
-  h3 a{color:inherit;text-decoration:underline;text-decoration-color:var(--rule);text-decoration-thickness:2px;text-underline-offset:4px;}
-  h3 a:hover{text-decoration-color:var(--teal-ink);}
-  .org{font-size:15px;line-height:1.45;color:var(--soft);margin-top:1px;}
-  .entry ul{list-style:none;margin-top:6px;display:grid;gap:4px;}
-  .entry li{position:relative;padding-left:16px;font-size:15.5px;line-height:1.55;max-width:70ch;}
-  .entry li::before{content:"";position:absolute;left:1px;top:.75em;width:7px;height:2px;background:var(--papaya);}
-
-  .skills{display:grid;grid-template-columns:var(--axis) 1fr;column-gap:24px;row-gap:8px;}
-  .skills dt{font-size:14px;line-height:1.5;color:var(--soft);padding-top:1px;}
-  .skills dd{font-size:15.5px;line-height:1.55;}
-
-  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;margin-top:36px;padding-top:12px;
-    border-top:1px solid var(--rule);font-size:13.5px;color:var(--soft);}
-
-  /* ---------- Small screens ---------- */
-  @media (max-width:700px){
-    .toolbar{padding:8px 12px;}
-    .stage{padding:16px 10px 40px;}
-    .sheet{padding:28px 20px 24px;border-radius:4px;}
-    .head{grid-template-columns:1fr;gap:14px;}
-    .photo{width:72px;height:72px;}
-    h1{font-size:31px;}
-    .headline{font-size:16px;}
-    .scale{margin-top:22px;}
-    .entry,.skills{grid-template-columns:1fr;}
-    .when span{display:inline;}
-    .when span + span::before{content:", ";}
-    .entry h3{margin-top:2px;}
-    .skills dt{margin-top:6px;}
-  }
-  @media (max-width:430px){
-    .back span{display:none;}
-    .dl span{display:none;}
-    .dl{padding:9px 14px;}
-  }
-
-  /* ---------- Print ---------- */
-  @page{size:A4;margin:14mm;}
-  @media print{
-    body{background:#fff;}
-    .toolbar{display:none;}
-    .stage{padding:0;}
-    .sheet{max-width:none;padding:0;border-radius:0;box-shadow:none;}
-    .entry{break-inside:avoid;}
-    a{color:inherit;text-decoration:none;}
-  }
-  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-</style>
+<!-- Apply theme before first paint -->
+<script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/cv.css">
 </head>
-<body>
+<body class="page-cv" data-mode="flow">
 
-<header class="toolbar">
-  <a class="back" href="../index.html"><img src="../assets/mclaren.png" alt=""><span id="t_back">Back to site</span></a>
-  <div class="tools">
-    <div class="lang" role="group" id="langGroup" aria-label="Language">
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
-      <button type="button" data-lang="es" aria-pressed="false">ES</button>
-    </div>
-    <a class="dl" id="dl" href="cv-en.pdf" download>
-      <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i><span id="t_dl">Download PDF</span>
+<header class="cv-bar">
+  <div class="cv-bar-inner">
+    <a class="cv-back" href="/">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5"/>
+        <path d="m12 19-7-7 7-7"/>
+      </svg>
+      <span id="t_back">Cover</span>
     </a>
+
+    <span class="cv-bar-title">Andy Casafranca · CV</span>
+
+    <div class="cv-tools">
+      <div class="cv-lang" role="group" id="langGroup" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a class="cv-dl" id="dl" href="cv-en.pdf" download>
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/>
+          <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+          <path d="M12 18v-6"/>
+          <path d="m9 15 3 3 3-3"/>
+        </svg>
+        <span class="cv-dl-label" id="t_dl">Download PDF</span>
+      </a>
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="Switch to dark theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/>
+        </svg>
+      </button>
+    </div>
   </div>
 </header>
 
-<main class="stage">
-  <article class="sheet" id="cv" aria-live="polite"></article>
+<main class="cv-stage">
+  <article class="cv-sheet" id="cv" aria-live="polite"></article>
 </main>
 
+<script src="/assets/js/site.js"></script>
 <script>
 (function(){
   "use strict";
+
+  SITE.initTheme();
+  SITE.maybeFitcheck();
+
+  var ICONS = {
+    pin: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
+    mail: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>',
+    linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.55c0-1.32-.03-3.02-1.84-3.02-1.85 0-2.13 1.44-2.13 2.93V21h-4V9Z"/></svg>',
+    github: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.98 10.98 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>'
+  };
 
   var CONTACT = {
     email:"andycasafranca@hotmail.com",
@@ -271,51 +216,52 @@
     }
   };
 
-  function entryHTML(e){
-    var title = e.url ? '<a href="'+e.url+'" target="_blank" rel="noopener">'+e.title+'</a>' : e.title;
+  function entryHTML(e, newTabHint){
+    var title = e.url
+      ? '<a href="'+e.url+'" target="_blank" rel="noopener">'+e.title+'<span class="sr-only">'+newTabHint+'</span></a>'
+      : e.title;
     var bullets = e.bullets.length ? '<ul>'+e.bullets.map(function(b){ return '<li>'+b+'</li>'; }).join('')+'</ul>' : '';
-    return '<div class="entry">'+
-      '<div class="when">'+e.when.map(function(w){ return '<span>'+w+'</span>'; }).join('')+'</div>'+
-      '<div><h3>'+title+'</h3><p class="org">'+e.org+'</p>'+bullets+'</div></div>';
+    return '<div class="cv-entry">'+
+      '<div class="cv-when">'+e.when.map(function(w){ return '<span>'+w+'</span>'; }).join('')+'</div>'+
+      '<div><h3>'+title+'</h3><p class="cv-org">'+e.org+'</p>'+bullets+'</div></div>';
   }
 
   function render(lang){
     var d = DATA[lang], u = d.ui;
+    var newTabHint = lang === 'es' ? ' (abre en una nueva pestaña)' : ' (opens in a new tab)';
     document.documentElement.lang = lang;
     document.title = u.title;
-    document.getElementById('t_back').textContent = u.back;
+    document.getElementById('t_back').textContent = lang === 'es' ? 'Portada' : 'Cover';
     document.getElementById('t_dl').textContent = u.dl;
-    // on small screens only the icons show, so keep an accessible name on both links
-    document.querySelector('.back').setAttribute('aria-label', u.back);
     document.getElementById('dl').setAttribute('aria-label', u.dl);
     document.getElementById('langGroup').setAttribute('aria-label', u.lang);
 
     var html =
-      '<header class="head">'+
-        '<img class="photo" src="../assets/banner.png" alt="'+u.photo+'" width="88" height="88">'+
+      '<header class="cv-head">'+
+        '<img class="cv-photo" src="/assets/banner.webp" alt="'+u.photo+'" width="92" height="92">'+
         '<div><h1>Andy Ricardo Casafranca Carrascal</h1>'+
-          '<p class="headline">'+d.headline+'</p>'+
-          '<ul class="contact">'+
-            '<li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>'+d.location+'</li>'+
-            '<li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:'+CONTACT.email+'">'+CONTACT.email+'</a></li>'+
-            '<li><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><a href="'+CONTACT.linkedin+'" target="_blank" rel="noopener">LinkedIn</a></li>'+
-            '<li><i class="fa-brands fa-github" aria-hidden="true"></i><a href="'+CONTACT.github+'" target="_blank" rel="noopener">GitHub</a></li>'+
+          '<p class="cv-headline">'+d.headline+'</p>'+
+          '<ul class="cv-contact">'+
+            '<li>'+ICONS.pin+d.location+'</li>'+
+            '<li>'+ICONS.mail+'<a href="mailto:'+CONTACT.email+'">'+CONTACT.email+'</a></li>'+
+            '<li>'+ICONS.linkedin+'<a href="'+CONTACT.linkedin+'" target="_blank" rel="noopener">LinkedIn<span class="sr-only">'+newTabHint+'</span></a></li>'+
+            '<li>'+ICONS.github+'<a href="'+CONTACT.github+'" target="_blank" rel="noopener">GitHub<span class="sr-only">'+newTabHint+'</span></a></li>'+
           '</ul></div>'+
       '</header>'+
-      '<div class="scale" aria-hidden="true"></div>'+
-      '<section><h2>'+d.profileTitle+'</h2><p class="profile">'+d.profile+'</p></section>';
+      '<div class="cv-scale" aria-hidden="true"></div>'+
+      '<section><h2>'+d.profileTitle+'</h2><p class="cv-profile">'+d.profile+'</p></section>';
 
     d.sections.forEach(function(s){
-      html += '<section><h2>'+s.title+'</h2>'+s.entries.map(entryHTML).join('')+'</section>';
+      html += '<section><h2>'+s.title+'</h2>'+s.entries.map(function(e){ return entryHTML(e, newTabHint); }).join('')+'</section>';
     });
 
-    html += '<section><h2>'+u.skills+'</h2><dl class="skills">'+
+    html += '<section><h2>'+u.skills+'</h2><dl class="cv-skills">'+
       d.skillRows.map(function(r){ return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>'; }).join('')+'</dl></section>'+
-      '<footer class="foot"><span>Andy Ricardo Casafranca Carrascal</span><span>'+u.updated+'</span></footer>';
+      '<footer class="cv-foot"><span>Andy Ricardo Casafranca Carrascal</span><span>'+u.updated+'</span></footer>';
 
     document.getElementById('cv').innerHTML = html;
 
-    Array.prototype.forEach.call(document.querySelectorAll('.lang button'), function(b){
+    Array.prototype.forEach.call(document.querySelectorAll('.cv-lang button'), function(b){
       b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
     });
     var dl = document.getElementById('dl');
@@ -334,7 +280,7 @@
   }
   render(initial);
 
-  Array.prototype.forEach.call(document.querySelectorAll('.lang button'), function(b){
+  Array.prototype.forEach.call(document.querySelectorAll('.cv-lang button'), function(b){
     b.addEventListener('click', function(){ render(b.getAttribute('data-lang')); });
   });
 })();

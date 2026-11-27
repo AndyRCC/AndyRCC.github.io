@@ -1554,6 +1554,225 @@ dialog.sheet::backdrop {
 }
 
 /* ==========================================================================
+   Flow Mode (Phones, Portrait Tablets, Zoomed Laptops, SPEC §6.5)
+   Exact complement of fit mode: width < 900px OR height < 560px
+   ========================================================================== */
+
+@media (max-width: 899.98px), (max-height: 559.98px) {
+  /* Cover in flow mode */
+  .cover {
+    grid-template-columns: 1fr;
+    margin: var(--gap-page);
+  }
+
+  .tile {
+    min-height: 144px;
+    padding: 16px;
+  }
+
+  .hero {
+    min-height: max(540px, 82svh);
+    padding: 16px 16px 76px;
+  }
+
+  .hero .coverlines {
+    max-width: 22ch;
+    margin-top: 14px;
+  }
+
+  .hero .portrait {
+    height: 44%;
+    max-width: 70%;
+  }
+
+  .hero .cvbtn {
+    left: 16px;
+    bottom: 16px;
+  }
+
+  .wide {
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .wide .copy {
+    gap: 4px;
+  }
+
+  .wide .ttl {
+    margin: 12px 0 2px;
+  }
+
+  .fan {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 2px 12px;
+    scrollbar-width: thin;
+  }
+
+  .print {
+    position: static;
+    transform: none !important;
+    flex: 0 0 200px;
+    width: 200px;
+    padding: 8px 8px 10px;
+    scroll-snap-align: start;
+    box-shadow: 0 6px 14px var(--shadow);
+  }
+
+  @media (min-width: 480px) {
+    .cover {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero,
+    .wide {
+      grid-column: 1 / -1;
+    }
+
+    .tile {
+      min-height: 160px;
+    }
+
+    .hero {
+      min-height: max(480px, 82svh);
+    }
+
+    .hero .portrait {
+      height: 56%;
+    }
+  }
+
+  /* Projects in flow mode */
+  .projects-shell {
+    display: flex;
+    flex-direction: column;
+    margin: var(--gap-page);
+  }
+
+  .ptop {
+    gap: 8px;
+    padding-bottom: 10px;
+  }
+
+  .ptop-title {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .phead {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px 0 12px;
+  }
+
+  .phead-title {
+    gap: 6px 12px;
+  }
+
+  .phead-title i {
+    font-size: clamp(18px, 4.5vw, 24px);
+  }
+
+  .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+
+  .pgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .card .media {
+    flex: none;
+    aspect-ratio: 16 / 10;
+  }
+
+  .card .kick-text {
+    white-space: normal;
+  }
+
+  .card .sum--flow {
+    position: static;
+    inset: auto;
+    opacity: 1;
+    transform: none;
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    font-size: var(--fs-sum);
+    line-height: 1.5;
+    display: block;
+    pointer-events: auto;
+    opacity: .84;
+  }
+
+  .card:not(.next):hover .sum--flow,
+  .card:not(.next):focus-within .sum--flow {
+    background: transparent;
+    color: inherit;
+    opacity: .92;
+  }
+
+  .card .foot {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+
+  .card .tags {
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  .card.feature h2 {
+    font-size: 28px;
+  }
+
+  .card.next {
+    min-height: 180px;
+    padding: 28px 16px;
+  }
+
+  .pfoot {
+    padding: 14px 0 8px;
+    justify-content: center;
+  }
+
+  .pfoot .pg,
+  .pfoot .esc-hint {
+    display: none;
+  }
+
+  @media (min-width: 700px) {
+    .pgrid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card.feature {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+/* ==========================================================================
    Cross-Document & Same-Document View Transitions (SPEC §6.6)
    ========================================================================== */
 

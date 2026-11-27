@@ -26,9 +26,15 @@
     '<path d="m9 18 6-6-6-6"/>' +
     '</svg>';
 
+  var FIT_QUERY = '(min-width: 900px) and (min-height: 560px)';
+  var fitMedia = window.matchMedia ? window.matchMedia(FIT_QUERY) : null;
   var currentState = { filter: 'all', page: 1 };
   var totalPages = 1;
   var bound = false;
+
+  function isFitMode() {
+    return !fitMedia || fitMedia.matches;
+  }
 
   function numberWord(n) {
     return n >= 0 && n < NUMBER_WORDS.length ? NUMBER_WORDS[n] : String(n);
@@ -57,7 +63,7 @@
     return span;
   }
 
-  function buildCard(project, isFeature) {
+  function buildCard(project, isFeature, fitMode) {
     var article = el('article', isFeature ? 'card feature' : 'card');
     article.setAttribute('data-fit', 'card-' + project.id);
     article.setAttribute('data-project-id', project.id);
@@ -67,7 +73,7 @@
     var fig = (window.SITE_FIGURES && window.SITE_FIGURES[project.id]) || '';
     media.innerHTML = fig;
 
-    if (!isFeature) {
+    if (!isFeature && fitMode) {
       var sum = el('div', 'sum');
       sum.appendChild(el('span', 'sum-text', project.summary));
       media.appendChild(sum);
@@ -104,6 +110,8 @@
         }
         article.appendChild(stats);
       }
+    } else if (!fitMode) {
+      article.appendChild(el('p', 'sum sum--flow', project.summary));
     }
 
     var foot = el('div', 'foot');
@@ -232,9 +240,11 @@
     var reqFilter = state && typeof state.filter === 'string' ? state.filter.toLowerCase() : 'all';
     var filter = allowed.indexOf(reqFilter) !== -1 ? reqFilter : 'all';
 
-    var pages = window.SITE_LAYOUT.buildPages(projects, filter, 6);
+    var fitMode = isFitMode();
+    var perPage = fitMode ? 6 : Math.max(projects.length + 1, 7);
+    var pages = window.SITE_LAYOUT.buildPages(projects, filter, perPage);
     totalPages = pages.length;
-    var pageNum = window.SITE_LAYOUT.clampPage(state ? state.page : 1, totalPages);
+    var pageNum = fitMode ? window.SITE_LAYOUT.clampPage(state ? state.page : 1, totalPages) : 1;
     var pageData = pages[pageNum - 1];
 
     currentState = { filter: filter, page: pageNum };
@@ -260,9 +270,9 @@
     if (!pageData || !pageData.feature) {
       frag.appendChild(buildEmptyState());
     } else {
-      frag.appendChild(buildCard(pageData.feature, true));
+      frag.appendChild(buildCard(pageData.feature, true, fitMode));
       for (var i = 0; i < pageData.items.length; i++) {
-        frag.appendChild(buildCard(pageData.items[i], false));
+        frag.appendChild(buildCard(pageData.items[i], false, fitMode));
       }
       if (pageData.showNext) {
         frag.appendChild(buildNextCard(projects.length + 1));
@@ -338,14 +348,20 @@
 
       if (e.key === 'Escape') {
         window.location.href = '/';
-      } else if (e.key === 'ArrowLeft' && currentState.page > 1) {
+      } else if (isFitMode() && e.key === 'ArrowLeft' && currentState.page > 1) {
         e.preventDefault();
         transitionTo({ filter: currentState.filter, page: currentState.page - 1 });
-      } else if (e.key === 'ArrowRight' && currentState.page < totalPages) {
+      } else if (isFitMode() && e.key === 'ArrowRight' && currentState.page < totalPages) {
         e.preventDefault();
         transitionTo({ filter: currentState.filter, page: currentState.page + 1 });
       }
     });
+
+    if (fitMedia && fitMedia.addEventListener) {
+      fitMedia.addEventListener('change', function () {
+        render(currentState);
+      });
+    }
   }
 
   var PROJECTS_PAGE = {

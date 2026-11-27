@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Styleguide · Editorial Design System</title>
+  <meta name="theme-color" content="#f2ede3">
+  <link rel="icon" href="../assets/mclaren.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    .sg { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    .sg-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: var(--rule); margin-bottom: 24px; }
+    .sg-top-meta { font-size: var(--fs-micro); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .sg h1 { font-family: var(--font-serif); font-weight: 400; font-size: var(--fs-h1); margin: 0 0 8px; line-height: .9; }
+    .sg h2 { font-size: var(--fs-micro); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; border-bottom: var(--rule); padding-bottom: 8px; margin: 32px 0 16px; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+    .swatch { border: var(--rule); padding: 12px; display: flex; flex-direction: column; gap: 8px; background: var(--paper); }
+    .swatch-box { height: 48px; border: 1px solid var(--ink); }
+    .swatch-name { font-size: var(--fs-micro); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .swatch-sample { font-size: var(--fs-body); font-weight: 700; }
+    .swatch-inv { background: var(--ink); color: var(--paper); }
+    .swatch-hero { background: var(--hero-bg); color: var(--hero-ink); border-color: var(--hero-ink); }
+    .type-list { display: flex; flex-direction: column; gap: 12px; }
+    .type-row { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 20%, transparent); }
+    .type-tok { font-size: var(--fs-micro); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--pap-text); }
+    .figs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .fig-card { border: var(--rule); background: var(--paper-2); padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+    .fig-meta { display: flex; justify-content: space-between; font-size: var(--fs-micro); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .fig-kicker { color: var(--pap-text); }
+  </style>
+</head>
+<body>
+  <main class="sg">
+    <header class="sg-top">
+      <span class="sg-top-meta">Styleguide · <span data-vol>Vol. 26</span></span>
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="Switch theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/>
+        </svg>
+      </button>
+    </header>
+
+    <h1>Editorial <i>Styleguide</i></h1>
+    <p>Tokens, typography scale, contrast surfaces, and the six inline SVG technical illustrations.</p>
+
+    <h2>Color Tokens</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-box" style="background:var(--ink)"></div><span class="swatch-name">--ink</span></div>
+      <div class="swatch"><div class="swatch-box" style="background:var(--paper)"></div><span class="swatch-name">--paper</span></div>
+      <div class="swatch"><div class="swatch-box" style="background:var(--paper-2)"></div><span class="swatch-name">--paper-2</span></div>
+      <div class="swatch"><div class="swatch-box" style="background:var(--pap)"></div><span class="swatch-name">--pap</span></div>
+      <div class="swatch"><div class="swatch-box" style="background:var(--pap-text)"></div><span class="swatch-name">--pap-text</span><span class="swatch-sample" style="color:var(--pap-text)">Readable papaya</span></div>
+      <div class="swatch swatch-inv is-inverted"><div class="swatch-box" style="background:var(--pap-text);border-color:var(--paper)"></div><span class="swatch-name">Inverted .is-inverted</span><span class="swatch-sample" style="color:var(--pap-text)">Inverted papaya</span></div>
+      <div class="swatch swatch-hero"><div class="swatch-box" style="background:var(--hero-ink)"></div><span class="swatch-name">Hero surface</span><span class="swatch-sample">Always #1a1714 on #ff8000</span></div>
+    </div>
+
+    <h2>Typography Scale</h2>
+    <div class="type-list">
+      <div class="type-row"><span class="type-tok">--fs-micro</span><span style="font-size:var(--fs-micro);font-weight:700;letter-spacing:.14em;text-transform:uppercase">IN THIS ISSUE · VOL. 26 · ARDUINO · EDGE AI</span></div>
+      <div class="type-row"><span class="type-tok">--fs-body</span><span style="font-size:var(--fs-body)">Instrumentation &amp; SCADA for water utilities, since Oct 2026.</span></div>
+      <div class="type-row"><span class="type-tok">--fs-sum</span><span style="font-size:var(--fs-sum)">Interactive 3D hydraulics (Manning, H2/H3/S2 profiles).</span></div>
+      <div class="type-row"><span class="type-tok">--fs-card</span><span style="font-family:var(--font-serif);font-size:var(--fs-card);line-height:1">Reservoir Outlet 3D</span></div>
+      <div class="type-row"><span class="type-tok">--fs-tile</span><span style="font-family:var(--font-serif);font-size:var(--fs-tile);line-height:1.05">The <i>one-pager.</i></span></div>
+      <div class="type-row"><span class="type-tok">--fs-num</span><span style="font-family:var(--font-serif);font-size:var(--fs-num);line-height:.85">01 · 02 · 03 · 04 · 05 · 06 · 07</span></div>
+      <div class="type-row"><span class="type-tok">--fs-xl</span><span style="font-family:var(--font-serif);font-size:var(--fs-xl);line-height:.9">Projects</span></div>
+      <div class="type-row"><span class="type-tok">--fs-h1</span><span style="font-family:var(--font-serif);font-size:var(--fs-h1);line-height:.85">Projects</span></div>
+      <div class="type-row"><span class="type-tok">--fs-mast</span><span style="font-family:var(--font-serif);font-size:var(--fs-mast);line-height:.8">Andy</span></div>
+      <div class="type-row"><span class="type-tok">--fs-mast2</span><span style="font-family:var(--font-serif);font-style:italic;font-size:var(--fs-mast2);line-height:1">Casafranca</span></div>
+    </div>
+
+    <h2>Illustrations</h2>
+    <div class="figs-grid" id="figsGrid"></div>
+  </main>
+
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/figures.js"></script>
+  <script src="../assets/js/site.js"></script>
+  <script>
+    (function () {
+      SITE.initTheme();
+      SITE.fillVolume();
+      SITE.maybeFitcheck();
+      var grid = document.getElementById('figsGrid');
+      SITE_DATA.PROJECTS.forEach(function (p) {
+        var card = document.createElement('div');
+        card.className = 'fig-card';
+        card.innerHTML =
+          SITE_FIGURES[p.id] +
+          '<div class="fig-meta"><span class="fig-kicker">' + p.title + '</span><span>' + p.no + '</span></div>';
+        grid.appendChild(card);
+      });
+    })();
+  </script>
+</body>
+</html>

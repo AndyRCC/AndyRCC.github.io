@@ -1,0 +1,255 @@
+/* ==========================================================================
+   andyrcc.github.io — Editorial Design System
+   Light (paper) & Dark (black paper), fit & flow modes, inline SVG figures.
+   ========================================================================== */
+
+:root {
+  /* Color tokens (Light theme — default) */
+  --ink: #1a1714;
+  --paper: #f2ede3;
+  --paper-2: #fbf8f2;
+  --pap: #ff8000;
+  --pap-text: #a84d00;
+  --pap-text-inv: #ff8000;
+  --shadow: rgba(26, 23, 20, .28);
+
+  /* Fixed hero colors (always papaya + dark ink in both themes) */
+  --hero-bg: #ff8000;
+  --hero-ink: #1a1714;
+  --hero-paper: #f2ede3;
+
+  /* Typography */
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Rules */
+  --rule: 1.5px solid var(--ink);
+
+  /* Scale defaults (flow mode) */
+  --fs-micro: 12px;
+  --fs-body: 15px;
+  --fs-sum: 15px;
+  --fs-card: 22px;
+  --fs-tile: 24px;
+  --fs-num: 28px;
+  --fs-xl: 40px;
+  --fs-h1: clamp(44px, 12vw, 64px);
+  --fs-mast: clamp(64px, 22vw, 120px);
+  --fs-mast2: clamp(32px, 10vw, 56px);
+  --gap-page: 16px;
+}
+
+[data-theme="dark"] {
+  --ink: #ece6da;
+  --paper: #131211;
+  --paper-2: #1c1a18;
+  --pap-text: #ff8000;
+  --pap-text-inv: #a84d00;
+  --shadow: rgba(0, 0, 0, .6);
+}
+
+.is-inverted {
+  --pap-text: var(--pap-text-inv);
+}
+
+/* Fit mode fluid scale */
+@media (min-width: 900px) and (min-height: 560px) {
+  :root {
+    --u: min(1vw, 1.7778dvh);
+    --fs-micro: max(11px, calc(var(--u) * .72));
+    --fs-body: max(13px, calc(var(--u) * .9));
+    --fs-sum: max(13px, calc(var(--u) * .82));
+    --fs-card: max(17px, calc(var(--u) * 1.5));
+    --fs-tile: max(19px, calc(var(--u) * 1.85));
+    --fs-num: max(22px, calc(var(--u) * 2.3));
+    --fs-xl: calc(var(--u) * 3.4);
+    --fs-h1: calc(var(--u) * 4.6);
+    --fs-mast: calc(var(--u) * 8.4);
+    --fs-mast2: calc(var(--u) * 3.9);
+    --gap-page: calc(var(--u) * 1.6);
+  }
+}
+
+/* Base reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background .35s ease, color .35s ease;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--pap-text);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Shared theme toggle button */
+.theme-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  background: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+
+.theme-btn svg {
+  width: 56%;
+  height: 56%;
+  display: block;
+}
+
+.theme-btn:hover {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   Inline SVG Illustrations (SPEC §8)
+   ========================================================================== */
+
+.ill {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--paper-2);
+  color: var(--ink);
+}
+
+.ill .s {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ill .a {
+  fill: none;
+  stroke: var(--pap);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ill .af {
+  fill: var(--pap);
+  stroke: none;
+}
+
+.ill .aw {
+  fill: var(--pap);
+  opacity: .2;
+  stroke: none;
+}
+
+.ill .aw2 {
+  fill: var(--pap);
+  opacity: .55;
+  stroke: none;
+}
+
+.ill .pf {
+  fill: var(--paper-2);
+}
+
+.ill .inkf {
+  fill: currentColor;
+  stroke: none;
+}
+
+.ill .d {
+  stroke-dasharray: 4 5;
+}
+
+.ill .gl line {
+  stroke: currentColor;
+  stroke-width: .6;
+  opacity: .1;
+}
+
+.ill text {
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  fill: currentColor;
+  opacity: .75;
+}
+
+.ill text.serif {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-style: italic;
+  fill: var(--pap);
+  opacity: 1;
+}
+
+.ill text.si {
+  fill: currentColor;
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

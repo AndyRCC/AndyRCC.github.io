@@ -4,12 +4,12 @@
   const THEME_COLORS = { light: '#f2ede3', dark: '#131211' };
   let themeBound = false;
 
+  // Light by default; dark only when the visitor picked it with the theme button.
   function readStoredTheme() {
     try {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'light' || saved === 'dark') return saved;
+      if (localStorage.getItem('theme') === 'dark') return 'dark';
     } catch {}
-    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'light';
   }
 
   const getTheme = () =>
@@ -57,12 +57,6 @@
 
     window.addEventListener('storage', e => {
       if (e.key === 'theme') applyTheme(readStoredTheme(), false);
-    });
-
-    window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change', () => {
-      let saved = null;
-      try { saved = localStorage.getItem('theme'); } catch {}
-      if (saved !== 'light' && saved !== 'dark') applyTheme(readStoredTheme(), false);
     });
   }
 

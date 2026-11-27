@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Andy Casafranca — CV</title>
-<meta name="description" content="Andy Casafranca — Instrumentation &amp; SCADA Engineer at LabProjects and Mechatronics Engineering graduate (UPC). CV in English and Spanish.">
+<title>Andy Casafranca — Résumé</title>
+<meta name="description" content="Andy Casafranca — Instrumentation &amp; SCADA Engineer at LabProjects and Mechatronics Engineering graduate (UPC). Résumé in English and Spanish.">
 <meta name="author" content="Andy Casafranca">
 <meta name="theme-color" content="#f2ede3">
 <link rel="icon" href="/assets/mclaren.png">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Andy Casafranca — CV">
+<meta property="og:title" content="Andy Casafranca — Résumé">
 <meta property="og:description" content="Instrumentation &amp; SCADA Engineer at LabProjects · Mechatronics Engineering graduate focused on instrumentation, SCADA and automation">
 <meta property="og:image" content="https://andyrcc.github.io/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -42,7 +42,7 @@
       <span id="t_back">Cover</span>
     </a>
 
-    <span class="cv-bar-title">Andy Casafranca · CV</span>
+    <span class="cv-bar-title" id="t_bar">Andy Casafranca · Résumé</span>
 
     <div class="cv-tools">
       <div class="cv-lang" role="group" id="langGroup" aria-label="Language">
@@ -95,7 +95,7 @@
 
   var DATA = {
     en: {
-      ui:{ back:"Back to site", dl:"Download PDF", lang:"Language", title:"Andy Casafranca — CV",
+      ui:{ back:"Back to site", dl:"Download PDF", lang:"Language", title:"Andy Casafranca — Résumé",
            updated:"Updated November 2026", skills:"Skills", photo:"Photo of Andy Casafranca" },
       headline:"Instrumentation & SCADA Engineer at LabProjects · Mechatronics Engineering graduate focused on instrumentation, SCADA and automation",
       location:"Lima, Peru",
@@ -233,6 +233,8 @@
     SITE.applyTheme(SITE.getTheme(), false);
     document.title = u.title;
     document.getElementById('t_back').textContent = lang === 'es' ? 'Portada' : 'Cover';
+    // English says Résumé; Spanish keeps CV
+    document.getElementById('t_bar').textContent = lang === 'es' ? 'Andy Casafranca · CV' : 'Andy Casafranca · Résumé';
     document.getElementById('t_dl').textContent = u.dl;
     document.getElementById('dl').setAttribute('aria-label', u.dl);
     document.getElementById('langGroup').setAttribute('aria-label', u.lang);
@@ -267,7 +269,7 @@
     });
     var dl = document.getElementById('dl');
     dl.setAttribute('href', 'cv-'+lang+'.pdf');
-    dl.setAttribute('download', 'Andy-Casafranca-CV-'+lang.toUpperCase()+'.pdf');
+    dl.setAttribute('download', lang === 'es' ? 'Andy-Casafranca-CV-ES.pdf' : 'Andy-Casafranca-Resume-EN.pdf');
     try { localStorage.setItem('cvLang', lang); } catch(e){}
   }
 

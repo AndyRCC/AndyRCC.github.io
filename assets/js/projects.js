@@ -91,8 +91,8 @@
     plus.setAttribute('aria-hidden', 'true');
     plus.innerHTML = svgIcon('M12 5v14M5 12h14');
     const h2 = el('h2');
-    h2.innerHTML = 'Your next build <i>loads here</i>';
-    card.append(plus, h2, el('small', null, `P.${String(nextNo).padStart(2, '0')} · coming soon`));
+    h2.innerHTML = 'Continued in the <i>next issue.</i>';
+    card.append(plus, h2, el('small', null, `P.${String(nextNo).padStart(2, '0')}`));
     return card;
   }
 
@@ -123,7 +123,7 @@
     const sub = document.getElementById('projectsSubtitle');
     if (sub) sub.textContent = `${WORDS[projects.length] ?? projects.length} things I've built end to end`;
     const cnt = document.getElementById('projectsCount');
-    if (cnt) cnt.textContent = `${projects.length} ${projects.length === 1 ? 'build' : 'builds'} · more coming`;
+    if (cnt) cnt.textContent = `${projects.length} ${projects.length === 1 ? 'build' : 'builds'}`;
 
     const fNav = document.getElementById('projectsFilters');
     if (fNav) {

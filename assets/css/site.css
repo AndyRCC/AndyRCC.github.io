@@ -460,6 +460,7 @@ button {
   font-size: 22px;
   line-height: 1.06;
   margin: 0;
+  text-wrap: balance;
 }
 
 .coverlines .sm {
@@ -467,6 +468,7 @@ button {
   font-weight: 500;
   margin: 8px 0 0;
   line-height: 1.38;
+  text-wrap: pretty;
 }
 
 .inside-link {

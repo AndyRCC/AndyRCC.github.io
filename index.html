@@ -24,6 +24,12 @@
   <!-- Apply theme before first paint -->
   <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
   <link rel="stylesheet" href="assets/css/site.css">
+  <noscript><style>
+    .page-cover { overflow: auto !important; }
+    dialog.sheet { display: block; position: static; width: auto; max-width: 960px; height: auto; max-height: none; margin: 24px var(--gap-page); border: var(--rule); background: var(--paper); color: var(--ink); overflow: visible; }
+    dialog.sheet .sheet-close { display: none; }
+    dialog.sheet .sheet-body { overflow: visible; }
+  </style></noscript>
 </head>
 <body class="page-cover">
   <main class="cover" id="cover">
@@ -148,6 +154,90 @@
     </a>
   </main>
 
+  <!-- About Panel -->
+  <dialog class="sheet" id="about" aria-labelledby="aboutTitle">
+    <div class="sheet-head">
+      <span class="sheet-eyebrow">01 · About</span>
+      <button class="sheet-close" type="button" data-close>Close <span aria-hidden="true">×</span></button>
+    </div>
+    <div class="sheet-body">
+      <h2 class="sheet-title" id="aboutTitle"><i>“Engineer who also has a soul.”</i></h2>
+
+      <figure class="sheet-figure">
+        <img src="assets/about.jpg" alt="Andy standing in the dunes outside Lima, Perú" width="1536" height="2048" loading="lazy">
+        <figcaption>Lima, Perú</figcaption>
+      </figure>
+
+      <div class="sheet-prose">
+        <p>Today I work full-time as an <strong class="hl">Instrumentation &amp; SCADA Engineer at LabProjects</strong>, serving Peruvian water utilities: I maintain the SCADA systems they use to monitor their reservoirs, harden the servers that host them, and calibrate bulk water meters in the field.</p>
+        <p>I'm just as comfortable <strong class="hl">debugging a circuit board</strong> as I am <strong class="hl">polishing a user interface</strong>. My work lives where mechanics, electronics, and intelligent systems collide — and where careful engineering meets a bit of curiosity.</p>
+        <p>I'm passionate about creating, exploring, and moving — whether it's through engineering challenges, road trips, fast cars, or quiet moments by the ocean.</p>
+      </div>
+
+      <section class="sheet-section" aria-label="Interests">
+        <h3 class="sheet-subhead">Interests</h3>
+        <ul class="interest-list">
+          <li>Formula 1</li>
+          <li>Fast cars</li>
+          <li>Gaming</li>
+          <li>Road trips</li>
+          <li>The ocean</li>
+        </ul>
+      </section>
+
+      <section class="sheet-section" aria-label="Elsewhere">
+        <h3 class="sheet-subhead">Elsewhere</h3>
+        <div class="sheet-links">
+          <a class="ul" href="https://www.instagram.com/andy_rcc" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a>
+          <a class="ul" href="https://steamcommunity.com/id/hitheads" target="_blank" rel="noopener">Steam <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </div>
+  </dialog>
+
+  <!-- Skills Panel -->
+  <dialog class="sheet" id="skills" aria-labelledby="skillsTitle">
+    <div class="sheet-head">
+      <span class="sheet-eyebrow">03 · Skills</span>
+      <button class="sheet-close" type="button" data-close>Close <span aria-hidden="true">×</span></button>
+    </div>
+    <div class="sheet-body">
+      <h2 class="sheet-title" id="skillsTitle">My featured <i>skills</i></h2>
+      <p class="sheet-lead">Four places where I like to get my hands dirty — from calibrating flowmeters in the field to breaking systems on purpose.</p>
+
+      <ol class="skill-list">
+        <li class="skill-item">
+          <span class="skill-no" aria-hidden="true">01</span>
+          <div>
+            <h3>Instrumentation &amp; SCADA</h3>
+            <p>Electromagnetic and ultrasonic flowmeters calibrated in the field, plus the SCADA/HMI (FUXA) and Siemens S7-1200 PLCs that turn their signals into decisions.</p>
+          </div>
+        </li>
+        <li class="skill-item">
+          <span class="skill-no" aria-hidden="true">02</span>
+          <div>
+            <h3>Embedded Systems &amp; Automation</h3>
+            <p>Microcontrollers, sensor integration, and control algorithms that bridge clean code and the messy physical world.</p>
+          </div>
+        </li>
+        <li class="skill-item">
+          <span class="skill-no" aria-hidden="true">03</span>
+          <div>
+            <h3>Machine Learning &amp; AI</h3>
+            <p>Training and deploying ML models — from feature engineering on raw sensor data to offline edge inference, like the ensemble behind HydraDetect-AI.</p>
+          </div>
+        </li>
+        <li class="skill-item">
+          <span class="skill-no" aria-hidden="true">04</span>
+          <div>
+            <h3>Ethical Hacking &amp; Pentesting</h3>
+            <p>Breaking things on purpose to make them safer — from web apps to embedded targets — and hardening the servers that keep SCADA systems online.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </dialog>
+
   <script src="assets/js/data.js"></script>
   <script src="assets/js/figures.js"></script>
   <script src="assets/js/site.js"></script>
@@ -158,6 +248,7 @@
       SITE.fillVolume();
       COVER.renderFan(document.getElementById('coverFan'), SITE_DATA.PROJECTS, SITE_FIGURES);
       COVER.startClock(document.getElementById('limaClock'));
+      COVER.initPanels();
       SITE.maybeFitcheck();
     })();
   </script>

@@ -1879,9 +1879,19 @@ dialog.sheet::backdrop {
 
 .nf-top {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding-bottom: 12px;
   border-bottom: 1.5px solid var(--hero-ink);
+}
+
+.nf-name {
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .nf-code {

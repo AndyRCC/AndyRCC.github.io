@@ -56,8 +56,13 @@
       applyTheme(getTheme() === 'dark' ? 'light' : 'dark', true);
     });
 
-    window.addEventListener('pageshow', function () {
+    window.addEventListener('pageshow', function (e) {
       applyTheme(readStoredTheme(), false);
+      if (e.persisted && document.activeElement &&
+          document.activeElement.matches &&
+          document.activeElement.matches('.wide, .back')) {
+        document.activeElement.blur();
+      }
     });
 
     window.addEventListener('storage', function (e) {

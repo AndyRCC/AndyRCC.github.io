@@ -689,6 +689,7 @@ button {
 
   .wide .ttl {
     margin: auto 0 calc(var(--u) * .3);
+    align-self: flex-start;
   }
 
   .fan {
@@ -1549,6 +1550,31 @@ dialog.sheet::backdrop {
       background: var(--pap);
       color: var(--hero-ink);
     }
+  }
+}
+
+/* ==========================================================================
+   Cross-Document & Same-Document View Transitions (SPEC §6.6)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  .wide .ttl,
+  .phead-word {
+    view-transition-name: vt-title;
+  }
+
+  ::view-transition-group(*) {
+    animation-duration: .6s;
+    animation-timing-function: cubic-bezier(.2, .8, .2, 1);
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: .35s;
   }
 }
 

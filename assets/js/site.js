@@ -25,7 +25,10 @@
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', THEME_COLORS[next]);
 
-    const label = next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+    const es = /^es/i.test(document.documentElement.lang || '');
+    const label = es
+      ? (next === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro')
+      : (next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
       btn.setAttribute('aria-label', label);
       btn.setAttribute('title', label);

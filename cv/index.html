@@ -230,6 +230,7 @@
     var d = DATA[lang], u = d.ui;
     var newTabHint = lang === 'es' ? ' (abre en una nueva pestaña)' : ' (opens in a new tab)';
     document.documentElement.lang = lang;
+    SITE.applyTheme(SITE.getTheme(), false);
     document.title = u.title;
     document.getElementById('t_back').textContent = lang === 'es' ? 'Portada' : 'Cover';
     document.getElementById('t_dl').textContent = u.dl;

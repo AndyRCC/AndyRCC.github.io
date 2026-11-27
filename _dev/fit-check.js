@@ -140,6 +140,35 @@
     return [...fails];
   }
 
+  function checkClick() {
+    const cards = document.querySelectorAll('.pgrid .card:not(.blank):not(.next)');
+    if (!cards.length) return [];
+    const sx = window.scrollX;
+    const sy = window.scrollY;
+    const fails = [];
+    for (const c of cards) {
+      c.scrollIntoView({ block: 'center', behavior: 'instant' });
+      const r = c.getBoundingClientRect();
+      let ok = 0;
+      let n = 0;
+      for (let i = 1; i < 6; i++) {
+        for (let j = 1; j < 10; j++) {
+          const x = r.left + r.width * i / 6;
+          const y = r.top + r.height * j / 10;
+          if (y < 0 || y > window.innerHeight) continue;
+          n++;
+          if (document.elementFromPoint(x, y)?.closest('a')) ok++;
+        }
+      }
+      const pct = n ? Math.round(100 * ok / n) : 100;
+      if (pct < 100) {
+        fails.push(`${c.querySelector('.no')?.textContent?.trim() || '?'} ${pct}%`);
+      }
+    }
+    window.scrollTo(sx, sy);
+    return fails;
+  }
+
   function runFitcheck() {
     ensureStyle();
 
@@ -147,7 +176,8 @@
       el.classList.remove('fitcheck-overflow', 'fitcheck-tiny');
     });
 
-    const isFit = window.matchMedia(FIT_QUERY).matches;
+    const forcedFlow = document.body?.dataset?.mode === 'flow';
+    const isFit = !forcedFlow && window.matchMedia(FIT_QUERY).matches;
     const mode = isFit ? 'fit' : 'flow';
     const doc = document.documentElement;
     const vScroll = doc.scrollHeight > window.innerHeight + 1;
@@ -186,6 +216,7 @@
 
     const cut = checkCut(isFit);
     const contrast = checkContrast();
+    const click = checkClick();
 
     const result = {
       mode,
@@ -196,7 +227,8 @@
       overflow,
       tinyText,
       cut,
-      contrast
+      contrast,
+      click
     };
 
     window.__fit = result;
@@ -210,7 +242,8 @@
         overflow: result.overflow.length,
         tinyText: result.tinyText.length,
         cut: result.cut.length,
-        contrast: result.contrast.length
+        contrast: result.contrast.length,
+        click: result.click.length
       }]);
     }
     console.log('[fitcheck]', JSON.stringify(result));

@@ -1,12 +1,14 @@
-(function () {
+(() => {
   'use strict';
 
-  var FIT_QUERY = '(min-width: 900px) and (min-height: 560px)';
-  var STYLE_ID = 'fitcheck-style';
+  // Sync fit/flow threshold with assets/css/site.css and assets/js/projects.js
+  const FIT_QUERY = '(min-width: 900px) and (min-height: 560px)';
+  const STYLE_ID = 'fitcheck-style';
+  const SKIP_SEL = 'dialog:not([open]), noscript, script, style, template, svg, [aria-hidden="true"], .sr-only';
 
   function ensureStyle() {
     if (document.getElementById(STYLE_ID)) return;
-    var style = document.createElement('style');
+    const style = document.createElement('style');
     style.id = STYLE_ID;
     style.textContent =
       '.fitcheck-overflow{outline:3px solid #e00 !important;outline-offset:-3px !important;}' +
@@ -15,95 +17,186 @@
   }
 
   function describeEl(el) {
-    var tag = el.tagName.toLowerCase();
-    var id = el.id ? '#' + el.id : '';
-    var cls = typeof el.className === 'string' && el.className.trim()
-      ? '.' + el.className.trim().split(/\s+/).filter(function (c) {
-          return c.indexOf('fitcheck-') !== 0;
-        }).slice(0, 3).join('.')
+    const tag = el.tagName.toLowerCase();
+    const id = el.id ? '#' + el.id : '';
+    const cls = typeof el.className === 'string' && el.className.trim()
+      ? '.' + el.className.trim().split(/\s+/).filter(c => !c.startsWith('fitcheck-')).slice(0, 3).join('.')
       : '';
-    var fitLabel = el.getAttribute('data-fit');
-    return tag + id + cls + (fitLabel && fitLabel !== '' && fitLabel !== '1' ? '[' + fitLabel + ']' : '');
+    const fitLabel = el.getAttribute('data-fit');
+    return tag + id + cls + (fitLabel && fitLabel !== '1' ? `[${fitLabel}]` : '');
   }
 
   function isElementVisible(el) {
     if (!el || el.nodeType !== 1) return false;
-    var cur = el;
-    while (cur && cur.nodeType === 1) {
+    for (let cur = el; cur && cur.nodeType === 1; cur = cur.parentElement) {
       if (cur.hidden) return false;
       if (cur.tagName === 'DIALOG' && !cur.open) return false;
-      var cs = getComputedStyle(cur);
+      const cs = getComputedStyle(cur);
       if (cs.display === 'none' || cs.visibility === 'hidden' || parseFloat(cs.opacity) === 0) {
         return false;
       }
-      cur = cur.parentElement;
     }
-    var rect = el.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
     return rect.width > 0 && rect.height > 0;
+  }
+
+  function checkCut(isFit) {
+    const truncated = [];
+    const clipped = new Set();
+
+    for (const el of document.querySelectorAll('body *')) {
+      if (el.closest(SKIP_SEL)) continue;
+      const cs = getComputedStyle(el);
+      if (cs.display === 'none') continue;
+      const ellipsis = cs.textOverflow === 'ellipsis' && el.scrollWidth > el.clientWidth + 1;
+      const clamp = cs.webkitLineClamp && cs.webkitLineClamp !== 'none' && el.scrollHeight > el.clientHeight + 1;
+      if (ellipsis || clamp) {
+        truncated.push(`truncated ${el.className || el.tagName}: ${el.textContent.trim().slice(0, 60)}`);
+      }
+    }
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    for (let n; (n = walker.nextNode());) {
+      const p = n.parentElement;
+      if (!n.textContent.trim() || !p || p.closest(SKIP_SEL)) continue;
+      const range = document.createRange();
+      range.selectNodeContents(n);
+      const r = range.getBoundingClientRect();
+      if (!r.width || !r.height) continue;
+
+      for (let a = p; a && a !== document.body; a = a.parentElement) {
+        const cs = getComputedStyle(a);
+        if (cs.overflowX === 'visible' && cs.overflowY === 'visible') continue;
+        const ar = a.getBoundingClientRect();
+        const d = Math.max(r.bottom - ar.bottom, r.right - ar.right, ar.top - r.top, ar.left - r.left);
+        const scrollsX = cs.overflowX === 'auto' || cs.overflowX === 'scroll';
+        if (d > 1 && cs.textOverflow !== 'ellipsis' && !scrollsX) {
+          clipped.add(`${a.className || a.tagName} clips "${n.textContent.trim().slice(0, 40)}" by ${Math.round(d)}px`);
+        }
+        break;
+      }
+      if (isFit && (r.bottom > window.innerHeight + 1 || r.right > window.innerWidth + 1)) {
+        clipped.add(`viewport clips "${n.textContent.trim().slice(0, 40)}"`);
+      }
+    }
+
+    return [...truncated, ...clipped];
+  }
+
+  function checkContrast() {
+    const parse = s => {
+      const m = s && s.match(/rgba?\(([^)]+)\)/);
+      if (!m) return null;
+      const p = m[1].split(/[ ,/]+/).filter(Boolean).map(Number);
+      return { r: p[0], g: p[1], b: p[2], a: p.length > 3 ? p[3] : 1 };
+    };
+    const lin = v => (v /= 255) <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
+    const lum = c => 0.2126 * lin(c.r) + 0.7152 * lin(c.g) + 0.0722 * lin(c.b);
+    const mix = (fg, bg, a) => ({
+      r: fg.r * a + bg.r * (1 - a),
+      g: fg.g * a + bg.g * (1 - a),
+      b: fg.b * a + bg.b * (1 - a),
+      a: 1
+    });
+    const bgOf = el => {
+      const layers = [];
+      for (let e = el; e; e = e.parentElement) {
+        const c = parse(getComputedStyle(e).backgroundColor);
+        if (c && c.a > 0) layers.push(c);
+        if (c && c.a === 1) break;
+      }
+      return layers.reverse().reduce((base, c) => mix(c, base, c.a), { r: 255, g: 255, b: 255, a: 1 });
+    };
+    const opacityOf = el => {
+      let o = 1;
+      for (let e = el; e; e = e.parentElement) o *= parseFloat(getComputedStyle(e).opacity);
+      return o;
+    };
+
+    const fails = new Set();
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    for (let n; (n = walker.nextNode());) {
+      const t = n.textContent.trim();
+      const el = n.parentElement;
+      if (!t || !el || el.closest(SKIP_SEL)) continue;
+      const cs = getComputedStyle(el);
+      if (cs.visibility === 'hidden' || !el.getBoundingClientRect().width) continue;
+      if (el.closest('button:disabled')) continue;
+      const o = opacityOf(el);
+      if (o < 0.05) continue;
+      const c = parse(cs.color);
+      if (!c) continue;
+      const bg = bgOf(el);
+      const fg = mix(c, bg, c.a * o);
+      const [hi, lo] = [lum(fg), lum(bg)].sort((x, y) => y - x);
+      const ratio = (hi + 0.05) / (lo + 0.05);
+      const size = parseFloat(cs.fontSize);
+      const bold = parseInt(cs.fontWeight, 10) >= 700;
+      const need = size >= 24 || (size >= 18.66 && bold) ? 3 : 4.5;
+      if (ratio < need) {
+        fails.add(`${t.slice(0, 30)} ${ratio.toFixed(2)}:1 (needs ${need}, ${size.toFixed(1)}px)`);
+      }
+    }
+    return [...fails];
   }
 
   function runFitcheck() {
     ensureStyle();
 
-    var prev = document.querySelectorAll('.fitcheck-overflow, .fitcheck-tiny');
-    for (var p = 0; p < prev.length; p++) {
-      prev[p].classList.remove('fitcheck-overflow', 'fitcheck-tiny');
-    }
+    document.querySelectorAll('.fitcheck-overflow, .fitcheck-tiny').forEach(el => {
+      el.classList.remove('fitcheck-overflow', 'fitcheck-tiny');
+    });
 
-    var isFit = window.matchMedia(FIT_QUERY).matches;
-    var mode = isFit ? 'fit' : 'flow';
-    var doc = document.documentElement;
-    var vScroll = doc.scrollHeight > window.innerHeight + 1;
-    var hScroll = doc.scrollWidth > window.innerWidth + 1;
-    var pageScrolls = isFit ? (vScroll || hScroll) : hScroll;
+    const isFit = window.matchMedia(FIT_QUERY).matches;
+    const mode = isFit ? 'fit' : 'flow';
+    const doc = document.documentElement;
+    const vScroll = doc.scrollHeight > window.innerHeight + 1;
+    const hScroll = doc.scrollWidth > window.innerWidth + 1;
+    const pageScrolls = isFit ? (vScroll || hScroll) : hScroll;
 
-    var overflow = [];
-    var fitEls = document.querySelectorAll('[data-fit]');
-    for (var i = 0; i < fitEls.length; i++) {
-      var el = fitEls[i];
+    const overflow = [];
+    for (const el of document.querySelectorAll('[data-fit]')) {
       if (!isElementVisible(el)) continue;
-      var oy = el.scrollHeight > el.clientHeight + 1;
-      var ox = el.scrollWidth > el.clientWidth + 1;
-      if (oy || ox) {
+      if (el.scrollHeight > el.clientHeight + 1 || el.scrollWidth > el.clientWidth + 1) {
         el.classList.add('fitcheck-overflow');
         overflow.push(
-          describeEl(el) +
-          ' (' + el.scrollWidth + 'x' + el.scrollHeight +
-          ' > ' + el.clientWidth + 'x' + el.clientHeight + ')'
+          `${describeEl(el)} (${el.scrollWidth}x${el.scrollHeight} > ${el.clientWidth}x${el.clientHeight})`
         );
       }
     }
 
-    var tinyText = [];
-    var seenTiny = new Set();
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    var node;
-    while ((node = walker.nextNode())) {
+    const tinyText = [];
+    const seenTiny = new Set();
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    for (let node; (node = walker.nextNode());) {
       if (!node.nodeValue || !node.nodeValue.trim()) continue;
-      var parent = node.parentElement;
+      const parent = node.parentElement;
       if (!parent) continue;
-      var tag = parent.tagName;
+      const tag = parent.tagName;
       if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'NOSCRIPT' || tag === 'TEMPLATE') continue;
-      if (parent.closest && parent.closest('svg')) continue;
+      if (parent.closest('svg, .sr-only')) continue;
       if (!isElementVisible(parent)) continue;
-      if (parent.classList.contains('sr-only') || (parent.closest && parent.closest('.sr-only'))) continue;
-      var fs = parseFloat(getComputedStyle(parent).fontSize);
+      const fs = parseFloat(getComputedStyle(parent).fontSize);
       if (fs < 10.95 && !seenTiny.has(parent)) {
         seenTiny.add(parent);
         parent.classList.add('fitcheck-tiny');
-        var snippet = node.nodeValue.trim().slice(0, 28);
-        tinyText.push(describeEl(parent) + ' "' + snippet + '" (' + fs.toFixed(1) + 'px)');
+        tinyText.push(`${describeEl(parent)} "${node.nodeValue.trim().slice(0, 28)}" (${fs.toFixed(1)}px)`);
       }
     }
 
-    var result = {
-      mode: mode,
-      viewport: window.innerWidth + 'x' + window.innerHeight,
+    const cut = checkCut(isFit);
+    const contrast = checkContrast();
+
+    const result = {
+      mode,
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
       theme: document.documentElement.getAttribute('data-theme') || 'light',
-      pageScrolls: pageScrolls,
+      pageScrolls,
       horizontalScroll: hScroll,
-      overflow: overflow,
-      tinyText: tinyText
+      overflow,
+      tinyText,
+      cut,
+      contrast
     };
 
     window.__fit = result;
@@ -113,9 +206,11 @@
         viewport: result.viewport,
         theme: result.theme,
         pageScrolls: result.pageScrolls,
-        horizontalScroll: result.horizontalScroll,
-        overflowCount: result.overflow.length,
-        tinyTextCount: result.tinyText.length
+        hScroll: result.horizontalScroll,
+        overflow: result.overflow.length,
+        tinyText: result.tinyText.length,
+        cut: result.cut.length,
+        contrast: result.contrast.length
       }]);
     }
     console.log('[fitcheck]', JSON.stringify(result));

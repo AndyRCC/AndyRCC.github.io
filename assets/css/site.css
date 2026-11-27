@@ -240,6 +240,496 @@ button {
 }
 
 /* ==========================================================================
+   Cover Page (/) — Fit & Base Editorial Styles
+   ========================================================================== */
+
+.cover {
+  margin: var(--gap-page);
+  display: grid;
+  border-top: var(--rule);
+  border-left: var(--rule);
+}
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  border-right: var(--rule);
+  border-bottom: var(--rule);
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+  transition: background .28s ease, color .28s ease;
+}
+
+.tile--link {
+  cursor: pointer;
+}
+
+.tile--static {
+  cursor: default;
+}
+
+.tile--interactive:hover {
+  background: var(--ink);
+  color: var(--paper);
+  --pap-text: var(--pap-text-inv);
+}
+
+.tile--link:focus-visible {
+  outline-offset: -4px;
+}
+
+.lab {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.lab-name {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.lab .n {
+  font-family: var(--font-serif);
+  font-size: var(--fs-num);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: .82;
+  transition: color .28s ease;
+}
+
+.tile--interactive:hover .lab .n {
+  color: var(--pap-text);
+}
+
+.tile .ttl {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--fs-tile);
+  line-height: 1.04;
+  margin: auto 0 6px;
+  letter-spacing: -.01em;
+}
+
+.tile .ttl i {
+  font-style: italic;
+}
+
+.tile .ttl-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.tile .ttl-link:hover {
+  text-decoration: underline;
+  text-underline-offset: .16em;
+  text-decoration-thickness: 1.5px;
+}
+
+.tile-sub {
+  font-size: var(--fs-body);
+  margin: 0;
+  line-height: 1.42;
+  opacity: .78;
+}
+
+.lima-sub {
+  margin-top: 8px;
+}
+
+.more {
+  margin-top: 8px;
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform .25s ease;
+}
+
+.tile--interactive:hover .arrow,
+.inside-link:hover .arrow {
+  transform: translateX(5px);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-top: 6px;
+  font-size: var(--fs-body);
+  font-weight: 500;
+}
+
+.ul {
+  text-decoration: underline;
+  text-underline-offset: .25em;
+  text-decoration-thickness: 1px;
+}
+
+.ul:hover {
+  color: var(--pap-text);
+}
+
+.clock {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  line-height: .9;
+  margin-top: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hero tile — always papaya #ff8000 with #1a1714 ink */
+.hero {
+  background: var(--hero-bg);
+  color: var(--hero-ink);
+  cursor: default;
+}
+
+.hero :focus-visible {
+  outline: 3px solid var(--hero-ink);
+  outline-offset: 3px;
+}
+
+.cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid var(--hero-ink);
+}
+
+.mast {
+  margin: 12px 0 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+}
+
+.mast-first {
+  display: block;
+  font-size: var(--fs-mast);
+  line-height: .78;
+  letter-spacing: -.03em;
+}
+
+.mast-last {
+  display: block;
+  font-style: italic;
+  font-size: var(--fs-mast2);
+  line-height: 1;
+  margin: 2px 0 0 2px;
+  letter-spacing: -.01em;
+}
+
+.coverlines {
+  position: relative;
+  z-index: 2;
+  margin-top: 14px;
+  max-width: 24ch;
+}
+
+.coverlines .big {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.06;
+  margin: 0;
+}
+
+.coverlines .sm {
+  font-size: var(--fs-body);
+  font-weight: 500;
+  margin: 8px 0 0;
+  line-height: 1.38;
+}
+
+.inside-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.inside-link:hover {
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+
+.hero .portrait {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 60%;
+  max-width: 72%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero .portrait img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom right;
+  filter: drop-shadow(0 10px 18px rgba(26, 23, 20, .35));
+}
+
+.cvbtn {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 2;
+  background: var(--hero-ink);
+  color: var(--hero-paper);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  line-height: 1;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.cvbtn svg {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+.cvbtn:hover {
+  transform: translateY(-2px);
+}
+
+/* Wide Projects tile + Fan */
+.wide {
+  gap: 14px;
+}
+
+.wide .copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.wide .ttl {
+  font-size: var(--fs-xl);
+  line-height: .94;
+}
+
+.fan {
+  position: relative;
+}
+
+.print {
+  background: var(--paper-2);
+  border: var(--rule);
+  color: var(--ink);
+  box-shadow: 0 10px 22px var(--shadow);
+}
+
+.print .cap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 5px;
+  font-family: var(--font-serif);
+  font-size: max(11px, 12px);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.print .cap span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.print .cap small {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  opacity: .65;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Cover Fit Mode (>= 900px wide & >= 560px tall)
+   ========================================================================== */
+
+@media (min-width: 900px) and (min-height: 560px) {
+  .page-cover {
+    overflow: hidden;
+  }
+
+  .cover {
+    height: calc(100dvh - 2 * var(--gap-page));
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1.12fr;
+  }
+
+  .tile {
+    padding: calc(var(--u) * 1.15) calc(var(--u) * 1.35);
+  }
+
+  .hero {
+    grid-row: 1 / 4;
+    padding: calc(var(--u) * 1.35) calc(var(--u) * 1.5);
+  }
+
+  .cover-top {
+    padding-bottom: calc(var(--u) * .6);
+  }
+
+  .theme-btn {
+    width: max(26px, calc(var(--u) * 1.9));
+    height: max(26px, calc(var(--u) * 1.9));
+  }
+
+  .mast {
+    margin-top: calc(var(--u) * .9);
+  }
+
+  .mast-last {
+    margin: calc(var(--u) * .1) 0 0 calc(var(--u) * .2);
+  }
+
+  .coverlines {
+    margin-top: calc(var(--u) * 1.1);
+    max-width: calc(var(--u) * 16.5);
+  }
+
+  .coverlines .big {
+    font-size: max(17px, calc(var(--u) * 1.6));
+  }
+
+  .coverlines .sm {
+    margin-top: calc(var(--u) * .55);
+  }
+
+  .inside-link {
+    margin-top: calc(var(--u) * .75);
+  }
+
+  .hero .portrait {
+    height: 60%;
+  }
+
+  .cvbtn {
+    left: calc(var(--u) * 1.5);
+    bottom: calc(var(--u) * 1.35);
+    padding: calc(var(--u) * .7) calc(var(--u) * 1.15);
+    gap: calc(var(--u) * .45);
+  }
+
+  .tile .ttl {
+    margin: auto 0 calc(var(--u) * .35);
+  }
+
+  .lima-sub {
+    margin-top: calc(var(--u) * .5);
+  }
+
+  .more {
+    margin-top: calc(var(--u) * .6);
+    gap: calc(var(--u) * .45);
+  }
+
+  .links {
+    gap: calc(var(--u) * .3) calc(var(--u) * .85);
+    margin-top: calc(var(--u) * .45);
+  }
+
+  .clock {
+    font-size: calc(var(--u) * 3.6);
+  }
+
+  .wide {
+    grid-column: 2 / 5;
+    flex-direction: row;
+    gap: calc(var(--u) * 1);
+    padding: calc(var(--u) * 1.25) calc(var(--u) * 1.5);
+  }
+
+  .wide .copy {
+    flex: 0 0 23%;
+  }
+
+  .wide .ttl {
+    margin: auto 0 calc(var(--u) * .3);
+  }
+
+  .fan {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .print {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(var(--u) * 11.5);
+    padding: calc(var(--u) * .42) calc(var(--u) * .42) calc(var(--u) * .55);
+    box-shadow: 0 calc(var(--u) * .8) calc(var(--u) * 1.8) var(--shadow);
+    z-index: var(--z, 1);
+    transform: translate(calc(-50% + var(--x, 0px)), calc(-50% + var(--y, 0px))) rotate(var(--r, 0deg));
+    transition: transform .55s cubic-bezier(.2, .8, .2, 1), box-shadow .3s ease;
+  }
+
+  .print .cap {
+    margin-top: calc(var(--u) * .35);
+    font-size: max(11px, calc(var(--u) * .95));
+  }
+
+  .print .cap small {
+    font-size: max(11px, calc(var(--u) * .62));
+  }
+
+  .wide:hover .print,
+  .wide:focus-visible .print {
+    transform: translate(calc(-50% + var(--hx, var(--x, 0px))), calc(-50% + var(--hy, var(--y, 0px)))) rotate(var(--hr, var(--r, 0deg)));
+  }
+
+  .wide .print:hover {
+    z-index: 9;
+    box-shadow: 0 calc(var(--u) * 1.5) calc(var(--u) * 2.8) var(--shadow);
+    transform: translate(calc(-50% + var(--hx, var(--x, 0px))), calc(-50% - var(--u) * 2.4)) rotate(0deg);
+  }
+}
+
+/* ==========================================================================
    Reduced motion
    ========================================================================== */
 
@@ -251,5 +741,11 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: .001ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .wide:hover .print,
+  .wide:focus-visible .print,
+  .wide .print:hover {
+    transform: translate(calc(-50% + var(--x, 0px)), calc(-50% + var(--y, 0px))) rotate(var(--r, 0deg));
   }
 }

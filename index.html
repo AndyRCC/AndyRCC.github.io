@@ -1,752 +1,165 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Andy Casafranca · Mechatronics Engineer</title>
-<meta name="description" content="Andy Casafranca — Instrumentation &amp; SCADA Engineer at LabProjects and Mechatronics Engineering graduate (UPC) from Perú. Instrumentation, SCADA, embedded systems, ethical hacking, and AI projects like HydraDetect-AI.">
-<meta name="author" content="Andy Casafranca">
-<meta name="theme-color" content="#0e1419">
-<link rel="icon" href="assets/mclaren.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Andy Casafranca · Instrumentation &amp; SCADA Engineer</title>
+  <meta name="description" content="Andy Casafranca — Instrumentation &amp; SCADA Engineer at LabProjects and Mechatronics Engineering graduate (UPC) from Perú. Instrumentation, SCADA, embedded systems, ethical hacking, and AI projects like HydraDetect-AI.">
+  <meta name="author" content="Andy Casafranca">
+  <meta name="theme-color" content="#f2ede3">
+  <link rel="icon" href="assets/mclaren.png">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Andy Casafranca · Mechatronics Engineer">
-<meta property="og:description" content="Instrumentation &amp; SCADA Engineer who also has a soul — instrumentation, embedded systems, ethical hacking, AI. Perú.">
-<meta property="og:image" content="https://andyrcc.github.io/assets/banner.png">
-<meta property="og:url" content="https://andyrcc.github.io/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Andy Casafranca · Instrumentation &amp; SCADA Engineer">
+  <meta property="og:description" content="Instrumentation &amp; SCADA Engineer who also has a soul — instrumentation, embedded systems, ethical hacking, AI. Perú.">
+  <meta property="og:image" content="https://andyrcc.github.io/assets/banner.png">
+  <meta property="og:url" content="https://andyrcc.github.io/">
 
-<!-- Fonts + icons -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Dosis:wght@300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
 
-<!-- Apply saved theme before paint to avoid flash; default = dark -->
-<script>
-  (function () {
-    try {
-      var t = localStorage.getItem('theme');
-      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-    } catch (e) {}
-  })();
-</script>
-
-<style>
-/* ============================================================
-   Andy Casafranca — personal site
-   Tokens distilled from AndyRCC.github.io design system.
-   Dark is the default theme; light is an override.
-   ============================================================ */
-:root {
-  /* Brand */
-  --primary:        #0aa697;
-  --primary-hover:  #025b4d;
-  --primary-bright: #19d3bd;   /* teal that passes AA on dark surfaces */
-  --papaya:         #ff8000;   /* McLaren signature accent */
-  --papaya-soft:    #ffa040;
-  --yellow:         #ffc107;
-  --red:            #dc3545;
-
-  /* Radii */
-  --r:      8px;
-  --r-sm:   4px;
-  --r-full: 999px;
-
-  /* Type */
-  --font-sans:    'DM Sans', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-display: 'Dosis', 'DM Sans', sans-serif;
-
-  /* Layout */
-  --maxw: 1180px;
-  --nav-h: 70px;
-
-  /* === Dark theme (DEFAULT) === */
-  --bg:        #0e1419;
-  --bg-2:      #161c22;
-  --bg-3:      #1d242b;
-  --surface:   #141b21;
-  --surface-2: #1a222a;
-  --heading:   #f5f7f8;
-  --text:      #c4cad0;
-  --text-soft: #8c949c;
-  --border:    #232a31;
-  --border-strong: #2e3741;
-  --shadow-sm: 0 4px 14px rgba(0,0,0,.45);
-  --shadow-md: 0 14px 38px rgba(0,0,0,.55);
-  --shadow-lg: 0 30px 80px rgba(0,0,0,.6);
-  --hero-overlay-a: rgba(8,12,16,.78);
-  --hero-overlay-b: rgba(8,12,16,.93);
-}
-
-[data-theme="light"] {
-  --primary-bright: #07897c;
-  --bg:        #ffffff;
-  --bg-2:      #f8f9fa;
-  --bg-3:      #eef1f4;
-  --surface:   #ffffff;
-  --surface-2: #f8f9fa;
-  --heading:   #0c1116;
-  --text:      #404040;
-  --text-soft: #6c757d;
-  --border:    #e6e8eb;
-  --border-strong: #d4d9de;
-  --shadow-sm: 0 4px 14px rgba(15,22,30,.06);
-  --shadow-md: 0 14px 38px rgba(15,22,30,.10);
-  --shadow-lg: 0 30px 80px rgba(15,22,30,.12);
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 12px); -webkit-text-size-adjust: 100%; }
-
-body {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--text);
-  background: var(--bg);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  overflow-x: hidden;
-  transition: background .4s ease, color .4s ease;
-}
-
-h1, h2, h3, h4 { color: var(--heading); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 .5rem; }
-p { margin: 0 0 1rem; }
-a { color: var(--primary-bright); text-decoration: none; transition: color .2s ease; }
-img { max-width: 100%; display: block; }
-
-:focus-visible { outline: 3px solid var(--papaya); outline-offset: 3px; border-radius: var(--r-sm); }
-
-/* ---------- Layout helpers ---------- */
-.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
-.section { padding: clamp(64px, 9vw, 120px) 0; position: relative; }
-.section--alt { background: var(--bg-2); }
-
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--font-sans); font-size: 13px; font-weight: 700;
-  letter-spacing: 2.5px; text-transform: uppercase; color: var(--papaya);
-  margin-bottom: 14px;
-}
-.eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--papaya); border-radius: 2px; }
-
-.section-title { font-size: clamp(1.9rem, 1rem + 3vw, 2.9rem); margin-bottom: 14px; }
-.section-lead { color: var(--text-soft); max-width: 56ch; font-size: 1.05rem; }
-
-.accent { color: var(--papaya); }
-.text-teal { color: var(--primary-bright); }
-
-/* ---------- Buttons ---------- */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  font-family: var(--font-sans); font-weight: 700; font-size: 15px;
-  padding: 14px 26px; border-radius: var(--r-full);
-  border: 1.5px solid transparent; cursor: pointer;
-  transition: transform .18s ease, box-shadow .25s ease, background .25s ease, color .2s ease, border-color .2s ease;
-  min-height: 48px; line-height: 1;
-}
-.btn:hover { transform: translateY(-2px); }
-.btn:active { transform: translateY(0); }
-.btn--primary { background: var(--primary); color: #fff; box-shadow: 0 10px 26px rgba(10,166,151,.32); }
-.btn--primary:hover { background: var(--primary-hover); box-shadow: 0 14px 34px rgba(10,166,151,.42); }
-.btn--papaya { background: var(--papaya); color: #1a1205; box-shadow: 0 10px 26px rgba(255,128,0,.30); }
-.btn--papaya:hover { background: var(--papaya-soft); box-shadow: 0 14px 34px rgba(255,128,0,.40); }
-.btn--ghost { background: transparent; color: var(--heading); border-color: var(--border-strong); }
-.btn--ghost:hover { border-color: var(--papaya); color: var(--papaya); }
-
-/* ============================================================
-   HEADER
-   ============================================================ */
-.site-header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: var(--nav-h);
-  display: flex; align-items: center;
-  background: color-mix(in srgb, var(--bg) 72%, transparent);
-  backdrop-filter: saturate(160%) blur(14px);
-  -webkit-backdrop-filter: saturate(160%) blur(14px);
-  border-bottom: 1px solid transparent;
-  transition: border-color .3s ease, background .3s ease;
-}
-.site-header.scrolled { border-bottom-color: var(--border); background: color-mix(in srgb, var(--bg) 88%, transparent); }
-.nav { display: flex; align-items: center; justify-content: space-between; width: 100%; }
-
-.brand { display: inline-flex; align-items: center; gap: 11px; font-family: var(--font-display); font-weight: 800; font-size: 20px; color: var(--heading); letter-spacing: .3px; }
-.brand img { width: 30px; height: auto; filter: drop-shadow(0 2px 6px rgba(255,128,0,.4)); }
-.brand b { color: var(--heading); font-weight: 800; }
-
-.nav-links { display: flex; align-items: center; gap: 30px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { color: var(--text); font-weight: 500; font-size: 15px; position: relative; padding: 6px 0; }
-.nav-links a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; background: var(--papaya); transition: width .25s ease; border-radius: 2px; }
-.nav-links a:hover, .nav-links a.active { color: var(--heading); }
-.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-
-.nav-actions { display: flex; align-items: center; gap: 12px; }
-
-.theme-toggle, .menu-btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 44px; height: 44px; border-radius: var(--r-full);
-  background: var(--surface-2); border: 1px solid var(--border);
-  color: var(--heading); cursor: pointer; font-size: 17px;
-  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
-}
-.theme-toggle:hover, .menu-btn:hover { color: var(--papaya); border-color: var(--papaya); transform: translateY(-1px); }
-.theme-toggle .fa-sun { display: none; }
-[data-theme="light"] .theme-toggle .fa-sun { display: inline; }
-[data-theme="light"] .theme-toggle .fa-moon { display: none; }
-.menu-btn { display: none; }
-
-/* ============================================================
-   HERO — dark "engineer's chalkboard"
-   ============================================================ */
-.hero {
-  position: relative; min-height: 100vh; min-height: 100svh;
-  display: flex; align-items: center;
-  padding-top: var(--nav-h); padding-bottom: 40px;
-  background:
-    linear-gradient(var(--hero-overlay-a), var(--hero-overlay-b)),
-    url('assets/banner-bg.jpg') center/cover no-repeat fixed;
-  color: #eef2f4;
-  overflow: hidden;
-}
-.hero::after { /* papaya glow bottom-left */
-  content: ""; position: absolute; left: -10%; bottom: -20%;
-  width: 50vw; height: 50vw; max-width: 620px; max-height: 620px;
-  background: radial-gradient(circle, rgba(255,128,0,.16), transparent 65%);
-  pointer-events: none;
-}
-.hero-grid {
-  display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center;
-  width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; position: relative; z-index: 2;
-}
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
-  color: var(--papaya); margin-bottom: 20px;
-}
-.hero-eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary-bright); box-shadow: 0 0 0 0 rgba(25,211,189,.7); animation: pulse 2.4s infinite; }
-@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(25,211,189,.55);} 70% { box-shadow: 0 0 0 12px rgba(25,211,189,0);} 100% { box-shadow: 0 0 0 0 rgba(25,211,189,0);} }
-
-.hero h1 { color: #fff; font-size: clamp(2.5rem, 1.3rem + 4.6vw, 4.6rem); line-height: 1.04; margin: 0 0 18px; }
-.hero h1 .accent { color: var(--papaya); }
-
-.hero-typed { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.15rem, .9rem + 1.2vw, 1.7rem); color: #dfe5e9; min-height: 1.6em; margin-bottom: 18px; }
-.hero-typed .static { color: var(--primary-bright); }
-.cursor { display: inline-block; width: 3px; height: 1.05em; background: var(--papaya); margin-left: 3px; transform: translateY(3px); animation: blink 1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-
-.hero-sub { color: #aeb8c0; font-size: 1.06rem; max-width: 48ch; margin-bottom: 30px; line-height: 1.7; }
-.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
-
-/* portrait */
-.hero-portrait { position: relative; justify-self: center; }
-.hero-portrait::before { /* teal halo */
-  content: ""; position: absolute; inset: -8% -6% -2% -6%;
-  background: radial-gradient(60% 60% at 50% 40%, rgba(10,166,151,.35), transparent 70%);
-  filter: blur(8px); z-index: 0;
-}
-.hero-portrait img { position: relative; z-index: 1; width: min(340px, 70vw); filter: drop-shadow(0 30px 50px rgba(0,0,0,.55)); }
-.hero-ring { position: absolute; z-index: 0; inset: 0; margin: auto; width: 108%; aspect-ratio: 1; border: 1.5px dashed rgba(255,128,0,.35); border-radius: 50%; animation: spin 26s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* echo wave divider */
-.echo { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; line-height: 0; }
-.echo svg { width: 100%; height: 54px; display: block; }
-.echo path { stroke: url(#echoGrad); }
-
-.scroll-hint { position: absolute; left: 50%; bottom: 86px; transform: translateX(-50%); z-index: 3; color: #8c98a2; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.scroll-hint i { animation: bob 1.8s ease-in-out infinite; }
-@keyframes bob { 50% { transform: translateY(6px); } }
-
-/* ============================================================
-   ABOUT
-   ============================================================ */
-.about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
-.about-photo { position: relative; }
-.about-photo img { width: 100%; border-radius: 16px; box-shadow: var(--shadow-lg); aspect-ratio: 3/4; object-fit: cover; }
-.about-photo .badge {
-  position: absolute; right: -14px; bottom: 22px; background: var(--papaya); color: #1a1205;
-  font-weight: 700; font-size: 13px; padding: 10px 16px; border-radius: var(--r-full);
-  box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 8px;
-}
-.about-body p { font-size: 1.08rem; line-height: 1.85; }
-.tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-.tag {
-  font-size: 13px; font-weight: 500; color: var(--text);
-  padding: 8px 15px; border-radius: var(--r-full);
-  background: var(--surface-2); border: 1px solid var(--border);
-}
-.tag i { color: var(--primary-bright); margin-right: 7px; }
-
-/* ============================================================
-   SKILLS
-   ============================================================ */
-.cards-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; margin-top: 46px; }
-.skill-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-  padding: 30px 26px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-  position: relative; overflow: hidden;
-}
-.skill-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--papaya), var(--primary)); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
-.skill-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
-.skill-card:hover::before { transform: scaleX(1); }
-.skill-icon {
-  width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center;
-  font-size: 24px; color: var(--primary-bright); margin-bottom: 20px;
-  background: color-mix(in srgb, var(--primary) 14%, transparent);
-  border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
-}
-.skill-card h3 { font-size: 1.22rem; margin-bottom: 10px; }
-.skill-card p { color: var(--text-soft); font-size: .97rem; margin: 0; line-height: 1.65; }
-
-/* ============================================================
-   PROJECTS
-   ============================================================ */
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 26px; margin-top: 46px; }
-.project-card {
-  display: flex; flex-direction: column; background: var(--surface);
-  border: 1px solid var(--border); border-radius: 18px; overflow: hidden;
-  color: inherit; transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
-}
-.project-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); border-color: color-mix(in srgb, var(--papaya) 50%, var(--border)); }
-.project-media { position: relative; aspect-ratio: 16/10; overflow: hidden; background: #06080a; }
-.project-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-.project-card:hover .project-media img { transform: scale(1.06); }
-.project-media .open-pill {
-  position: absolute; top: 14px; right: 14px; background: rgba(8,12,16,.72); color: #fff;
-  font-size: 12px; font-weight: 600; padding: 7px 13px; border-radius: var(--r-full);
-  display: inline-flex; align-items: center; gap: 7px; backdrop-filter: blur(6px);
-  opacity: 0; transform: translateY(-6px); transition: opacity .25s ease, transform .25s ease;
-}
-.project-card:hover .open-pill { opacity: 1; transform: translateY(0); }
-.project-body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
-.project-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--papaya); margin-bottom: 9px; }
-.project-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
-.project-card p { color: var(--text-soft); font-size: .97rem; line-height: 1.65; margin-bottom: 18px; }
-.project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
-.chip { font-size: 12px; font-weight: 600; color: var(--primary-bright); padding: 5px 11px; border-radius: var(--r-full); background: color-mix(in srgb, var(--primary) 12%, transparent); border: 1px solid color-mix(in srgb, var(--primary) 26%, transparent); }
-
-/* placeholder "next project" card */
-.project-next {
-  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 12px;
-  border: 1.5px dashed var(--border-strong); border-radius: 18px; padding: 40px 24px;
-  color: var(--text-soft); background: transparent; min-height: 220px;
-  transition: border-color .25s ease, color .25s ease, transform .25s ease;
-}
-.project-next:hover { border-color: var(--papaya); color: var(--papaya); transform: translateY(-4px); }
-.project-next .plus { width: 54px; height: 54px; border-radius: 50%; border: 1.5px dashed currentColor; display: flex; align-items: center; justify-content: center; font-size: 22px; }
-.project-next span { font-weight: 600; font-size: .95rem; }
-.project-next small { font-size: .8rem; opacity: .8; }
-
-/* ============================================================
-   CONTACT
-   ============================================================ */
-.contact { text-align: center; }
-.contact .section-lead { margin: 0 auto 34px; }
-.social-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
-.social-btn {
-  display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px;
-  padding: 13px 22px; min-height: 48px; border-radius: var(--r-full);
-  background: var(--surface); border: 1px solid var(--border); color: var(--heading);
-  transition: transform .18s ease, border-color .2s ease, color .2s ease, box-shadow .25s ease;
-}
-.social-btn i { font-size: 18px; color: var(--text-soft); transition: color .2s ease; }
-.social-btn:hover { transform: translateY(-3px); border-color: var(--papaya); box-shadow: var(--shadow-sm); }
-.social-btn:hover i { color: var(--papaya); }
-.social-btn.email { background: var(--primary); color: #fff; border-color: transparent; }
-.social-btn.email i { color: #fff; }
-.social-btn.email:hover { background: var(--primary-hover); border-color: transparent; }
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-.site-footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 40px 0; }
-.footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
-.footer-inner p { margin: 0; color: var(--text-soft); font-size: .92rem; }
-.footer-inner .brand { font-size: 18px; }
-.to-top { color: var(--text-soft); font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
-.to-top:hover { color: var(--papaya); }
-
-/* ============================================================
-   Scroll-reveal
-   ============================================================ */
-.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.in { opacity: 1; transform: none; }
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width: 980px) {
-  .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 34px; padding-top: 20px; }
-  .hero-eyebrow, .hero-cta { justify-content: center; }
-  .hero-sub { margin-left: auto; margin-right: auto; }
-  .hero-portrait { order: -1; }
-  .hero-portrait img { width: min(260px, 60vw); }
-  .scroll-hint { display: none; }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-photo { max-width: 380px; margin: 0 auto; }
-  .about-photo img { aspect-ratio: 4/3; }
-}
-
-@media (max-width: 760px) {
-  .nav-links {
-    position: fixed; inset: var(--nav-h) 0 auto 0;
-    flex-direction: column; align-items: flex-start; gap: 4px;
-    background: var(--bg); border-bottom: 1px solid var(--border);
-    padding: 14px 24px 22px; box-shadow: var(--shadow-md);
-    transform: translateY(-130%); transition: transform .32s cubic-bezier(.4,0,.2,1);
-    max-height: calc(100dvh - var(--nav-h)); overflow-y: auto;
-  }
-  .nav-links.open { transform: translateY(0); }
-  .nav-links a { width: 100%; padding: 13px 4px; font-size: 17px; border-bottom: 1px solid var(--border); }
-  .nav-links a::after { display: none; }
-  .menu-btn { display: inline-flex; }
-}
-
-@media (max-width: 480px) {
-  .wrap { padding: 0 18px; }
-  .hero-grid { padding-left: 18px; padding-right: 18px; }
-  .btn { width: 100%; }
-  .hero-cta { flex-direction: column; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .social-btn { width: 100%; justify-content: center; }
-  .footer-inner { flex-direction: column; text-align: center; }
-}
-
-/* ============================================================
-   Reduced motion
-   ============================================================ */
-@media (prefers-reduced-motion: reduce) {
-  * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
-  .reveal { opacity: 1; transform: none; }
-  .hero { background-attachment: scroll; }
-  .cursor { animation: none; }
-}
-@media (max-width: 980px) { .hero { background-attachment: scroll; } }
-</style>
+  <!-- Apply theme before first paint -->
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
+<body class="page-cover">
+  <main class="cover" id="cover">
+    <!-- Hero (col 1, rows 1–3) -->
+    <section class="tile hero" data-fit="hero" aria-label="Introduction">
+      <div class="cover-top">
+        <span><span data-vol>Vol. 26</span> · Lima, Perú</span>
+        <button class="theme-btn" type="button" data-theme-toggle aria-label="Switch to dark theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
+      </div>
 
-<body>
+      <h1 class="mast">
+        <span class="mast-first">Andy</span>
+        <span class="mast-last">Casafranca</span>
+      </h1>
 
-<!-- ========================= HEADER ========================= -->
-<header class="site-header" id="header">
-  <nav class="nav wrap" aria-label="Primary">
-    <a class="brand" href="#home" aria-label="Andy Casafranca — home">
-      <img src="assets/mclaren.png" alt="" aria-hidden="true">
-      <span>Andy <b>Casafranca</b></span>
+      <div class="coverlines">
+        <p class="big">The engineer who keeps the water honest.</p>
+        <p class="sm">Instrumentation &amp; SCADA at LabProjects. Mechatronics, UPC, top 10%.</p>
+        <a class="inside-link" href="/projects/">Inside: <span data-project-count>6</span> projects <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="portrait">
+        <img src="assets/banner.png" alt="Andy Casafranca" width="380" height="508" fetchpriority="high">
+      </div>
+
+      <a class="cvbtn" href="/cv/">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/>
+          <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+          <path d="M10 9H8"/>
+          <path d="M16 13H8"/>
+          <path d="M16 17H8"/>
+        </svg>
+        <span>View CV</span>
+      </a>
+    </section>
+
+    <!-- 01 About -->
+    <a class="tile tile--link tile--interactive" href="#about" data-fit="about">
+      <div class="lab">
+        <h2 class="lab-name">About</h2>
+        <span class="n" aria-hidden="true">01</span>
+      </div>
+      <p class="ttl"><i>“Engineer who also has a soul.”</i></p>
+      <span class="more">Read <span class="arrow" aria-hidden="true">→</span></span>
     </a>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">about</a></li>
-      <li><a href="#skills">skills</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#contact">contact</a></li>
-    </ul>
-
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light / dark theme">
-        <i class="fa-solid fa-moon" aria-hidden="true"></i>
-        <i class="fa-solid fa-sun" aria-hidden="true"></i>
-      </button>
-      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-
-<!-- ========================= HERO ========================= -->
-<section class="hero" id="home">
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <span class="hero-eyebrow"><span class="dot"></span>Instrumentation &amp; SCADA Engineer — Perú</span>
-      <h1>Hi, I'm Andy <span class="accent">Casafranca</span>.</h1>
-      <p class="hero-typed" aria-live="polite">
-        <span class="static">Just as comfortable&nbsp;</span><span id="typed"></span><span class="cursor" aria-hidden="true"></span>
-      </p>
-      <p class="hero-sub">Mechatronics Engineer (UPC, top 10%) at LabProjects: I keep water utilities’ SCADA systems running and their flowmeters honest, right at the chaotic intersection of mechanics, electronics, and intelligent systems.</p>
-      <div class="hero-cta">
-        <a class="btn btn--papaya" href="cv/"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> View CV</a>
-        <a class="btn btn--ghost" href="#contact">Get in touch</a>
+    <!-- 02 Now (static) -->
+    <section class="tile tile--static" data-fit="now">
+      <div class="lab">
+        <h2 class="lab-name">Now</h2>
+        <span class="n" aria-hidden="true">02</span>
       </div>
-    </div>
+      <p class="ttl">LabProjects</p>
+      <p class="tile-sub">Instrumentation &amp; SCADA for water utilities, since Oct 2026.</p>
+    </section>
 
-    <div class="hero-portrait">
-      <span class="hero-ring" aria-hidden="true"></span>
-      <img src="assets/banner.png" alt="Andy Casafranca" width="340" loading="eager">
-    </div>
-  </div>
-
-  <a class="scroll-hint" href="#about" aria-label="Scroll to about">
-    <span>scroll</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-  </a>
-
-  <div class="echo" aria-hidden="true">
-    <svg viewBox="0 0 1200 54" preserveAspectRatio="none" fill="none">
-      <defs>
-        <linearGradient id="echoGrad" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#ff8000"/><stop offset="0.5" stop-color="#0aa697"/><stop offset="1" stop-color="#ff8000"/>
-        </linearGradient>
-      </defs>
-      <path d="M0 40 Q 60 8 120 40 T 240 40 T 360 40 T 480 40 T 600 40 T 720 40 T 840 40 T 960 40 T 1080 40 T 1200 40"
-            stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
-    </svg>
-  </div>
-</section>
-
-<!-- ========================= ABOUT ========================= -->
-<section class="section" id="about">
-  <div class="wrap about-grid">
-    <div class="about-photo reveal">
-      <img src="assets/about.jpg" alt="Andy standing in the dunes outside Lima, Perú">
-      <span class="badge"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Lima, Perú</span>
-    </div>
-    <div class="about-body reveal">
-      <span class="eyebrow">about</span>
-      <h2 class="section-title">Engineer who also has a soul.</h2>
-      <p>Today I work full-time as an <span class="text-teal">Instrumentation &amp; SCADA Engineer at LabProjects</span>, serving Peruvian water utilities: I maintain the SCADA systems they use to monitor their reservoirs, harden the servers that host them, and calibrate bulk water meters in the field.</p>
-      <p>I'm just as comfortable <span class="text-teal">debugging a circuit board</span> as I am <span class="text-teal">polishing a user interface</span>. My work lives where mechanics, electronics, and intelligent systems collide — and where careful engineering meets a bit of curiosity.</p>
-      <p>I'm passionate about creating, exploring, and moving — whether it's through engineering challenges, road trips, fast cars, or quiet moments by the ocean.</p>
-      <div class="tag-row">
-        <span class="tag"><i class="fa-solid fa-flag-checkered"></i>Formula 1</span>
-        <span class="tag"><i class="fa-solid fa-gauge-high"></i>Fast cars</span>
-        <span class="tag"><i class="fa-solid fa-gamepad"></i>Gaming</span>
-        <span class="tag"><i class="fa-solid fa-road"></i>Road trips</span>
-        <span class="tag"><i class="fa-solid fa-water"></i>The ocean</span>
+    <!-- 03 Skills -->
+    <a class="tile tile--link tile--interactive" href="#skills" data-fit="skills">
+      <div class="lab">
+        <h2 class="lab-name">Skills</h2>
+        <span class="n" aria-hidden="true">03</span>
       </div>
-    </div>
-  </div>
-</section>
+      <p class="ttl">SCADA <i>/</i> Embedded <i>/</i> ML &amp; AI <i>/</i> Pentest</p>
+      <span class="more">Details <span class="arrow" aria-hidden="true">→</span></span>
+    </a>
 
-<!-- ========================= SKILLS ========================= -->
-<section class="section section--alt" id="skills">
-  <div class="wrap">
-    <div class="reveal">
-      <span class="eyebrow">some things i do</span>
-      <h2 class="section-title">My featured skills</h2>
-      <p class="section-lead">Four places where I like to get my hands dirty — from calibrating flowmeters in the field to breaking systems on purpose.</p>
-    </div>
-    <div class="cards-3">
-      <article class="skill-card reveal">
-        <div class="skill-icon"><i class="fa-solid fa-gauge" aria-hidden="true"></i></div>
-        <h3>Instrumentation &amp; SCADA</h3>
-        <p>Electromagnetic and ultrasonic flowmeters calibrated in the field, plus the SCADA/HMI (FUXA) and Siemens S7-1200 PLCs that turn their signals into decisions.</p>
-      </article>
-      <article class="skill-card reveal">
-        <div class="skill-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
-        <h3>Embedded Systems &amp; Automation</h3>
-        <p>Microcontrollers, sensor integration, and control algorithms that bridge clean code and the messy physical world.</p>
-      </article>
-      <article class="skill-card reveal">
-        <div class="skill-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
-        <h3>Machine Learning &amp; AI</h3>
-        <p>Training and deploying ML models — from feature engineering on raw sensor data to offline edge inference, like the ensemble behind HydraDetect-AI.</p>
-      </article>
-      <article class="skill-card reveal">
-        <div class="skill-icon"><i class="fa-solid fa-user-secret" aria-hidden="true"></i></div>
-        <h3>Ethical Hacking &amp; Pentesting</h3>
-        <p>Breaking things on purpose to make them safer — from web apps to embedded targets — and hardening the servers that keep SCADA systems online.</p>
-      </article>
-    </div>
-  </div>
-</section>
+    <!-- 04 Résumé -->
+    <section class="tile tile--group tile--interactive" data-fit="resume">
+      <div class="lab">
+        <h2 class="lab-name">Résumé</h2>
+        <span class="n" aria-hidden="true">04</span>
+      </div>
+      <p class="ttl"><a class="ttl-link" href="/cv/">The <i>one-pager.</i></a></p>
+      <div class="links">
+        <a class="ul" href="/cv/cv-en.pdf" download>English <span aria-hidden="true">↓</span></a>
+        <a class="ul" href="/cv/cv-es.pdf" download>Español <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
 
-<!-- ========================= PROJECTS ========================= -->
-<section class="section" id="projects">
-  <div class="wrap">
-    <div class="reveal">
-      <span class="eyebrow">portfolio</span>
-      <h2 class="section-title">my projects <span aria-hidden="true">ツ</span></h2>
-      <p class="section-lead">Things I've built end-to-end. Click any card to open the live project or its code — more are on the way.</p>
-    </div>
-    <div class="projects-grid" id="projectsGrid"><!-- rendered by JS --></div>
-  </div>
-</section>
+    <!-- 05 Lima (static) -->
+    <section class="tile tile--static" data-fit="lima">
+      <div class="lab">
+        <h2 class="lab-name">Lima</h2>
+        <span class="n" aria-hidden="true">05</span>
+      </div>
+      <p class="tile-sub lima-sub">Local time, UTC−5</p>
+      <time class="clock" id="limaClock">--:--</time>
+    </section>
 
-<!-- ========================= CONTACT ========================= -->
-<section class="section section--alt contact" id="contact">
-  <div class="wrap reveal">
-    <span class="eyebrow" style="justify-content:center;">get in touch</span>
-    <h2 class="section-title">Let's build something.</h2>
-    <p class="section-lead">Open to collaborations, interesting engineering challenges, and good conversations — about instrumentation, Formula 1, or anything that moves fast.</p>
-    <div class="social-row">
-      <a class="social-btn email" href="mailto:andycasafranca@hotmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email me</a>
-      <a class="social-btn" href="https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a>
-      <a class="social-btn" href="https://github.com/AndyRCC" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-      <a class="social-btn" href="https://www.instagram.com/andy_rcc" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
-      <a class="social-btn" href="https://www.youtube.com/@Andy_Casafranca" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</a>
-      <a class="social-btn" href="https://steamcommunity.com/id/hitheads" target="_blank" rel="noopener"><i class="fa-brands fa-steam" aria-hidden="true"></i> Steam</a>
-    </div>
-  </div>
-</section>
+    <!-- 06 Contact -->
+    <section class="tile tile--group tile--interactive" data-fit="contact">
+      <div class="lab">
+        <h2 class="lab-name">Contact</h2>
+        <span class="n" aria-hidden="true">06</span>
+      </div>
+      <p class="ttl">Say <i>hola.</i></p>
+      <div class="links">
+        <a class="ul" href="mailto:andycasafranca@hotmail.com">Email</a>
+        <a class="ul" href="https://www.linkedin.com/in/andy-ricardo-casafranca-carrascal-215982115" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="ul" href="https://github.com/AndyRCC" target="_blank" rel="noopener">GitHub</a>
+        <a class="ul" href="https://www.youtube.com/@Andy_Casafranca" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </section>
 
-<!-- ========================= FOOTER ========================= -->
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <a class="brand" href="#home"><img src="assets/mclaren.png" alt="" aria-hidden="true"><span>Andy <b>Casafranca</b></span></a>
-    <p>© <span id="year"></span> Andy Casafranca — built with caffeine &amp; papaya in Lima, Perú.</p>
-    <a class="to-top" href="#home"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Back to top</a>
-  </div>
-</footer>
+    <!-- 07 Projects -->
+    <a class="tile tile--link tile--interactive wide" id="projectsTile" href="/projects/" data-fit="projects" aria-label="Projects, see all 6">
+      <div class="copy">
+        <div class="lab">
+          <span>In this issue</span>
+          <span class="n" aria-hidden="true">07</span>
+        </div>
+        <h2 class="ttl">Projects</h2>
+        <span class="more">See all <span data-project-count>6</span> <span class="arrow" aria-hidden="true">→</span></span>
+      </div>
+      <div class="fan" id="coverFan" aria-hidden="true"></div>
+    </a>
+  </main>
 
-<!-- ========================= SCRIPTS ========================= -->
-<script>
-(function () {
-  'use strict';
-  var root = document.documentElement;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---- Theme toggle ---- */
-  var toggle = document.getElementById('themeToggle');
-  toggle.addEventListener('click', function () {
-    var current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-    var next = current === 'light' ? 'dark' : 'light';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem('theme', next); } catch (e) {}
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', next === 'light' ? '#ffffff' : '#0e1419');
-  });
-
-  /* ---- Mobile menu ---- */
-  var menuBtn = document.getElementById('menuBtn');
-  var navLinks = document.getElementById('navLinks');
-  function closeMenu() {
-    navLinks.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    menuBtn.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-  }
-  menuBtn.addEventListener('click', function () {
-    var open = navLinks.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.innerHTML = open ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-  });
-  navLinks.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
-
-  /* ---- Header shadow on scroll ---- */
-  var header = document.getElementById('header');
-  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 12); }
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  /* ---- Year ---- */
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  /* ---- Projects data (add a block here to grow the grid) ---- */
-  var PROJECTS = [
-    {
-      title: 'HydraDetect-AI',
-      kicker: 'Big Brother × Little Brother',
-      summary: 'Detects clandestine water taps in city pipes using a controlled water hammer and machine learning. Lab-to-field transfer reaches 89% accuracy — running offline on an Arduino edge device.',
-      image: 'assets/hydradetect-card.svg',
-      tags: ['Arduino', 'Python', 'Machine Learning', 'Signal Processing', 'Edge AI'],
-      url: 'https://andyrcc.github.io/HydraDetect-AI/'
-    },
-    {
-      title: 'Reservoir Outlet 3D',
-      kicker: 'Why the flowmeter lies',
-      summary: 'Interactive 3D simulation of a reservoir outlet that drops at 45°. Real 1D hydraulics (Manning, H2/H3/S2 profiles, vena contracta) show how a partly full pipe makes an electromagnetic flowmeter over-read by about 35%.',
-      image: 'assets/reservorio-card.svg',
-      tags: ['Three.js', 'JavaScript', 'Hydraulics', 'Instrumentation', 'Flow Metering'],
-      url: 'https://andyrcc.github.io/simulacion-reservorio-3d/'
-    },
-    {
-      title: 'Bulk Meter Verification',
-      kicker: 'Field metrology for a water utility',
-      summary: 'Case study: verifying 53 bulk water meters at a utility’s wells and reservoirs against a portable clamp-on ultrasonic reference. 41 meters tested on site; 15 corrected in the field without cutting supply, all re-verified.',
-      image: 'assets/verificacion-card.svg',
-      tags: ['Flow Metering', 'Calibration', 'Field Work', 'Data Viz', 'JavaScript'],
-      url: 'https://andyrcc.github.io/contrastacion-emapica/'
-    },
-    {
-      title: 'Hoardling',
-      kicker: 'A dragon that guards your limits',
-      summary: 'A tiny desktop pet for Windows that keeps an eye on my Claude Code and Antigravity usage limits: glasses on while they work, napping when they’re closed. Local-only hooks, no telemetry.',
-      image: 'assets/hoardling-card.png',
-      tags: ['C#', '.NET 10', 'WPF', 'Windows', 'Desktop App'],
-      url: 'https://github.com/AndyRCC/hoardling',
-      repo: true
-    }
-    /* , { title:'', kicker:'', summary:'', image:'assets/xxx.png', tags:['',''], url:'', repo:false } */
-  ];
-
-  function el(tag, cls, html) { var n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; }
-
-  var grid = document.getElementById('projectsGrid');
-  PROJECTS.forEach(function (p) {
-    var card = el('a', 'project-card reveal');
-    card.href = p.url; card.target = '_blank'; card.rel = 'noopener';
-    card.setAttribute('aria-label', p.title + (p.repo ? ' — view on GitHub' : ' — open live project'));
-    var tags = p.tags.map(function (t) { return '<span class="chip">' + t + '</span>'; }).join('');
-    var pill = p.repo
-      ? '<i class="fa-brands fa-github"></i> GitHub'
-      : '<i class="fa-solid fa-arrow-up-right-from-square"></i> Open';
-    card.innerHTML =
-      '<div class="project-media">' +
-        '<img src="' + p.image + '" alt="' + p.title + ' preview" loading="lazy">' +
-        '<span class="open-pill">' + pill + '</span>' +
-      '</div>' +
-      '<div class="project-body">' +
-        '<span class="project-kicker">' + p.kicker + '</span>' +
-        '<h3>' + p.title + '</h3>' +
-        '<p>' + p.summary + '</p>' +
-        '<div class="project-tags">' + tags + '</div>' +
-      '</div>';
-    grid.appendChild(card);
-  });
-
-  /* placeholder "next build" card */
-  var next = el('a', 'project-next reveal');
-  next.href = 'https://github.com/AndyRCC'; next.target = '_blank'; next.rel = 'noopener';
-  next.innerHTML = '<span class="plus"><i class="fa-solid fa-plus"></i></span><span>Your next build loads here</span><small>more coming soon · see my GitHub</small>';
-  grid.appendChild(next);
-
-  /* ---- Scroll reveal ---- */
-  var reveals = document.querySelectorAll('.reveal');
-  if (reduceMotion || !('IntersectionObserver' in window)) {
-    reveals.forEach(function (r) { r.classList.add('in'); });
-  } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    reveals.forEach(function (r) { io.observe(r); });
-  }
-
-  /* ---- Active nav link on scroll ---- */
-  var sections = ['about', 'skills', 'projects', 'contact'].map(function (id) { return document.getElementById(id); });
-  var linkFor = {};
-  document.querySelectorAll('.nav-links a').forEach(function (a) { linkFor[a.getAttribute('href').slice(1)] = a; });
-  if ('IntersectionObserver' in window) {
-    var navIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          Object.values(linkFor).forEach(function (a) { a.classList.remove('active'); });
-          var active = linkFor[e.target.id];
-          if (active) active.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    sections.forEach(function (s) { if (s) navIO.observe(s); });
-  }
-
-  /* ---- Hero typed effect ---- */
-  var phrases = ['debugging a circuit board.', 'calibrating a flowmeter.', 'polishing a user interface.', 'chasing the perfect lap.', 'catching water thieves with AI.'];
-  var typedEl = document.getElementById('typed');
-  if (reduceMotion) {
-    typedEl.textContent = phrases[0];
-  } else {
-    var pi = 0, ci = 0, deleting = false;
-    function tick() {
-      var word = phrases[pi];
-      ci += deleting ? -1 : 1;
-      typedEl.textContent = word.slice(0, ci);
-      var delay = deleting ? 38 : 70;
-      if (!deleting && ci === word.length) { delay = 1600; deleting = true; }
-      else if (deleting && ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; delay = 320; }
-      setTimeout(tick, delay);
-    }
-    setTimeout(tick, 600);
-  }
-})();
-</script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/figures.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/cover.js"></script>
+  <script>
+    (function () {
+      SITE.initTheme();
+      SITE.fillVolume();
+      COVER.renderFan(document.getElementById('coverFan'), SITE_DATA.PROJECTS, SITE_FIGURES);
+      COVER.startClock(document.getElementById('limaClock'));
+      SITE.maybeFitcheck();
+    })();
+  </script>
 </body>
 </html>
